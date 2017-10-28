@@ -114,7 +114,7 @@ public class MinerControllerGUI extends JPanel implements ActionListener{
 //this function creates a JPanel for parsed wallet info
 	public void walletView() {
 		JPanel wallet = new JPanel (new GridLayout(3,3));
-		wallet.add();
+		wallet.add();shit
 	}
 
 	
