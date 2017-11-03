@@ -26,7 +26,7 @@ public class MiningController {
 
 		try {
 			connection.connect();
-		} catch (IOException e) {
+		} catch (IOException e) {s
 			e.printStackTrace();
 			System.out.println("Connection to external API failed"); }
 
