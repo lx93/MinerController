@@ -11,7 +11,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MinerControllerGUI">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MiningView">
   <tabs>
     <Tab text="Mining">
       <content>
@@ -26,16 +26,13 @@
                      <font>
                         <Font size="26.0" />
                      </font></Text>
-                  <Text fx:id="balanceText" layoutX="339.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading...">
+                  <Text fx:id="balanceText" layoutX="232.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." textAlignment="CENTER" wrappingWidth="334.5673828125">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <ImageView fitHeight="93.0" fitWidth="71.0" layoutX="715.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../logo.png" />
-                     </image>
-                  </ImageView>
+                  <Text fx:id="hashrateText" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current hashrate: loading..." />
+                  <TextField fx:id="claymoreText" editable="false" layoutX="21.0" layoutY="366.0" prefHeight="25.0" prefWidth="759.0" promptText="Claymore Status" />
           </children></AnchorPane>
       </content>
     </Tab>

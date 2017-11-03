@@ -18,7 +18,7 @@ public class MinerControllerApplication extends Application{
 
 
 	public void start(Stage primaryStage) throws Exception{
-		Parent root = FXMLLoader.load(getClass().getResource("MinerControllerFXML.fxml"));
+		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MinerControllerFXML.fxml"));
 		primaryStage.setTitle("Isaiah Miner");
 		primaryStage.setScene(new Scene(root, 800, 450));
 		//primaryStage.setFullScreen(true);
