@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="try intellij">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MinerController_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiningController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WalletController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WalletView.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/MinerControllerApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/MinerControllerGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/jsoup-1.10.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MinerController/MinerControllerGUI.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MinerControllerGUI.java" afterPath="$PROJECT_DIR$/src/MiningView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MinerController/MinerControllerApplication.class" afterPath="$PROJECT_DIR$/out/production/MinerController/MinerControllerApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/MinerController.xml" afterPath="$PROJECT_DIR$/.idea/libraries/MinerController.xml" />
+    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinerControllerApplication.java" afterPath="$PROJECT_DIR$/src/MinerControllerApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinerControllerFXML.fxml" afterPath="$PROJECT_DIR$/src/MinerControllerFXML.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +42,8 @@
       <file leaf-file-name="MiningController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MiningController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="738">
+              <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="5">
     <option name="y" value="25" />
     <option name="width" value="1567" />
     <option name="height" value="1413" />
@@ -327,11 +313,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509220686336</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="try intellij">
+      <created>1509693853580</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1509693853580</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1567" height="1413" extended-state="4" />
+    <frame x="0" y="25" width="1567" height="1413" extended-state="5" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -395,7 +388,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try intellij" />
-    <option name="LAST_COMMIT_MESSAGE" value="try intellij" />
+    <MESSAGE value="fixed and refactored a bunch of classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed and refactored a bunch of classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -760,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MiningController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="738">
+          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
