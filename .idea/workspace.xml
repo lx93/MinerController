@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="fixed and refactored a bunch of classes">
+    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinerControllerApplication.java" afterPath="$PROJECT_DIR$/src/MinerControllerApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinerControllerFXML.fxml" afterPath="$PROJECT_DIR$/src/MinerControllerFXML.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiningController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MiningController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MiningController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
@@ -70,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinerControllerFXML.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MinerControllerFXML.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MinerControllerFXML.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="-76">
               <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
@@ -344,7 +342,21 @@
       <option name="project" value="LOCAL" />
       <updated>1509694381940</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="updated fxml">
+      <created>1509810005934</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1509810005934</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated fxml">
+      <created>1509810015713</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1509810015713</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -413,7 +425,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try intellij" />
     <MESSAGE value="fixed and refactored a bunch of classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed and refactored a bunch of classes" />
+    <MESSAGE value="updated fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,17 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerControllerFXML.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WalletController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -750,6 +752,17 @@
             <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerControllerFXML.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>
