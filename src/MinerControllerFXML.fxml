@@ -24,7 +24,7 @@
             </Button>
             <Text layoutX="260.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unconfirmed Balance" wrappingWidth="279.7294921875">
                      <font>
-                        <Font size="26.0" />
+                        <Font size="26.0" />s
                      </font></Text>
                   <Text fx:id="balanceText" layoutX="232.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." textAlignment="CENTER" wrappingWidth="334.5673828125">
                      <font>
