@@ -38,7 +38,23 @@
     </Tab>
     <Tab text="Wallet">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="62.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Ethereum wallet balance:">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="62.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Bitcoin wallet balance:">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="ETHSendBtn" layoutX="116.0" layoutY="146.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
+                  <Button fx:id="ETHRecBtn" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
+                  <Button fx:id="BTCRecBtn" layoutX="222.0" layoutY="310.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
+                  <Button fx:id="BTCSendBtn" layoutX="116.0" layoutY="310.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
+               </children></AnchorPane>
       </content>
     </Tab>
   </tabs>
