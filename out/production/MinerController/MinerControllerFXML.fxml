@@ -11,50 +11,16 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MiningView">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-    <Tab text="Mining">
+    <Tab fx:id="miningTab" text="Mining">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0">
-          <children>
-            <Button fx:id="mineButton" layoutX="259.0" layoutY="200.0" mnemonicParsing="false" onAction="#mineButtonController" prefHeight="138.0" prefWidth="282.0" style="-fx-base: #b6e7c9" text="Start Mining">
-              <font>
-                <Font size="24.0" />
-              </font>
-            </Button>
-            <Text layoutX="260.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unconfirmed Balance" wrappingWidth="279.7294921875">
-                     <font>
-                        <Font size="26.0" />
-                     </font></Text>
-                  <Text fx:id="balanceText" layoutX="232.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." textAlignment="CENTER" wrappingWidth="334.5673828125">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="hashrateText" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current hashrate: loading..." />
-                  <TextField fx:id="claymoreText" editable="false" layoutX="21.0" layoutY="366.0" prefHeight="25.0" prefWidth="759.0" promptText="Claymore Status" />
-          </children></AnchorPane>
+      	<fx:include fx:id="miningViewTab" source="MiningTab.fxml" />
       </content>
     </Tab>
-    <Tab text="Wallet">
+    <Tab fx:id="walletTab" text="Wallet">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <Text layoutX="62.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Ethereum wallet balance:">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="62.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Bitcoin wallet balance:">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="ETHSendBtn" layoutX="116.0" layoutY="146.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
-                  <Button fx:id="ETHRecBtn" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
-                  <Button fx:id="BTCRecBtn" layoutX="222.0" layoutY="310.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
-                  <Button fx:id="BTCSendBtn" layoutX="116.0" layoutY="310.0" mnemonicParsing="false" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
-               </children></AnchorPane>
+      	<fx:include fx:id="walletViewTab" source="WalletTab.fxml" />
       </content>
     </Tab>
   </tabs>
