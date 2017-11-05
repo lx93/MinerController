@@ -6,8 +6,10 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
 import com.github.sarxos.webcam.WebcamResolution;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
@@ -29,12 +31,26 @@ public class QRHelper {
 		super();
 		Dimension size = WebcamResolution.QVGA.getSize();
 
-		webcam = Webcam.getWebcams().get(2);
+		webcam = Webcam.getDefault();
 		webcam.setViewSize(size);
 		webcam.open();
 
 	}
-	
+
+
+	public void showScanner(JFrame window){
+		WebcamPanel panel = new WebcamPanel(webcam);
+		panel.setFPSDisplayed(true);
+		panel.setDisplayDebugInfo(true);
+		panel.setImageSizeDisplayed(true);
+		panel.setMirrored(true);
+		window.add(panel);
+
+
+
+	}
+
+
 	public String scanCode(){
 		Result result = null;
 		BufferedImage image = null;
