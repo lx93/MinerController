@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="uploaded dependency packages">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MinerController.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apache-commons-codec-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apache-commons.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bitcoinj-core-0.14.5-bundled.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bridj-0.6.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javase-2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webcam-capture-0.3.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zxing-core-3.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ExchangeTab.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MinerController_jar/MinerController.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MinerController/MinerControllerApplication.class" afterPath="$PROJECT_DIR$/out/production/MinerController/MinerControllerApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MinerController/MiningView.class" afterPath="$PROJECT_DIR$/out/production/MinerController/MiningView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MinerController/WalletController.class" afterPath="$PROJECT_DIR$/out/production/MinerController/WalletController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MinerController/WalletView.class" afterPath="$PROJECT_DIR$/out/production/MinerController/WalletView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/MinerController_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MinerController_jar.xml" />
+    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MinerControllerApplication.java" afterPath="$PROJECT_DIR$/src/MinerControllerApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiningView.java" afterPath="$PROJECT_DIR$/src/MiningView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/QRHelper.java" afterPath="$PROJECT_DIR$/src/QRHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WalletController.java" afterPath="$PROJECT_DIR$/src/WalletController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WalletTab.fxml" afterPath="$PROJECT_DIR$/src/WalletTab.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WalletView.java" afterPath="$PROJECT_DIR$/src/WalletView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +20,8 @@
       <file leaf-file-name="MinerControllerApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MinerControllerApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,7 +100,7 @@
       <file leaf-file-name="QRHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QRHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="900">
               <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding />
             </state>
@@ -451,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509862996467</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="uploaded dependency packages">
+      <created>1510105319772</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1510105319773</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -465,9 +451,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32746747" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -962,7 +949,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QRHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="900">
           <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding />
         </state>
@@ -1036,8 +1023,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MinerControllerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
