@@ -1,3 +1,4 @@
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -12,6 +13,50 @@ import java.nio.charset.Charset;
 
 
 public class MiningController {
+
+	Process p;
+	final static boolean DEBUG = true;
+	public String directory = "/home/isaiahminer0/Desktop/Claymore/start.bash";
+
+	public MiningController() throws IOException{
+	}
+
+
+
+
+	public String getPathToMiningProgram() {
+
+		if (DEBUG) {
+			return "bash/test-print.sh";
+		} else {
+			return directory;
+		}
+	}
+
+
+	public String returnBalance(){
+		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
+
+		if (DEBUG) {
+			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance");
+		}
+		else{
+			return jsonParse(jsonToString(connectAPI(URLAddress)),"balance");
+		}
+	}
+
+	public String returnHashrate(){
+		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
+		if (DEBUG) {
+			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","hashrate");
+		}
+		else{
+			return jsonParse(jsonToString(connectAPI(URLAddress)),"hashrate");
+		}
+
+	}
+
+
 	// this function establish connection to various external APIs
 	public URLConnection connectAPI(String URLAddress){
 
@@ -91,4 +136,36 @@ public class MiningController {
 
 		else {return "you are a prick";}
 	}
+
+
+
+
+	// this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
+	public String claymoreReader () throws IOException{
+		BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+		String line;
+		while ((line = in.readLine()) != null) {
+			System.out.println(line);
+			return line;
+		}
+		System.out.println("cant read");
+		return ("cannot read line from claymore!!!");
+	}
+
+
+	public void claymoreStarter(){
+		try {
+			p = new ProcessBuilder("/bin/bash",
+					getPathToMiningProgram()).start();
+			claymoreReader();
+
+		} catch (IOException f) {
+			f.printStackTrace();
+			System.out.println("Claymore is not executing");
+		}
+	}
+
+
+
+
 }

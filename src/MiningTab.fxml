@@ -11,7 +11,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="MiningView">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="MiningView">
   <children>
     <Button fx:id="mineButton" layoutX="259.0" layoutY="200.0" mnemonicParsing="false" onAction="#mineButtonController" prefHeight="138.0" prefWidth="282.0" style="-fx-base: #b6e7c9" text="Start Mining">
       <font>

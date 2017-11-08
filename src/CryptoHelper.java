@@ -38,7 +38,7 @@ import org.spongycastle.crypto.params.ECPublicKeyParameters;
 
 public class CryptoHelper {
 	
-	public static BitCoinKeyPair getKeyPair(){
+	public static WalletController getKeyPair(){
 		String[] values = new String[2];;
 		ECKey key = new ECKey();
 
@@ -48,7 +48,7 @@ public class CryptoHelper {
 
 		Address add = new Address(NetworkParameters.prodNet(), Utils.sha256hash160(pub));
 		values[1] =  add.toBase58();
-		BitCoinKeyPair kp = new BitCoinKeyPair(values[0], values[1]);
+		WalletController kp = new WalletController(values[0], values[1]);
 		return kp;
 	}
 	 

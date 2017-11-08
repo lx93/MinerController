@@ -13,21 +13,18 @@ import java.io.*;
 
 public class MiningView {
 
-	final static boolean DEBUG = false;
 
 
-	public static MiningController controller = new MiningController();
+	public MiningController controller = new MiningController();
 	public Button mineButton = new Button();
 	public Text balanceText = new Text();
 	public Text hashrateText = new Text();
 	public TextField claymoreText = new TextField();
 
 
-	public boolean buttonStatus = false;
+	public boolean buttonStatus = true;
 
 
-	public String directory = "/home/isaiahminer0/Desktop/Claymore/start.bash";
-	Process p;
 
 
 	//class constructor
@@ -36,36 +33,7 @@ public class MiningView {
 		updateHashrate();
 	}
 
-	private String getPathToMiningProgram() {
 
-		if (DEBUG) {
-			return "bash/test-print.sh";
-		} else {
-			return directory;
-		}
-	}
-
-	private String returnBalance(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
-
-		if (DEBUG) {
-			return controller.jsonParse("{\"status\":true,\"data\":0.0500000000}","balance");
-		}
-		else{
-			return controller.jsonParse(controller.jsonToString(controller.connectAPI(URLAddress)),"balance");
-		}
-	}
-
-	private String returnHashrate(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
-		if (DEBUG) {
-			return controller.jsonParse("{\"status\":true,\"data\":500}","hashrate");
-		}
-		else{
-			return controller.jsonParse(controller.jsonToString(controller.connectAPI(URLAddress)),"hashrate");
-		}
-
-	}
 
 
 
@@ -84,7 +52,7 @@ public class MiningView {
 					Platform.runLater(new Runnable() {
 						public void run() {
 							// we are now back in the EventThread and can update the GUI
-							balanceText.setText(returnBalance() + " ETH");
+							balanceText.setText(controller.returnBalance() + " ETH");
 						}
 					});
 				}
@@ -108,7 +76,7 @@ public class MiningView {
 					Platform.runLater(new Runnable() {
 						public void run() {
 							// we are now back in the EventThread and can update the GUI
-							hashrateText.setText("current hashrate: " + returnHashrate() + " MH/s");
+							hashrateText.setText("current hashrate: " + controller.returnHashrate() + " MH/s");
 						}
 					});
 				}
@@ -117,10 +85,7 @@ public class MiningView {
 	}
 
 
-	public void updateClaymoreStatus(){
-
-
-
+	public void updateClaymoreStatus() throws IOException {
 	}
 
 
@@ -133,15 +98,7 @@ public class MiningView {
 			buttonStatus = false;
 			mineButton.setStyle("-fx-font: 22 arial; -fx-base: #ef8973;");
 			mineButton.setText("Stop Mining");
-			try {
-				p = new ProcessBuilder("/bin/bash",
-						getPathToMiningProgram()).start();
-				claymoreReader();
-
-			} catch (IOException f) {
-				f.printStackTrace();
-				System.out.println("Claymore is not executing");
-			}
+			controller.claymoreStarter();
 		}
 		else{
 			buttonStatus = true;
@@ -150,17 +107,6 @@ public class MiningView {
 		}
 	}
 
-	
-
-
-	// this function creates a BufferedReader that reads from Claymore output to print in console
-	public void claymoreReader () throws IOException {
-		BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-		String line;
-		while ((line = in.readLine()) != null) {
-			System.out.println(line);
-		}
-	}
 
 
 

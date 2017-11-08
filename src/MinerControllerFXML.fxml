@@ -15,12 +15,17 @@
   <tabs>
     <Tab fx:id="miningTab" text="Mining">
       <content>
-      	<fx:include fx:id="miningViewTab" source="MiningTab.fxml" />
+      	<fx:include source="MiningTab.fxml" />
       </content>
     </Tab>
     <Tab fx:id="walletTab" text="Wallet">
       <content>
-      	<fx:include fx:id="walletViewTab" source="WalletTab.fxml" />
+      	<fx:include source="WalletTab.fxml" />
+      </content>
+    </Tab>
+    <Tab fx:id="exchangeTab" text="Exchange">
+      <content>
+        <fx:include source="ExchangeTab.fxml" />
       </content>
     </Tab>
   </tabs>
