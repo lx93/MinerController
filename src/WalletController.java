@@ -1,25 +1,35 @@
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
+
 public class WalletController {
 
 
 	WalletView view = new WalletView();
+	Text notification = new Text ();
 
 	public void sendETH(){
-		view.QRScanFrame();
+		//view.controller=this;
+		view.QRScanFrame(notification);
 	}
 
 
 	public void sendBTC(){
-		view.QRScanFrame();
+		//view.controller=this;
+		view.QRScanFrame(notification);
 	}
 
 
 	public void recETH(){
-		view.QRShowFrame();
-
+		view.displayQRAddr();
 	}
 
 	public void recBTC(){
-		view.QRShowFrame();
+		view.displayQRAddr();
 	}
+
+	public void updateNotification(){
+		notification.setText("Payment sent successfully");
+	}
+
 
 }

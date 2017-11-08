@@ -23,7 +23,7 @@ public class MiningView {
 	public TextField claymoreText = new TextField();
 
 
-	public boolean buttonStatus = true;
+	public boolean buttonStatus = false;
 
 
 	public String directory = "/home/isaiahminer0/Desktop/Claymore/start.bash";
@@ -119,6 +119,8 @@ public class MiningView {
 
 	public void updateClaymoreStatus(){
 
+
+
 	}
 
 
@@ -135,7 +137,11 @@ public class MiningView {
 				p = new ProcessBuilder("/bin/bash",
 						getPathToMiningProgram()).start();
 				claymoreReader();
-			} catch (IOException f) {f.printStackTrace();}
+
+			} catch (IOException f) {
+				f.printStackTrace();
+				System.out.println("Claymore is not executing");
+			}
 		}
 		else{
 			buttonStatus = true;

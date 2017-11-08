@@ -1,9 +1,17 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="MinerController:jar">
+  <artifact type="jar" name="MinerController:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/MinerController_jar</output-path>
     <root id="archive" name="MinerController.jar">
       <element id="module-output" name="MinerController" />
       <element id="extracted-dir" path="$PROJECT_DIR$/json-simple-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/apache-commons-codec-1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/apache-commons.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bitcoinj-core-0.14.5-bundled.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/zxing-core-3.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/bridj-0.6.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javase-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/webcam-capture-0.3.10.jar" path-in-jar="/" />
+      <element id="library" level="project" name="MinerController" />
     </root>
   </artifact>
 </component>

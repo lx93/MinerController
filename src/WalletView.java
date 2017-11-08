@@ -2,56 +2,80 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.EventListener;
+
+import javafx.application.Platform;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 public class WalletView{
 
 	QRHelper helper;
+	//public WalletController controller;
 	JButton shutterBtn = new JButton("Capture!");
+	JButton submitBtn = new JButton("Submit!");
+	TextField address = new TextField("Address");
+	TextField amount = new TextField("Amount");
 
 
 
 	public WalletView (){
 		helper = new QRHelper();
+		//controller = new WalletController();
 	}
 
 
 	// Creates a JFrame which houses QRHelper Panel;
-	public void QRScanFrame(){
+	public void QRScanFrame(Text notification){
 
 		JFrame QRFrame = new JFrame();
 
 		shutterBtn.setVisible(true);
 		QRFrame.add(shutterBtn,BorderLayout.WEST);
+		QRFrame.add(submitBtn,BorderLayout.EAST);
 
+		address = new TextField("Address");
+		amount = new TextField("Payment");
+
+		QRFrame.add(address,BorderLayout.NORTH);
+		QRFrame.add(amount,BorderLayout.SOUTH);
 		QRFrame.setSize (800,450);
 		helper.showScanner(QRFrame);
 		QRFrame.setVisible(true);
-		System.out.println("1");
+
 		shutterBtn.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				System.out.println("2");
 				shutter();
 			}
 		});
+
+		submitBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				QRFrame.dispose();
+				notification.setText("HII");
+				notification.setVisible(true);
+//				System.out.println(notification);
+				//controller.updateNotification();
+
+
+			}
+		});
+
 	}
 
 
 
 
 	public void shutter(){
-		System.out.println("hi");
-		System.out.println(helper.scanCode());
+		address.setText(helper.scanCode().substring(8));
 	}
 
 
-	public void QRShowFrame(){
-		JFrame QRFrame = new JFrame();
-		QRFrame.setSize (800,450);
-		helper.showScanner(QRFrame);
-		QRFrame.setVisible(true);
+	public void displayQRAddr(){
+		helper.generateQR(MinerControllerApplication.key.getPubKey());
 
 
 	}
