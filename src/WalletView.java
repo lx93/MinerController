@@ -2,9 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 
-import com.google.zxing.client.j2se.MatrixToImageWriter;
+
+
 import javafx.scene.text.Text;
 
 public class WalletView{

@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/json-simple-1.1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/apache-commons-codec-1.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/apache-commons.jar!/" />
       <root url="jar://$PROJECT_DIR$/bitcoinj-core-0.14.5-bundled.jar!/" />
       <root url="jar://$PROJECT_DIR$/zxing-core-3.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/bridj-0.6.2.jar!/" />
@@ -11,8 +10,6 @@
       <root url="jar://$PROJECT_DIR$/webcam-capture-0.3.10.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/bitcoinj-core-0.14.5-bundled.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

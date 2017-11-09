@@ -1,20 +1,12 @@
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
+
 import java.util.EnumMap;
 import java.util.Map;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.*;
+
 
 
 import com.github.sarxos.webcam.Webcam;
