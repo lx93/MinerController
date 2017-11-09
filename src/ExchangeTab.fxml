@@ -14,7 +14,39 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExchangeView">
    <children>
-      <ComboBox fx:id="src" layoutX="122.0" layoutY="225.0" prefWidth="150.0" promptText="Exhange this" visibleRowCount="3" />
-      <ComboBox fx:id="dest" layoutX="523.0" layoutY="225.0" prefWidth="150.0" promptText="To this" visibleRowCount="3" />
+      <Text layoutX="72.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert ETH to BTC">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert BTC to ETH" visible="false">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <TextField layoutX="452.0" layoutY="203.0" prefHeight="25.0" prefWidth="67.0" text="1" />
+      <Text layoutX="538.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ETH">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="329.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="329.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Output:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="538.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTC">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField layoutX="452.0" layoutY="329.0" prefHeight="25.0" prefWidth="67.0" text="1" />
+      <Text layoutX="72.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current exchange rate:" />
+      <Button fx:id="ETHSendBtn" layoutX="79.0" layoutY="244.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: b6e7c9;" text="Submit!" />
    </children>
 </AnchorPane>

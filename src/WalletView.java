@@ -2,12 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
+import com.google.zxing.client.j2se.MatrixToImageWriter;
 import javafx.scene.text.Text;
 
 public class WalletView{
 
-	WalletController controller;
 	JButton shutterBtn = new JButton("Capture!");
 	JButton submitBtn = new JButton("Submit!");
 	TextField address = new TextField("Address");
@@ -15,14 +16,16 @@ public class WalletView{
 
 	Text notification = new Text ();
 
+	public static WalletController controller = CryptoHelper.getKeyPair();
+
 
 
 	public WalletView (){
-		controller = new WalletController();
+
 	}
 
 
-	// Creates a JFrame which houses WalletController Panel;
+	// Creates a JFrame which houses WalletControl Panel;
 	public void QRScanFrame(Text notification){
 
 		JFrame QRFrame = new JFrame();
@@ -68,10 +71,17 @@ public class WalletView{
 	}
 
 
-	public void displayQRAddr(){
-		controller.generateQR(controller.key.getPubKey());
+	public void displayQRAddr(String pubkey){
+		JFrame frame = new JFrame();
+		frame.getContentPane().setLayout(new FlowLayout());
+		frame.getContentPane().add(new JLabel(new ImageIcon(controller.generateQR(controller.getPubKey()))));
+		frame.getContentPane().add(new JLabel(controller.getPubKey()));
+		frame.setPreferredSize(new java.awt.Dimension(325,325));
+		frame.pack();
+		frame.setVisible(true);
 
 
+		controller.generateQR(controller.getPubKey());
 	}
 
 
@@ -88,12 +98,14 @@ public class WalletView{
 	}
 
 
-	public void recETH(){
-		displayQRAddr();
+	public void recETH()
+	{
+		displayQRAddr(controller.getPubKey());
 	}
 
-	public void recBTC(){
-		displayQRAddr();
+	public void recBTC()
+	{
+		displayQRAddr(controller.getPubKey());
 	}
 
 	public void updateNotification(){

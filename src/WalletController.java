@@ -39,7 +39,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 public class WalletController {
 
 
-	public static WalletController key;
+	public static WalletController key = CryptoHelper.getKeyPair();
 
 
 	private String pubKey;
@@ -47,27 +47,31 @@ public class WalletController {
 
 	private Webcam webcam = null;
 
-	public WalletController(String privKey, String pubKey) {
-		this.privKey = privKey;
-		this.pubKey = pubKey;
-	}
 
-	public WalletController() {
+	public WalletController(String privKey, String pubKey) {
+
 
 		// Initialize Camera
 		super();
 		Dimension size = WebcamResolution.QVGA.getSize();
 		try {
 			webcam = Webcam.getDefault();
-			webcam.setViewSize(size);
+			//webcam.setViewSize(size);
 			webcam.open();
 		}
 		catch(NullPointerException e){}
 
-		// Setup public/private keypair
-		key = CryptoHelper.getKeyPair();
+
+		this.privKey = privKey;
+		this.pubKey = pubKey;
+	}
+
+	public WalletController(){
+
 
 	}
+
+
 
 	public String getPubKey() {
 		return pubKey;
@@ -87,6 +91,8 @@ public class WalletController {
 		panel.setMirrored(true);
 		window.add(panel);
 	}
+
+
 
 
 	public String scanCode(){
@@ -113,33 +119,33 @@ public class WalletController {
 		if (result != null) {
 			return result.getText();
 		}
-
-		//}
 		return result.getText();
 	}
 
-	public void generateQR(String content){
+
+
+
+	public BufferedImage generateQR(String content){
 		BitMatrix matrix=null;
 		int bigEnough = 256;
 		Writer writer = new QRCodeWriter();
 		try {
 			matrix = writer.encode(content, BarcodeFormat.QR_CODE, bigEnough,
 					bigEnough, null);
-
-
 		} catch (WriterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		BufferedImage image = MatrixToImageWriter.toBufferedImage(matrix);
-		JFrame frame = new JFrame();
-		frame.getContentPane().setLayout(new FlowLayout());
-		frame.getContentPane().add(new JLabel(new ImageIcon(image)));
-		frame.getContentPane().add(new JLabel(key.getPubKey()));
-		frame.setPreferredSize(new java.awt.Dimension(325,325));
-		frame.pack();
-		frame.setVisible(true);
+		return MatrixToImageWriter.toBufferedImage(matrix);
 
+//		BufferedImage image = MatrixToImageWriter.toBufferedImage(matrix);
+//		JFrame frame = new JFrame();
+//		frame.getContentPane().setLayout(new FlowLayout());
+//		frame.getContentPane().add(new JLabel(new ImageIcon(image)));
+//		frame.getContentPane().add(new JLabel(key.getPubKey()));
+//		frame.setPreferredSize(new java.awt.Dimension(325,325));
+//		frame.pack();
+//		frame.setVisible(true);
 	}
 }
