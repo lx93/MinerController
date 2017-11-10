@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="git add .">
+    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/MinerController/ExchangeView$1$1.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/MinerController/ExchangeView$1.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/MinerController/ExchangeView.class" />
@@ -55,8 +55,8 @@
       <file leaf-file-name="ExchangeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1914">
-              <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+            <state relative-caret-position="1936">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -455,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510306176134</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="git add .">
+      <created>1510353548977</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1510353548977</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView">
@@ -706,8 +713,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="1936">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding />
         </state>
       </provider>
