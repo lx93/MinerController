@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MinerController.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/MinerController_jar.xml" afterPath="" />
+    <list default="true" id="3ce8b390-f8cf-4846-b2bf-eb5eee4d723c" name="Default" comment="fixed JAR packing config.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bash/test-print.sh" afterPath="$PROJECT_DIR$/bash/test-print.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExchangeController.java" afterPath="$PROJECT_DIR$/src/ExchangeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExchangeTab.fxml" afterPath="$PROJECT_DIR$/src/ExchangeTab.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ExchangeView.java" afterPath="$PROJECT_DIR$/src/ExchangeView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiningController.java" afterPath="$PROJECT_DIR$/src/MiningController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiningView.java" afterPath="$PROJECT_DIR$/src/MiningView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,18 +27,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
               <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <marker date="1510299825356" expanded="true" signature="711:733" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MiningController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MiningController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MiningController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2570">
-              <caret line="127" column="65" lean-forward="true" selection-start-line="127" selection-start-column="65" selection-end-line="127" selection-end-column="65" />
+            <state relative-caret-position="1419">
+              <caret line="93" column="23" lean-forward="true" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,9 +47,31 @@
       <file leaf-file-name="MiningView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MiningView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="902">
+              <caret line="51" column="110" lean-forward="true" selection-start-line="51" selection-start-column="110" selection-end-line="51" selection-end-column="110" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExchangeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExchangeView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ExchangeView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1210">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +79,7 @@
       <file leaf-file-name="WalletController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WalletController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="660">
               <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -66,35 +88,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExchangeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1276">
-              <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExchangeView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ExchangeView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WalletView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WalletView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="902">
+              <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1114#1115#0" expanded="true" />
-                <element signature="e#1134#1135#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,13 +147,9 @@
         <option value="$PROJECT_DIR$/src/MinerControllerGUI.java" />
         <option value="$PROJECT_DIR$/src/MiningGUI.java" />
         <option value="$PROJECT_DIR$/src/QRHelper.java" />
-        <option value="$PROJECT_DIR$/src/MiningController.java" />
-        <option value="$PROJECT_DIR$/src/MiningView.java" />
         <option value="$PROJECT_DIR$/src/MinerControllerFXML.fxml" />
-        <option value="$PROJECT_DIR$/src/ExchangeController.java" />
         <option value="$PROJECT_DIR$/src/MiningTab.fxml" />
         <option value="$PROJECT_DIR$/src/WalletTab.fxml" />
-        <option value="$PROJECT_DIR$/src/ExchangeView.java" />
         <option value="$PROJECT_DIR$/src/MinerControllerApplication.java" />
         <option value="$PROJECT_DIR$/src/BitCoinKeyPair.java" />
         <option value="$PROJECT_DIR$/zxing-core-3.3.1.jar!/com/google/zxing/qrcode/QRCodeWriter.class" />
@@ -162,6 +158,10 @@
         <option value="$PROJECT_DIR$/src/WalletView.java" />
         <option value="$PROJECT_DIR$/src/CryptoHelper.java" />
         <option value="$PROJECT_DIR$/src/WalletController.java" />
+        <option value="$PROJECT_DIR$/src/MiningController.java" />
+        <option value="$PROJECT_DIR$/src/ExchangeController.java" />
+        <option value="$PROJECT_DIR$/src/MiningView.java" />
+        <option value="$PROJECT_DIR$/src/ExchangeView.java" />
       </list>
     </option>
   </component>
@@ -436,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510269889578</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed JAR packing config.">
+      <created>1510300172502</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1510300172502</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -521,7 +528,8 @@
     <MESSAGE value="uploaded dependency packages" />
     <MESSAGE value="integrating BitCoinKeyPair class into WalletController Class, changed FXML controller for Wallet to WalletView, etc." />
     <MESSAGE value="Finally fixed the build directory so it runs in terminal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally fixed the build directory so it runs in terminal." />
+    <MESSAGE value="fixed JAR packing config." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed JAR packing config." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -623,38 +631,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExchangeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MinerControllerFXML.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/MiningTab.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/WalletTab.fxml" />
     <entry file="file://$PROJECT_DIR$/src/MinerControllerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <marker date="1510299825356" expanded="true" signature="711:733" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinerControllerFXML.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/MiningTab.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/MiningView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WalletTab.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/MiningController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1419">
+          <caret line="93" column="23" lean-forward="true" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiningView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="51" column="110" lean-forward="true" selection-start-line="51" selection-start-column="110" selection-end-line="51" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WalletView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WalletController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="660">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -662,30 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WalletView.java">
+    <entry file="file://$PROJECT_DIR$/src/ExchangeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
-            <element signature="e#1134#1135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExchangeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1276">
-          <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiningController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2570">
-          <caret line="127" column="65" lean-forward="true" selection-start-line="127" selection-start-column="65" selection-end-line="127" selection-end-column="65" />
+        <state relative-caret-position="1210">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

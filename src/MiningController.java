@@ -114,7 +114,7 @@ public class MiningController {
 				Object obj = parser.parse(json);
 				JSONObject jsonObject = (JSONObject) obj;
 				jsonObject = (JSONObject) jsonObject.get("data");
-				String balance = String.valueOf(jsonObject.get("balance"));
+				String balance = String.valueOf(jsonObject.get(dataType));
 				return (balance);
 			} catch (ParseException e) {
 				System.out.println("JSON File invalid");
@@ -126,7 +126,7 @@ public class MiningController {
 				Object obj = parser.parse(json);
 				JSONObject jsonObject = (JSONObject) obj;
 				jsonObject = (JSONObject) jsonObject.get("data");
-				String hashrate = String.valueOf(jsonObject.get("hashrate"));
+				String hashrate = String.valueOf(jsonObject.get(dataType));
 				return (hashrate);
 			} catch (ParseException e) {
 				System.out.println("JSON File invalid");

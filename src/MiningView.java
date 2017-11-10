@@ -41,10 +41,12 @@ public class MiningView {
 	public void updateBalance(){
 		new Thread(new Runnable() {
 			public void run() {
-				for (int i = 0; i < 20000; i++) {
+				for (int i = 0; i < 200000; i++) {
+					//initial run before constant update every minute
+					balanceText.setText(controller.returnBalance() + " ETH");
 
 					//this is just for demo purposes
-					try { Thread.sleep(2000); } catch (Exception e) {}
+					try { Thread.sleep(60000); } catch (Exception e) {}
 
 					// we are not in the event thread currently so we should not update the UI here
 					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
@@ -66,9 +68,11 @@ public class MiningView {
 		new Thread(new Runnable() {
 			public void run() {
 				for (int i = 0; i < 200000; i++) {
+					//initial run before constant update every minute
+					hashrateText.setText("current hashrate: " + controller.returnHashrate() + " MH/s");
 
 					//this is just for demo purposes
-					try { Thread.sleep(2000); } catch (Exception e) {}
+					try { Thread.sleep(60000); } catch (Exception e) {}
 
 					// we are not in the event thread currently so we should not update the UI here
 					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
