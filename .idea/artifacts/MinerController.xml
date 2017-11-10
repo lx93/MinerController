@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="MinerController">
+    <output-path>$PROJECT_DIR$/out/artifacts/MinerController</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="MinerControllerApplication" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="MinerController.jar">
+        <element id="module-output" name="MinerController" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/apache-commons-codec-1.4.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/bitcoinj-core-0.14.5-bundled.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/bridj-0.6.2.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/javase-2.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/json-simple-1.1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/webcam-capture-0.3.10.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/zxing-core-3.3.1.jar" path-in-jar="/" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src" />
+      </element>
+    </root>
+  </artifact>
+</component>
