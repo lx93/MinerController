@@ -509,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510353553991</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added .gitignore">
+      <created>1510640120271</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1510640120271</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -597,7 +604,8 @@
     <MESSAGE value="fixed JAR packing config." />
     <MESSAGE value="implemented getRate for ShapeShift partially" />
     <MESSAGE value="git add ." />
-    <option name="LAST_COMMIT_MESSAGE" value="git add ." />
+    <MESSAGE value="added .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
