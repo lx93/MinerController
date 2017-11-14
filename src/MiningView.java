@@ -43,7 +43,8 @@ public class MiningView {
 			public void run() {
 				for (int i = 0; i < 200000; i++) {
 					//initial run before constant update every minute
-					balanceText.setText(controller.returnBalance() + " ETH");
+					String balance = controller.returnBalance();
+					balanceText.setText(balance + " ETH");
 
 					//this is just for demo purposes
 					try { Thread.sleep(60000); } catch (Exception e) {}
@@ -54,7 +55,7 @@ public class MiningView {
 					Platform.runLater(new Runnable() {
 						public void run() {
 							// we are now back in the EventThread and can update the GUI
-							balanceText.setText(controller.returnBalance() + " ETH");
+							balanceText.setText(balance + " ETH");
 						}
 					});
 				}
@@ -69,7 +70,8 @@ public class MiningView {
 			public void run() {
 				for (int i = 0; i < 200000; i++) {
 					//initial run before constant update every minute
-					hashrateText.setText("current hashrate: " + controller.returnHashrate() + " MH/s");
+					String hashrate = controller.returnHashrate();
+					hashrateText.setText("current hashrate: " + hashrate + " MH/s");
 
 					//this is just for demo purposes
 					try { Thread.sleep(60000); } catch (Exception e) {}
@@ -80,7 +82,7 @@ public class MiningView {
 					Platform.runLater(new Runnable() {
 						public void run() {
 							// we are now back in the EventThread and can update the GUI
-							hashrateText.setText("current hashrate: " + controller.returnHashrate() + " MH/s");
+							hashrateText.setText("current hashrate: " + hashrate + " MH/s");
 						}
 					});
 				}

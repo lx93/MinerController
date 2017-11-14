@@ -15,7 +15,7 @@ import java.nio.charset.Charset;
 public class MiningController {
 
 	Process p;
-	final static boolean DEBUG = true;
+	final static boolean DEBUG = false;
 	public String directory = "/home/isaiahminer0/Desktop/Claymore/start.bash";
 
 	public MiningController() throws IOException{

@@ -23,8 +23,8 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <TextField fx:id="input_ethTF" layoutX="600.0" layoutY="201.0" prefHeight="25.0" prefWidth="67.0" text="1" />
-      <Text layoutX="686.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ETH">
+      <TextField fx:id="input_ethTF" layoutX="600.0" layoutY="201.0" prefHeight="25.0" prefWidth="87.0" text="1" />
+      <Text layoutX="695.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ETH">
          <font>
             <Font size="18.0" />
          </font>
@@ -39,12 +39,12 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="686.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTC">
+      <Text layoutX="695.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BTC">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="output_btcTF" layoutX="600.0" layoutY="297.0" prefHeight="25.0" prefWidth="67.0" />
+      <TextField fx:id="output_btcTF" layoutX="600.0" layoutY="297.0" prefHeight="9.0" prefWidth="87.0" />
       <Text fx:id="eth_btcText" layoutX="72.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current exchange rate: 1ETH = " />
       <Button fx:id="eth_btcSubmit" layoutX="267.0" layoutY="229.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: b6e7c9;" text="Submit">
          <font>

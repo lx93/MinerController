@@ -88,7 +88,7 @@ public class WalletView{
 
 	public void sendETH(){
 		//view.controller=this;
-		QRScanFrame(notification);
+		//QRScanFrame(notification);
 	}
 
 
@@ -100,7 +100,7 @@ public class WalletView{
 
 	public void recETH()
 	{
-		displayQRAddr(controller.getPubKey());
+		//displayQRAddr(controller.getPubKey());
 	}
 
 	public void recBTC()
