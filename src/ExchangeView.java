@@ -12,7 +12,6 @@ public class ExchangeView {
     public TextField output_btcTF;
 
 
-
     ExchangeController controller = new ExchangeController();
 
 
@@ -23,7 +22,7 @@ public class ExchangeView {
 
 
     // This function updates eth_btc rate section on the screen
-    public void update_eth_btcRate(){
+    public void update_eth_btcRate() {
         new Thread(new Runnable() {
             public void run() {
                 for (int i = 0; i < 200000; i++) {
@@ -34,7 +33,10 @@ public class ExchangeView {
                     output_btcTF.setText(rate);
 
                     //this is just for demo purposes
-                    try { Thread.sleep(60000); } catch (Exception e) {}
+                    try {
+                        Thread.sleep(60000);
+                    } catch (Exception e) {
+                    }
 
                     // we are not in the event thread currently so we should not update the UI here
                     // this is a good place to do some slow, background loading, e.g. load from a server or from a file system
@@ -52,15 +54,4 @@ public class ExchangeView {
             }
         }).start();
     }
-
-
-
-
-
-
-
-
-
-
-
 }
