@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'MinerControllerApplication'
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies{
+	compile "org.apache.directory.studio:org.apache.commons.codec:1.8"
+	compile "org.bitcoinj:bitcoinj-core:0.14.5"
+	compile "com.nativelibs4java:bridj:0.7.0"
+	compile "net.glxn.qrgen:javase:2.0"
+	compile "com.googlecode.json-simple:json-simple:1.1.1"
+	compile "com.github.sarxos:webcam-capture:0.3.11"
+	compile "com.google.zxing:javase:3.3.1"
+
+}
+
+
+jar{
+	baseName = 'MinerController'
+	version = '0.1.0'
+
+	manifest{
+		attributes("Main-Class":"MinerControllerApplication")
+	}
+}
