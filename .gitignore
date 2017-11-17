@@ -1,4 +1,5 @@
-*
+/*
+/*/
 !.gitignore
 !build.gradle
-!src/
+!/src/
