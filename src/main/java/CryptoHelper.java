@@ -5,6 +5,7 @@ import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.Utils;
 
 import org.apache.commons.codec.binary.Hex;
+import org.bitcoinj.wallet.Wallet;
 
 public class CryptoHelper {
 	
@@ -15,6 +16,9 @@ public class CryptoHelper {
 		values[0] = key.getPrivateKeyEncoded(NetworkParameters.prodNet()).toString();
 
 		byte[] pub = ECKey.publicKeyFromPrivate(key.getPrivKey(), false);
+//	public static void createWallet(){
+//		Wallet wallet = new Wallet(Context context);
+//	}
 
 		Address add = new Address(NetworkParameters.prodNet(), Utils.sha256hash160(pub));
 		values[1] =  add.toBase58();
@@ -28,6 +32,10 @@ public class CryptoHelper {
 	 }
 
 }
+
+//	public static void createWallet(){
+//		Wallet wallet = new Wallet(Context context);
+//	}
 
 
 /*

@@ -23,6 +23,8 @@ public class ExchangeView {
 
     // This function updates eth_btc rate section on the screen
     public void update_eth_btcRate() {
+
+
         new Thread(new Runnable() {
             public void run() {
                 for (int i = 0; i < 200000; i++) {

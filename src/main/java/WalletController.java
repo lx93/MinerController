@@ -1,4 +1,6 @@
 import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 
 import java.util.EnumMap;
@@ -42,14 +44,13 @@ public class WalletController {
 
 	public WalletController(String privKey, String pubKey) {
 
-
 		// Initialize Camera
 		super();
 		Dimension size = WebcamResolution.QVGA.getSize();
 		try {
 			webcam = Webcam.getDefault();
 			//webcam.setViewSize(size);
-			webcam.open();
+			//webcam.open();
 		}
 		catch(NullPointerException e){}
 
@@ -59,7 +60,6 @@ public class WalletController {
 	}
 
 	public WalletController(){
-
 
 	}
 
@@ -76,15 +76,19 @@ public class WalletController {
 
 
 	public void showScanner(JFrame window){
+		webcam.open();
 		WebcamPanel panel = new WebcamPanel(webcam);
 		panel.setFPSDisplayed(true);
 		panel.setDisplayDebugInfo(true);
 		panel.setImageSizeDisplayed(true);
 		panel.setMirrored(true);
 		window.add(panel);
+		window.addWindowListener(new WindowAdapter(){
+			@Override
+			public void windowClosing(WindowEvent e){webcam.close();}
+		});
+
 	}
-
-
 
 
 	public String scanCode(){
