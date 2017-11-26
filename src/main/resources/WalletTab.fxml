@@ -13,20 +13,30 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WalletView">
        <children>
-          <Text layoutX="62.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Ethereum wallet balance:    10.98ETH">
+          <Text layoutX="222.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Ethereum wallet balance:    10.98ETH">
              <font>
                 <Font size="26.0" />
              </font>
           </Text>
-          <Text layoutX="62.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Bitcoin wallet balance:   2.423BTC">
+          <Text layoutX="222.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Bitcoin wallet balance:   2.423BTC">
              <font>
                 <Font size="26.0" />
              </font>
           </Text>
-          <Button fx:id="ETHSendBtn" layoutX="115.0" layoutY="146.0" mnemonicParsing="false" onAction="#sendETH" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
-          <Button fx:id="ETHRecBtn" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" onAction="#recETH" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
-          <Button fx:id="BTCRecBtn" layoutX="222.0" layoutY="310.0" mnemonicParsing="false" onAction="#recBTC" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
-          <Button fx:id="BTCSendBtn" layoutX="116.0" layoutY="310.0" mnemonicParsing="false" onAction="#sendBTC" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
+          <Button fx:id="ETHSendBtn" layoutX="262.0" layoutY="226.0" mnemonicParsing="false" onAction="#sendETH" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
+          <Button fx:id="ETHRecBtn" layoutX="422.0" layoutY="226.0" mnemonicParsing="false" onAction="#recETH" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
+          <Button fx:id="BTCRecBtn" layoutX="422.0" layoutY="334.0" mnemonicParsing="false" onAction="#recBTC" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
+          <Button fx:id="BTCSendBtn" layoutX="262.0" layoutY="334.0" mnemonicParsing="false" onAction="#sendBTC" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
       <!--<Text fx:id="notification" layoutX="62.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="343.7294921875" />-->
+           <ImageView fitHeight="94.0" fitWidth="91.0" layoutX="695.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                   <Image url="@logo%20black.png" />
+               </image>
+           </ImageView>
+      <Text layoutX="92.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wallet">
+         <font>
+            <Font size="58.0" />
+         </font>
+      </Text>
        </children>
 </AnchorPane>

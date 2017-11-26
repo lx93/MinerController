@@ -20,7 +20,6 @@ import java.util.Map;
 public class MiningController {
 
 
-	final static boolean DEBUG = true;
 	SettingsController controller = new SettingsController();
 
 
@@ -29,7 +28,7 @@ public class MiningController {
 
 
 	public String getPathToMiningProgram() {
-		if (DEBUG) {
+		if (MinerControllerApplication.DEBUG) {
 			return "src/main/resources/bash/test-print.sh";
 		} else {
 			return "src/main/resources/Claymore/start.bash";
@@ -40,7 +39,7 @@ public class MiningController {
 	public String returnBalance(){
 		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
 
-		if (DEBUG) {
+		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance");
 		}
 		else{
@@ -50,7 +49,7 @@ public class MiningController {
 
 	public String returnHashrate(){
 		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
-		if (DEBUG) {
+		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","hashrate");
 		}
 		else{

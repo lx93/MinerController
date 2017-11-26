@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MinerControllerApplication extends Application{
 
-
+    final static boolean DEBUG = true;
 
 	public void start(Stage primaryStage) throws Exception{
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MinerControllerFXML.fxml"));
@@ -23,7 +23,7 @@ public class MinerControllerApplication extends Application{
 		//primaryStage.setFullScreen(true);
 		primaryStage.show();
 	}
-
+// terminates the program when clicked X on window
 	@Override
 	public void stop(){System.exit(0);}
 

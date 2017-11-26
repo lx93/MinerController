@@ -13,22 +13,22 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
-    <Tab fx:id="miningTab" text="Mining">
+    <Tab fx:id="miningTab" text=" Mining ">
       <content>
       	<fx:include source="MiningTab.fxml" />
       </content>
     </Tab>
-    <Tab fx:id="walletTab" text="Wallet">
+    <Tab fx:id="walletTab" text=" Wallet ">
       <content>
       	<fx:include source="WalletTab.fxml" />
       </content>
     </Tab>
-    <Tab fx:id="exchangeTab" text="Exchange">
+    <Tab fx:id="exchangeTab" text=" Exchange ">
       <content>
         <fx:include source="ExchangeTab.fxml" />
       </content>
     </Tab>
-    <Tab fx:id="settingsTab" text="Settings">
+    <Tab fx:id="settingsTab" text=" Settings ">
       <content>
         <fx:include source="SettingsTab.fxml" />
       </content>

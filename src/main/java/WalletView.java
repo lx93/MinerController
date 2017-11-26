@@ -9,7 +9,6 @@ import javafx.scene.text.Text;
 
 public class WalletView{
 
-
 	TextField address = new TextField("Address");
 	TextField amount = new TextField("Amount");
 

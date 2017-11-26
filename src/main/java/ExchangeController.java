@@ -17,13 +17,11 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class ExchangeController {
 
-	final static boolean DEBUG = false;
-
 
 
 	public String eth_btcRate(){
 		String URLAddress = "https://shapeshift.io/rate/eth_btc";
-		if (DEBUG) {
+		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"pair\":\"eth_btc\",\"rate\":\"1\"}","rate");
 		}
 		else{
@@ -97,20 +95,6 @@ public class ExchangeController {
 		}
 		else {return "you are a prick";}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

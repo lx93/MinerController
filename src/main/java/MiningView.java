@@ -15,21 +15,39 @@ import java.io.*;
 
 public class MiningView {
 
+    public MiningController controller = new MiningController();
+    public Button mineButton = new Button();
+    public Text balanceText = new Text();
+    public Text hashrateText = new Text();
+    public Text walletText = new Text();
+    public TextField claymoreText = new TextField();
+    public boolean buttonStatus = true;
+    SettingsController settingsController = new SettingsController();
+
+
 
 
 	//class constructor
 	public MiningView() throws IOException, ParserConfigurationException {
 		updateBalance();
 		updateHashrate();
+		updateWallet();
 	}
 
 
-	public MiningController controller = new MiningController();
-	public Button mineButton = new Button();
-	public Text balanceText = new Text();
-	public Text hashrateText = new Text();
-	public TextField claymoreText = new TextField();
-	public boolean buttonStatus = true;
+
+//this function updates wallet address
+    public void updateWallet(){
+	    new Thread(new Runnable() {
+	        public void run(){
+	            for (int i=0; i < 200000; i++){
+                    //initial run before constant update every minute
+                    String wallet = settingsController.returnMiningAddress();
+                    walletText.setText("current wallet: " + settingsController.returnMiningAddress());
+                }
+            }
+        }).start();
+    }
 
 
 
