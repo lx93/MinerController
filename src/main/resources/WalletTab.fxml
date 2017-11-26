@@ -27,6 +27,6 @@
           <Button fx:id="ETHRecBtn" layoutX="222.0" layoutY="146.0" mnemonicParsing="false" onAction="#recETH" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
           <Button fx:id="BTCRecBtn" layoutX="222.0" layoutY="310.0" mnemonicParsing="false" onAction="#recBTC" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />
           <Button fx:id="BTCSendBtn" layoutX="116.0" layoutY="310.0" mnemonicParsing="false" onAction="#sendBTC" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />
-      <Text fx:id="notification" layoutX="62.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="343.7294921875" />
+      <!--<Text fx:id="notification" layoutX="62.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="343.7294921875" />-->
        </children>
 </AnchorPane>

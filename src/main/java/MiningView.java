@@ -1,6 +1,8 @@
 
+import java.awt.*;
 import java.io.IOException;
 
+import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
 
 import javafx.application.Platform;
@@ -15,18 +17,6 @@ public class MiningView {
 
 
 
-	public MiningController controller = new MiningController();
-	public Button mineButton = new Button();
-	public Text balanceText = new Text();
-	public Text hashrateText = new Text();
-	public TextField claymoreText = new TextField();
-
-
-	public boolean buttonStatus = true;
-
-
-
-
 	//class constructor
 	public MiningView() throws IOException, ParserConfigurationException {
 		updateBalance();
@@ -34,6 +24,12 @@ public class MiningView {
 	}
 
 
+	public MiningController controller = new MiningController();
+	public Button mineButton = new Button();
+	public Text balanceText = new Text();
+	public Text hashrateText = new Text();
+	public TextField claymoreText = new TextField();
+	public boolean buttonStatus = true;
 
 
 
@@ -99,7 +95,7 @@ public class MiningView {
 
 
 	//Controls the state of the mineButton
-	public void mineButtonController (){
+	public void mineButtonController () throws IOException {
 		if (buttonStatus) {
 			buttonStatus = false;
 			mineButton.setStyle("-fx-font: 22 arial; -fx-base: #ef8973;");
@@ -112,11 +108,6 @@ public class MiningView {
 			mineButton.setStyle("-fx-font: 22 arial; -fx-base: #b6e7c9;");
 		}
 	}
-
-
-
-
-
 
 
 

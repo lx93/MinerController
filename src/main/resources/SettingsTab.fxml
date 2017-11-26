@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsView">
+   <children>
+      <Text layoutX="72.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert BTC to ETH" visible="false">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="eth_btcText" layoutX="72.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change mining wallet">
+         <font>
+            <Font size="19.0" />
+         </font></Text>
+      <Button layoutX="578.0" layoutY="155.0" mnemonicParsing="false" onAction="#QRScanFrame" text="Change" />
+   </children>
+</AnchorPane>

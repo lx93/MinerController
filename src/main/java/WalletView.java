@@ -9,47 +9,40 @@ import javafx.scene.text.Text;
 
 public class WalletView{
 
-	JButton shutterBtn = new JButton("Capture!");
-	JButton submitBtn = new JButton("Submit!");
+
 	TextField address = new TextField("Address");
 	TextField amount = new TextField("Amount");
 
 	Text notification = new Text ();
 
-	public static WalletController controller = CryptoHelper.getKeyPair();
-
-
-
-	public WalletView (){
-
-	}
+	public static WalletController walletController = BTCHelper.getKeyPair();
+	QRScanner scanner = new QRScanner();
 
 
 	// Creates a JFrame which houses WalletControl Panel;
 	public void QRScanFrame(Text notification){
 
 		JFrame QRFrame = new JFrame();
-
-		shutterBtn.setVisible(true);
+		JButton shutterBtn = new JButton("Capture!");
+		JButton submitBtn = new JButton("Submit!");
 		QRFrame.add(shutterBtn,BorderLayout.WEST);
 		QRFrame.add(submitBtn,BorderLayout.EAST);
-
-		address = new TextField("Address");
-		amount = new TextField("Payment");
-
 		QRFrame.add(address,BorderLayout.NORTH);
 		QRFrame.add(amount,BorderLayout.SOUTH);
 		QRFrame.setSize (800,450);
-		controller.showScanner(QRFrame);
+		scanner.showScanner(QRFrame);
 		QRFrame.setVisible(true);
+
+
 
 		shutterBtn.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				shutter();
-			}
+				address.setText(walletController.scanCode().substring(8));			}
 		});
+
+
 
 		submitBtn.addActionListener(new ActionListener()
 		{
@@ -58,30 +51,22 @@ public class WalletView{
 				QRFrame.dispose();
 				notification.setText("HII");
 				notification.setVisible(true);
-//				System.out.println(notification);
-				//controller.updateNotification();
 			}
 		});
 
 	}
 
 
-	public void shutter(){
-		address.setText(controller.scanCode().substring(8));
-	}
-
-
 	public void displayQRAddr(String pubkey){
 		JFrame frame = new JFrame();
 		frame.getContentPane().setLayout(new FlowLayout());
-		frame.getContentPane().add(new JLabel(new ImageIcon(controller.generateQR(controller.getPubKey()))));
-		frame.getContentPane().add(new JLabel(controller.getPubKey()));
+		frame.getContentPane().add(new JLabel(new ImageIcon(walletController.generateQR(walletController.getPubKey()))));
+		frame.getContentPane().add(new JLabel(walletController.getPubKey()));
 		frame.setPreferredSize(new java.awt.Dimension(325,325));
 		frame.pack();
 		frame.setVisible(true);
 
-
-		controller.generateQR(controller.getPubKey());
+		walletController.generateQR(walletController.getPubKey());
 	}
 
 
@@ -105,15 +90,12 @@ public class WalletView{
 
 	public void recBTC()
 	{
-		displayQRAddr(controller.getPubKey());
+		displayQRAddr(walletController.getPubKey());
 	}
 
 	public void updateNotification(){
 		notification.setText("Payment sent successfully");
 	}
-
-
-
 
 
 }

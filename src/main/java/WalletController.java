@@ -33,36 +33,18 @@ import com.google.zxing.qrcode.QRCodeWriter;
 public class WalletController {
 
 
-	public static WalletController key = CryptoHelper.getKeyPair();
+	public static WalletController key = BTCHelper.getKeyPair();
+	QRScanner scanner = new QRScanner();
 
 
 	private String pubKey;
 	private String privKey;
 
-	private Webcam webcam = null;
-
 
 	public WalletController(String privKey, String pubKey) {
-
-		// Initialize Camera
-		super();
-		Dimension size = WebcamResolution.QVGA.getSize();
-		try {
-			webcam = Webcam.getDefault();
-			//webcam.setViewSize(size);
-			//webcam.open();
-		}
-		catch(NullPointerException e){}
-
-
 		this.privKey = privKey;
 		this.pubKey = pubKey;
 	}
-
-	public WalletController(){
-
-	}
-
 
 
 	public String getPubKey() {
@@ -74,51 +56,9 @@ public class WalletController {
 	}
 
 
-
-	public void showScanner(JFrame window){
-		webcam.open();
-		WebcamPanel panel = new WebcamPanel(webcam);
-		panel.setFPSDisplayed(true);
-		panel.setDisplayDebugInfo(true);
-		panel.setImageSizeDisplayed(true);
-		panel.setMirrored(true);
-		window.add(panel);
-		window.addWindowListener(new WindowAdapter(){
-			@Override
-			public void windowClosing(WindowEvent e){webcam.close();}
-		});
-
-	}
-
-
 	public String scanCode(){
-		Result result = null;
-		BufferedImage image = null;
-
-		//if () {
-		try { Thread.sleep(2000); } catch (Exception e) {}
-		if ((image = webcam.getImage()) == null) {
-		}
-
-		LuminanceSource source = new BufferedImageLuminanceSource(image);
-		BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-		Map<DecodeHintType,Object> pureHints = new EnumMap<>(DecodeHintType.class);
-		//pureHints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
-		pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
-		try {
-			result = new MultiFormatReader().decode(bitmap, pureHints);
-		} catch (NotFoundException e) {
-			e.printStackTrace();
-		}
-
-		System.out.println(result.getText());
-		if (result != null) {
-			return result.getText();
-		}
-		return result.getText();
+		return scanner.scanCode();
 	}
-
-
 
 
 	public BufferedImage generateQR(String content){
@@ -135,13 +75,5 @@ public class WalletController {
 
 		return MatrixToImageWriter.toBufferedImage(matrix);
 
-//		BufferedImage image = MatrixToImageWriter.toBufferedImage(matrix);
-//		JFrame frame = new JFrame();
-//		frame.getContentPane().setLayout(new FlowLayout());
-//		frame.getContentPane().add(new JLabel(new ImageIcon(image)));
-//		frame.getContentPane().add(new JLabel(key.getPubKey()));
-//		frame.setPreferredSize(new java.awt.Dimension(325,325));
-//		frame.pack();
-//		frame.setVisible(true);
 	}
 }

@@ -28,5 +28,10 @@
         <fx:include source="ExchangeTab.fxml" />
       </content>
     </Tab>
+    <Tab fx:id="settingsTab" text="Settings">
+      <content>
+        <fx:include source="SettingsTab.fxml" />
+      </content>
+    </Tab>
   </tabs>
 </TabPane>

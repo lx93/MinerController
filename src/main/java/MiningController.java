@@ -1,34 +1,38 @@
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
-
+import java.util.Map;
 
 
 public class MiningController {
 
-	Process p;
-	final static boolean DEBUG = false;
-	public String directory = "/home/isaiahminer0/Desktop/Claymore/start.bash";
+
+	final static boolean DEBUG = true;
+	SettingsController controller = new SettingsController();
+
 
 	public MiningController() throws IOException{
 	}
 
 
-
-
 	public String getPathToMiningProgram() {
-
 		if (DEBUG) {
-			return "bash/test-print.sh";
+			return "src/main/resources/bash/test-print.sh";
 		} else {
-			return directory;
+			return "src/main/resources/Claymore/start.bash";
 		}
 	}
 
@@ -53,6 +57,21 @@ public class MiningController {
 			return jsonParse(jsonToString(connectAPI(URLAddress)),"hashrate");
 		}
 
+	}
+
+
+
+
+
+	public String getWalletAddress (){
+		boolean debug = true;
+
+		if (debug){
+			return "0x36f536f54ccec727f861d6622e465003a731fe41";
+		}
+		else{
+			 return null;
+		}
 	}
 
 
@@ -138,33 +157,40 @@ public class MiningController {
 
 
 
+// this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
 
-	// this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
-	public String claymoreReader () throws IOException{
-		BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
-		String line;
-		while ((line = in.readLine()) != null) {
-			System.out.println(line);
-			return line;
+	private static String output(InputStream inputStream) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		BufferedReader br = null;
+		try{
+			br = new BufferedReader(new InputStreamReader(inputStream));
+			String line;
+			while ((line=br.readLine())!=null){
+				sb.append(line + System.getProperty("line.separator"));
+			}
+		} finally {
+			br.close();
 		}
-		System.out.println("cant read");
-		return ("cannot read line from claymore!!!");
+	return sb.toString();
 	}
 
 
-	public void claymoreStarter(){
+
+		public void claymoreStarter() throws IOException{
 		try {
-			p = new ProcessBuilder("/bin/bash",
-					getPathToMiningProgram()).start();
-			claymoreReader();
+			ProcessBuilder pb = new ProcessBuilder();
+			pb.directory(new java.io.File("src/main/resources/Claymore"));
+			pb.command("./ethdcrminer64");
+
+			Process p = pb.start();
+			System.out.println(output(p.getInputStream()));
+			System.out.print(controller.returnMiningAddress());
 
 		} catch (IOException f) {
 			f.printStackTrace();
 			System.out.println("Claymore is not executing");
 		}
 	}
-
-
 
 
 }

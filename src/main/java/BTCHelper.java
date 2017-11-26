@@ -7,30 +7,26 @@ import org.bitcoinj.core.Utils;
 import org.apache.commons.codec.binary.Hex;
 import org.bitcoinj.wallet.Wallet;
 
-public class CryptoHelper {
-	
-	public static WalletController getKeyPair(){
-		String[] values = new String[2];;
+public class BTCHelper {
+
+	public static WalletController getKeyPair() {
+		String[] values = new String[2];
 		ECKey key = new ECKey();
 
 		values[0] = key.getPrivateKeyEncoded(NetworkParameters.prodNet()).toString();
 
 		byte[] pub = ECKey.publicKeyFromPrivate(key.getPrivKey(), false);
-//	public static void createWallet(){
-//		Wallet wallet = new Wallet(Context context);
-//	}
 
 		Address add = new Address(NetworkParameters.prodNet(), Utils.sha256hash160(pub));
-		values[1] =  add.toBase58();
+		values[1] = add.toBase58();
 		WalletController kp = new WalletController(values[0], values[1]);
 		return kp;
 	}
-	 
-	 public static String toHex(byte[] a){
-		 String re3 = Hex.encodeHexString(a);
-		 return re3;
-	 }
 
+	public static String toHex(byte[] a) {
+		String re3 = Hex.encodeHexString(a);
+		return re3;
+	}
 }
 
 //	public static void createWallet(){

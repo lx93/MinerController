@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -22,6 +23,10 @@ public class MinerControllerApplication extends Application{
 		//primaryStage.setFullScreen(true);
 		primaryStage.show();
 	}
+
+	@Override
+	public void stop(){System.exit(0);}
+
 
 	public static void main(String[] args) throws IOException, ParserConfigurationException {
 
