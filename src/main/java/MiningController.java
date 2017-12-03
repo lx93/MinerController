@@ -21,9 +21,22 @@ public class MiningController {
 
 
 	SettingsController controller = new SettingsController();
+	String epool = "eth-us-east1.nanopool.org:9999";
+    String ewal = controller.returnMiningAddress();
+    String epsw = "x";
+    String tt = "75";
+    String fanmin = "60";
+    String fanmax = "90";
+    String dcri = "4";
+    String cclock = "1165";
+    String mclock = "2150";
+    String cvddc = "810";
+    String mvddc = "810";
 
 
-	public MiningController() throws IOException{
+
+
+    public MiningController() throws IOException{
 	}
 
 
@@ -31,7 +44,7 @@ public class MiningController {
 		if (MinerControllerApplication.DEBUG) {
 			return "src/main/resources/bash/test-print.sh";
 		} else {
-			return "src/main/resources/Claymore/start.bash";
+			return "src/main/resources/Claymore/ethdcrminer64";
 		}
 	}
 
@@ -177,13 +190,12 @@ public class MiningController {
 
 		public void claymoreStarter() throws IOException{
 		try {
-			ProcessBuilder pb = new ProcessBuilder();
-			pb.directory(new java.io.File("src/main/resources/Claymore"));
-			pb.command("./ethdcrminer64");
+			ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
+                    "-epool",epool,"-ewal",ewal,"-epsw",epsw,"-tt",tt,"-fanmin",fanmin,"-fanmax",fanmax,"-dcri",dcri,"-cclock",cclock,"-mclock",mclock,"-cvddc",cvddc,"-mvddc",mvddc);
 
 			Process p = pb.start();
 			System.out.println(output(p.getInputStream()));
-			System.out.print(controller.returnMiningAddress());
+			System.out.print(ewal);
 
 		} catch (IOException f) {
 			f.printStackTrace();

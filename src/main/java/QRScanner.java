@@ -34,6 +34,8 @@ public class QRScanner {
         BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
         Map<DecodeHintType,Object> pureHints = new EnumMap<>(DecodeHintType.class);
         pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+
+        // parsing the QR into result object
         try {
             result = new MultiFormatReader().decode(bitmap, pureHints);
         } catch (NotFoundException e) {
@@ -41,11 +43,15 @@ public class QRScanner {
             System.out.println("didnt find a QR code");
         }
 
+
+        // if the QR is present
         if (result != null) {
             return result.getText();
         }
+
+        //otherwise if the QR is not picked up
         else{
-            return ("lalalalal the QR code and your face is messed up");
+            return ("lalalala the QR code and your face is messed up");
         }
     }
 

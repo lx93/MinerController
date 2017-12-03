@@ -1,6 +1,3 @@
-import com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion;
-import javafx.scene.text.Text;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +6,7 @@ import java.awt.event.ActionListener;
 public class SettingsView {
 
     QRScanner scanner = new QRScanner();
-    SettingsController settingsController = new SettingsController();
+    SettingsController controller = new SettingsController();
     JButton shutterBtn = new JButton("Capture!");
 
 
@@ -23,7 +20,8 @@ public class SettingsView {
         shutterBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e)
             {
-                settingsController.scanCode();
+                String address = controller.scanCode();
+                controller.addressWrite(address);
             }
         });
     }

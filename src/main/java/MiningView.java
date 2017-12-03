@@ -15,17 +15,14 @@ import java.io.*;
 
 public class MiningView {
 
-    public MiningController controller = new MiningController();
+    public MiningController miningController = new MiningController();
     public Button mineButton = new Button();
     public Text balanceText = new Text();
     public Text hashrateText = new Text();
     public Text walletText = new Text();
     public TextField claymoreText = new TextField();
     public boolean buttonStatus = true;
-    SettingsController settingsController = new SettingsController();
-
-
-
+    public SettingsController controller = new SettingsController();
 
 	//class constructor
 	public MiningView() throws IOException, ParserConfigurationException {
@@ -40,10 +37,24 @@ public class MiningView {
     public void updateWallet(){
 	    new Thread(new Runnable() {
 	        public void run(){
-	            for (int i=0; i < 200000; i++){
+	            while (true) {
+
                     //initial run before constant update every minute
-                    String wallet = settingsController.returnMiningAddress();
-                    walletText.setText("current wallet: " + settingsController.returnMiningAddress());
+                    walletText.setText("current wallet: " + controller.returnMiningAddress());
+                    System.out.println("init print");
+
+                    //this is just for demo purposes, 60000 = one minute
+                    try {
+                        Thread.sleep(2000); } catch (Exception e) {}
+
+
+//                    Platform.runLater(new Runnable() {
+//                        public void run() {
+//                            // we are now back in the EventThread and can update the GUI
+//                            walletText.setText("current wallet: " + controller.returnMiningAddress());
+//                            System.out.println("thread print");
+//                        }
+//                    });
                 }
             }
         }).start();
@@ -55,50 +66,50 @@ public class MiningView {
 	public void updateBalance(){
 		new Thread(new Runnable() {
 			public void run() {
-				for (int i = 0; i < 200000; i++) {
+				while (true) {
 					//initial run before constant update every minute
-					String balance = controller.returnBalance();
+					String balance = miningController.returnBalance();
 					balanceText.setText(balance + " ETH");
 
-					//this is just for demo purposes
+					//this is just for demo purposes, 60000 = one minute
 					try { Thread.sleep(60000); } catch (Exception e) {}
 
 					// we are not in the event thread currently so we should not update the UI here
 					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
 
-					Platform.runLater(new Runnable() {
-						public void run() {
-							// we are now back in the EventThread and can update the GUI
-							balanceText.setText(balance + " ETH");
-						}
-					});
+//					Platform.runLater(new Runnable() {
+//						public void run() {
+//							// we are now back in the EventThread and can update the GUI
+//							balanceText.setText(balance + " ETH");
+//						}
+//					});
 				}
 			}
 		}).start();
 	}
 
 
-
+    // This function updates hashrate section on the screen
 	public void updateHashrate(){
 		new Thread(new Runnable() {
 			public void run() {
-				for (int i = 0; i < 200000; i++) {
+                while (true) {
 					//initial run before constant update every minute
-					String hashrate = controller.returnHashrate();
+					String hashrate = miningController.returnHashrate();
 					hashrateText.setText("current hashrate: " + hashrate + " MH/s");
 
-					//this is just for demo purposes
+                    //this is just for demo purposes, 60000 = one minute
 					try { Thread.sleep(60000); } catch (Exception e) {}
 
 					// we are not in the event thread currently so we should not update the UI here
 					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
 
-					Platform.runLater(new Runnable() {
-						public void run() {
-							// we are now back in the EventThread and can update the GUI
-							hashrateText.setText("current hashrate: " + hashrate + " MH/s");
-						}
-					});
+//					Platform.runLater(new Runnable() {
+//						public void run() {
+//							// we are now back in the EventThread and can update the GUI
+//							hashrateText.setText("current hashrate: " + hashrate + " MH/s");
+//						}
+//					});
 				}
 			}
 		}).start();
@@ -118,7 +129,7 @@ public class MiningView {
 			buttonStatus = false;
 			mineButton.setStyle("-fx-font: 22 arial; -fx-base: #ef8973;");
 			mineButton.setText("Stop Mining");
-			controller.claymoreStarter();
+			miningController.claymoreStarter();
 		}
 		else{
 			buttonStatus = true;

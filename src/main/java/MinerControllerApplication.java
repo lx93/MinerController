@@ -14,7 +14,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MinerControllerApplication extends Application{
 
-    final static boolean DEBUG = true;
+    final static boolean DEBUG = false;
 
 	public void start(Stage primaryStage) throws Exception{
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MinerControllerFXML.fxml"));
