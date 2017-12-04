@@ -3,3 +3,4 @@
 !.gitignore
 !build.gradle
 !/src/
+!README

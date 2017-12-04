@@ -1,0 +1,80 @@
+16:49:58:992	198bc740	Check and remove old log files...
+16:49:58:992	198bc740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer1/lx93@me.com -epsw x -tt 73 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+16:49:58:992	198bc740	
+16:49:58:992	198bc740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+16:49:58:992	198bc740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+16:49:58:992	198bc740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+16:49:58:992	198bc740	
+16:49:59:193	198bc740	ETH: 1 pool is specified
+16:49:59:193	198bc740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+16:49:59:193	198bc740	DCR: 0 pool is specified
+16:49:59:242	198bc740	OpenCL platform: AMD Accelerated Parallel Processing
+16:49:59:242	198bc740	OpenCL initializing...
+
+16:49:59:242	198bc740	AMD Cards available: 2 
+16:49:59:242	198bc740	GPU #0: Ellesmere, 4077 MB available, 32 compute units
+16:49:59:242	198bc740	GPU #0 recognized as Radeon RX 470/570
+16:49:59:242	198bc740	GPU #1: Ellesmere, 4077 MB available, 32 compute units
+16:49:59:242	198bc740	GPU #1 recognized as Radeon RX 470/570
+16:49:59:242	198bc740	POOL/SOLO version
+16:49:59:242	198bc740	b421 
+16:49:59:242	198bc740	Platform: Linux
+16:49:59:324	198bc740	start building OpenCL program for GPU 0...
+16:49:59:426	198bc740	done
+16:49:59:631	198bc740	start building OpenCL program for GPU 1...
+16:49:59:760	198bc740	done
+16:49:59:984	198bc740	GPU #0: algorithm ASM
+16:50:00:010	198bc740	GPU #1: algorithm ASM
+16:50:00:015	198bc740	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+16:50:00:015	198bc740	No NVIDIA CUDA GPUs detected.
+16:50:00:015	198bc740	Total cards: 2 
+16:50:04:016	198bc740	AMD ADL library not found.
+16:50:04:017	198bc740	amdgpu cnt: 2
+16:50:04:017	198bc740	No NVIDIA cards in the list, NVML library will not be used.
+16:50:04:045	37fe700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <142.44.242.100> port 9999
+16:50:04:081	37fe700	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer1/lx93@me.com", "x"], "id": 2, "method": "eth_submitLogin"}
+
+16:50:04:081	37fe700	ETH: Stratum - Connected (eth-us-east1.nanopool.org:9999)
+16:50:04:118	198bc740	No pool specified for Decred! Ethereum-only mining mode is enabled
+16:50:04:118	198bc740	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+16:50:04:118	198bc740	ETH: eth-proxy stratum mode
+16:50:04:118	198bc740	Watchdog enabled
+16:50:04:118	198bc740	Remote management (READ-ONLY MODE) is enabled on port 3333
+16:50:04:118	198bc740	
+16:50:04:313	37fe700	got 282 bytes
+16:50:04:313	37fe700	buf: {"jsonrpc":"2.0","id":2,"result":true}
+{"jsonrpc":"2.0","id":0,"result":["0x1b88cc838ac7f152843b853df82d8dac0648c7fbe2a8f0fb61ca2c5abcad566e","0x71d6fd365fbfdb38fb35d013e70699b5d49fcca6b24a8dc66f22693d0aaacc7d","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+16:50:04:313	37fe700	parse packet: 38
+16:50:04:313	37fe700	ETH: Authorized
+16:50:04:313	37fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+16:50:04:313	37fe700	remove first packet 243
+16:50:04:313	37fe700	new buf size: 243
+16:50:04:313	37fe700	parse packet: 242
+16:50:04:313	37fe700	ETH: job changed
+16:50:04:313	37fe700	new buf size: 0
+16:50:04:323	3fff700	Setting DAG epoch #152...
+16:50:04:445	37fe700	got 243 bytes
+16:50:04:446	37fe700	buf: {"jsonrpc":"2.0","id":0,"result":["0x1b88cc838ac7f152843b853df82d8dac0648c7fbe2a8f0fb61ca2c5abcad566e","0x71d6fd365fbfdb38fb35d013e70699b5d49fcca6b24a8dc66f22693d0aaacc7d","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+16:50:04:446	37fe700	parse packet: 242
+16:50:04:446	37fe700	ETH: job is the same
+16:50:04:446	37fe700	new buf size: 0
+16:50:05:206	12a4a700	GPU 0 temp = 29, old fan speed = 33, new fan speed = 25 
+16:50:05:206	12a4a700	Failed to set new fan speed, check if miner has root access!
+16:50:05:206	12a4a700	GPU 1 temp = 28, old fan speed = 33, new fan speed = 25 
+16:50:05:206	12a4a700	Failed to set new fan speed, check if miner has root access!
+16:50:06:751	3fff700	Setting DAG epoch #152 for GPU1
+16:50:06:751	943a700	Setting DAG epoch #152 for GPU0
+16:50:06:752	943a700	Create GPU buffer for GPU0
+16:50:06:752	3fff700	Create GPU buffer for GPU1
+16:50:07:883	198bc740	Quit signal received...
+16:50:07:883	198bc740	GPU 0 temp = 36, old fan speed = 33, new fan speed = 25 
+16:50:07:883	198bc740	Failed to set new fan speed, check if miner has root access!
+16:50:07:883	198bc740	GPU 1 temp = 35, old fan speed = 33, new fan speed = 25 
+16:50:07:883	198bc740	Failed to set new fan speed, check if miner has root access!
+16:50:08:209	12a4a700	GPU 0 temp = 36, old fan speed = 33, new fan speed = 25 
+16:50:08:210	12a4a700	Failed to set new fan speed, check if miner has root access!
+16:50:08:210	12a4a700	GPU 1 temp = 35, old fan speed = 33, new fan speed = 25 
+16:50:08:210	12a4a700	Failed to set new fan speed, check if miner has root access!

@@ -73,20 +73,6 @@ public class MiningController {
 
 
 
-
-
-	public String getWalletAddress (){
-		boolean debug = true;
-
-		if (debug){
-			return "0x36f536f54ccec727f861d6622e465003a731fe41";
-		}
-		else{
-			 return null;
-		}
-	}
-
-
 	// this function establish connection to various external APIs
 	public URLConnection connectAPI(String URLAddress){
 

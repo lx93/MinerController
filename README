@@ -1,0 +1,13 @@
+---------------This is a Java software written for IsaiahMiner-----------------
+
+This software is designed to run on Debian based Linux systems.
+
+To begin, make sure you have the latest Gradle installed. https://gradle.org/install
+
+To build,
+gradle build
+
+To run,
+gradle run
+
+--------------------End of file------------------------------
