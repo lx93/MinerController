@@ -29,6 +29,7 @@ public class MiningView {
 		updateBalance();
 		updateHashrate();
 		updateWallet();
+		updateClaymoreStatus();
 	}
 
 
@@ -68,8 +69,8 @@ public class MiningView {
 			public void run() {
 				while (true) {
 					//initial run before constant update every minute
-					String balance = miningController.returnBalance();
-					balanceText.setText(balance + " ETH");
+                    String balance = miningController.returnBalance();
+					balanceText.setText(balance + " milliether");
 
 					//this is just for demo purposes, 60000 = one minute
 					try { Thread.sleep(60000); } catch (Exception e) {}
@@ -95,8 +96,8 @@ public class MiningView {
 			public void run() {
                 while (true) {
 					//initial run before constant update every minute
-					String hashrate = miningController.returnHashrate();
-					hashrateText.setText("current hashrate: " + hashrate + " MH/s");
+                    String hashrate = miningController.returnHashrate();
+                    hashrateText.setText("current hashrate: " + hashrate + " MH/s");
 
                     //this is just for demo purposes, 60000 = one minute
 					try { Thread.sleep(60000); } catch (Exception e) {}
@@ -117,9 +118,21 @@ public class MiningView {
 
 
 	public void updateClaymoreStatus() throws IOException {
+
+        new Thread(new Runnable() {
+            public void run(){
+                while (true) {
+
+                    //initial run before constant update every minute
+                    claymoreText.setText(MiningController.claymoreStats);
+
+                    //this is just for demo purposes, 60000 = one minute
+                    try {
+                        Thread.sleep(2000); } catch (Exception e) {}
+                }
+            }
+        }).start();
 	}
-
-
 
 
 
@@ -139,7 +152,4 @@ public class MiningView {
 	}
 
 
-
 }
-
-

@@ -30,6 +30,11 @@ public class MinerControllerApplication extends Application{
 
 	public static void main(String[] args) throws IOException, ParserConfigurationException {
 
+
+	    if (DEBUG){
+	        System.out.println("Debug mode is on!!!!!!!!!!!!!!!!!");
+        }
+
 		launch(args);
 
 	}

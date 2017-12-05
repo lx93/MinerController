@@ -87,7 +87,7 @@ public class ExchangeController {
 				Object obj = parser.parse(json);
 				JSONObject jsonObject = (JSONObject) obj;
 				String balance = String.valueOf(jsonObject.get(dataType));
-				return (balance);
+				return balance;
 			} catch (ParseException e) {
 				System.out.println("JSON File invalid");
 				return "0";

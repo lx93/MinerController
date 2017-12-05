@@ -21,7 +21,10 @@ public class MiningController {
 
 
 	SettingsController controller = new SettingsController();
-	String epool = "eth-us-east1.nanopool.org:9999";
+    public static String claymoreStats;
+
+//The following variables are all configurations for Claymore
+    String epool = "eth-us-east1.nanopool.org:9999";
     String ewal = controller.returnMiningAddress();
     String epsw = "x";
     String tt = "75";
@@ -50,18 +53,18 @@ public class MiningController {
 
 
 	public String returnBalance(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
+		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/"+ewal;
 
 		if (MinerControllerApplication.DEBUG) {
-			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance");
+            return String.valueOf(Double.parseDouble((jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance")))*1000);
 		}
 		else{
-			return jsonParse(jsonToString(connectAPI(URLAddress)),"balance");
+			return String.valueOf(Double.parseDouble((jsonParse(jsonToString(connectAPI(URLAddress)),"balance")))*1000);
 		}
 	}
 
 	public String returnHashrate(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/0x36f536f54ccec727f861d6622e465003a731fe41";
+		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/"+ewal;
 		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","hashrate");
 		}
@@ -131,7 +134,7 @@ public class MiningController {
 				JSONObject jsonObject = (JSONObject) obj;
 				jsonObject = (JSONObject) jsonObject.get("data");
 				String balance = String.valueOf(jsonObject.get(dataType));
-				return (balance);
+				return balance;
 			} catch (ParseException e) {
 				System.out.println("JSON File invalid");
 				return "0";
@@ -143,7 +146,7 @@ public class MiningController {
 				JSONObject jsonObject = (JSONObject) obj;
 				jsonObject = (JSONObject) jsonObject.get("data");
 				String hashrate = String.valueOf(jsonObject.get(dataType));
-				return (hashrate);
+				return hashrate;
 			} catch (ParseException e) {
 				System.out.println("JSON File invalid");
 				return "0";
@@ -157,20 +160,27 @@ public class MiningController {
 
 // this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
 
-	private static String output(InputStream inputStream) throws IOException {
-		StringBuilder sb = new StringBuilder();
-		BufferedReader br = null;
-		try{
-			br = new BufferedReader(new InputStreamReader(inputStream));
-			String line;
-			while ((line=br.readLine())!=null){
-				sb.append(line + System.getProperty("line.separator"));
-			}
-		} finally {
-			br.close();
-		}
-	return sb.toString();
-	}
+
+
+    private String output(InputStream inputStream) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        BufferedReader br = null;
+        try {
+            //System.out.println(inputStream.available());
+            br = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            while ((line = br.readLine()) != null) {
+                sb.append(line + System.getProperty("line.separator"));
+            }
+        } finally {
+            if (br!=null){br.close();}
+        }
+
+        if (sb != null){
+            return sb.toString();
+        }
+        else {return "StringBuilder is null";}
+    }
 
 
 
@@ -180,8 +190,22 @@ public class MiningController {
                     "-epool",epool,"-ewal",ewal,"-epsw",epsw,"-tt",tt,"-fanmin",fanmin,"-fanmax",fanmax,"-dcri",dcri,"-cclock",cclock,"-mclock",mclock,"-cvddc",cvddc,"-mvddc",mvddc);
 
 			Process p = pb.start();
-			System.out.println(output(p.getInputStream()));
-			System.out.print(ewal);
+
+
+            new Thread(new Runnable() {
+                public void run(){
+                    claymoreStats = "be back in 4s";
+                    while (true) {
+                        try { Thread.sleep(4000); } catch (Exception e) {}
+
+                        // we are not in the event thread currently so we should not update the UI here
+                        // this is a good place to do some slow, background loading, e.g. load from a server or from a file system
+                        if (p.isAlive()){
+                            try { claymoreStats = output(p.getInputStream()); } catch (IOException e) { e.printStackTrace(); }
+                        }
+                    }
+                }
+            }).start();
 
 		} catch (IOException f) {
 			f.printStackTrace();
