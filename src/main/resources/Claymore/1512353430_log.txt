@@ -1,0 +1,28 @@
+10:10:30:114	30eebbc0	Check and remove old log files...
+10:10:30:116	30eebbc0	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41 -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+10:10:30:116	30eebbc0	
+10:10:30:116	30eebbc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+10:10:30:116	30eebbc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+10:10:30:116	30eebbc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+10:10:30:116	30eebbc0	
+10:10:30:317	30eebbc0	ETH: 1 pool is specified
+10:10:30:317	30eebbc0	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+10:10:30:317	30eebbc0	DCR: 0 pool is specified
+10:10:30:326	30eebbc0	AMD OpenCL platform not found 
+10:10:30:327	30eebbc0	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+10:10:30:327	30eebbc0	No NVIDIA CUDA GPUs detected.
+10:10:30:327	30eebbc0	No AMD OPENCL or NVIDIA CUDA GPUs found, exit
+10:10:30:354	26356bc0	Check and remove old log files...
+10:10:30:355	26356bc0	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41 -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+10:10:30:355	26356bc0	
+10:10:30:355	26356bc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+10:10:30:355	26356bc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+10:10:30:355	26356bc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+10:10:30:355	26356bc0	
+10:10:30:556	26356bc0	ETH: 1 pool is specified
+10:10:30:556	26356bc0	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+10:10:30:556	26356bc0	DCR: 0 pool is specified
+10:10:30:563	26356bc0	AMD OpenCL platform not found 
+10:10:30:564	26356bc0	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+10:10:30:564	26356bc0	No NVIDIA CUDA GPUs detected.
+10:10:30:564	26356bc0	No AMD OPENCL or NVIDIA CUDA GPUs found, exit

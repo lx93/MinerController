@@ -177,6 +177,7 @@ public class MiningController {
         }
 
         if (sb != null){
+            System.out.println(sb.toString());
             return sb.toString();
         }
         else {return "StringBuilder is null";}
