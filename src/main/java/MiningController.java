@@ -128,7 +128,7 @@ public class MiningController {
 
 		JSONParser parser = new JSONParser();
 
-		if (dataType == "balance") {
+		if ("balance".equalsIgnoreCase(dataType)) {
 			try {
 				Object obj = parser.parse(json);
 				JSONObject jsonObject = (JSONObject) obj;
