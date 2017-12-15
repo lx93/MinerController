@@ -1,12 +1,3 @@
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import javax.swing.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,8 +5,10 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
-import java.util.Map;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class MiningController {
 
@@ -36,19 +29,12 @@ public class MiningController {
     String cvddc = "810";
     String mvddc = "810";
 
-
-
-
     public MiningController() throws IOException{
 	}
 
-
 	public String getPathToMiningProgram() {
-		if (MinerControllerApplication.DEBUG) {
-			return "src/main/resources/bash/test-print.sh";
-		} else {
-			return "src/main/resources/Claymore/ethdcrminer64";
-		}
+		return MinerControllerApplication.DEBUG ? "src/main/resources/bash/test-print.sh"
+				: "src/main/resources/Claymore/ethdcrminer64";
 	}
 
 
@@ -68,10 +54,7 @@ public class MiningController {
 		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","hashrate");
 		}
-		else{
-			return jsonParse(jsonToString(connectAPI(URLAddress)),"hashrate");
-		}
-
+		return jsonParse(jsonToString(connectAPI(URLAddress)),"hashrate");
 	}
 
 
@@ -182,15 +165,15 @@ public class MiningController {
 
 
 
-		public void claymoreStarter() throws IOException{
+	public void claymoreStarter() throws IOException{
 		try {
 			ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
                     "-epool",epool,"-ewal",ewal,"-epsw",epsw,"-tt",tt,"-fanmin",fanmin,"-fanmax",fanmax,"-dcri",dcri,"-cclock",cclock,"-mclock",mclock,"-cvddc",cvddc,"-mvddc",mvddc);
 
 			Process p = pb.start();
 
-
             new Thread(new Runnable() {
+            		@Override
                 public void run(){
                     claymoreStats = "be back in 4s";
                     while (true) {
@@ -210,6 +193,4 @@ public class MiningController {
 			System.out.println("Claymore is not executing");
 		}
 	}
-
-
 }
