@@ -108,37 +108,26 @@ public class MiningController {
 
 	// This function parses the string of nanopool balance JSON
 	public String jsonParse(String json, String dataType) {
-
-		JSONParser parser = new JSONParser();
-
 		if ("balance".equalsIgnoreCase(dataType)) {
-			try {
-				Object obj = parser.parse(json);
-				JSONObject jsonObject = (JSONObject) obj;
-				jsonObject = (JSONObject) jsonObject.get("data");
-				String balance = String.valueOf(jsonObject.get(dataType));
-				return balance;
-			} catch (ParseException e) {
-				System.out.println("JSON File invalid");
-				return "0";
-			}
+			return getValueFromJson(json, dataType);
 		}
 		if ("hashrate".equalsIgnoreCase(dataType)) {
-			try {
-				Object obj = parser.parse(json);
-				JSONObject jsonObject = (JSONObject) obj;
-				jsonObject = (JSONObject) jsonObject.get("data");
-				String hashrate = String.valueOf(jsonObject.get(dataType));
-				return hashrate;
-			} catch (ParseException e) {
-				System.out.println("JSON File invalid");
-				return "0";
-			}
+			return getValueFromJson(json, dataType);
 		}
 		return "you are a prick";
 	}
 
-
+	private String getValueFromJson(String json, String dataType) {
+		final JSONParser parser = new JSONParser();
+		try {
+			JSONObject jsonObject = (JSONObject) parser.parse(json);
+			JSONObject innerObject = (JSONObject) jsonObject.get("data");
+			return String.valueOf(innerObject.get(dataType));
+		} catch (ParseException e) {
+			System.out.println("JSON File invalid: " + json);
+			return "0";
+		}
+	}
 
 // this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
 
