@@ -175,12 +175,9 @@ public class MiningController {
         } finally {
             if (br!=null){br.close();}
         }
-
-        if (sb != null){
-            System.out.println(sb.toString());
-            return sb.toString();
-        }
-        else {return "StringBuilder is null";}
+        final String result = sb.toString();
+        System.out.println(result);
+        return result;
     }
 
 
