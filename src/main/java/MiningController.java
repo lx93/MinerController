@@ -106,7 +106,12 @@ public class MiningController {
 
 	}
 
-	// This function parses the string of nanopool balance JSON
+	/**
+	 * parses the string of nanopool balance JSON
+	 * @param json - original JSON
+	 * @param dataType has to be either "balance" or "hashrate"
+	 * @return either the balance or the hashrate
+	 */
 	public String jsonParse(String json, String dataType) {
 		if ("balance".equalsIgnoreCase(dataType)) {
 			return getValueFromJson(json, dataType);
@@ -129,10 +134,12 @@ public class MiningController {
 		}
 	}
 
-// this function creates a BufferedReader that reads what Claymore prints, and returns it as a string
-
-
-
+    /**
+     * creates a BufferedReader that reads what Claymore prints, and returns it as a string
+     * @param inputStream
+     * @return
+     * @throws IOException
+     */
     private String output(InputStream inputStream) throws IOException {
         StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
@@ -150,8 +157,6 @@ public class MiningController {
         System.out.println(result);
         return result;
     }
-
-
 
 	public void claymoreStarter() throws IOException{
 		try {
