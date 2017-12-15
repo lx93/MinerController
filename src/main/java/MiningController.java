@@ -123,7 +123,7 @@ public class MiningController {
 				return "0";
 			}
 		}
-		else if (dataType == "hashrate") {
+		if ("hashrate".equalsIgnoreCase(dataType)) {
 			try {
 				Object obj = parser.parse(json);
 				JSONObject jsonObject = (JSONObject) obj;
@@ -135,8 +135,7 @@ public class MiningController {
 				return "0";
 			}
 		}
-
-		else {return "you are a prick";}
+		return "you are a prick";
 	}
 
 
