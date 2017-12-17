@@ -5,3 +5,5 @@
 !/src/
 !README
 !ETHaddress
+!.classpath
+!.project
