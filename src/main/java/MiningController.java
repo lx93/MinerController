@@ -37,24 +37,24 @@ public class MiningController {
 				: "src/main/resources/Claymore/ethdcrminer64";
 	}
 
-
-	public String returnBalance(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/"+ewal;
-
-		if (MinerControllerApplication.DEBUG) {
-            return String.valueOf(Double.parseDouble((jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance")))*1000);
-		}
-		else{
-			return String.valueOf(Double.parseDouble((jsonParse(jsonToString(connectAPI(URLAddress)),"balance")))*1000);
-		}
+	public String returnBalance() {
+		return String.format("%.2f", Double.parseDouble(balance()) * 1000);
 	}
 
-	public String returnHashrate(){
-		String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/"+ewal;
+	private String balance() {
+		if (MinerControllerApplication.DEBUG) {
+            return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","balance");
+		}
+		final String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/" + ewal;
+		return jsonParse(jsonToString(connectAPI(URLAddress)), "balance");
+	}
+
+	public String returnHashrate() {
 		if (MinerControllerApplication.DEBUG) {
 			return jsonParse("{\"status\":true,\"data\":{\"hashrate\":8000,\"balance\":50}}","hashrate");
 		}
-		return jsonParse(jsonToString(connectAPI(URLAddress)),"hashrate");
+		final String URLAddress = "https://api.nanopool.org/v1/eth/balance_hashrate/" + ewal;
+		return jsonParse(jsonToString(connectAPI(URLAddress)), "hashrate");
 	}
 
 

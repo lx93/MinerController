@@ -10,7 +10,7 @@ public class MiningControllerTest {
 
 	@Test public void testReturnBalance() throws IOException {
     		MiningController miningController = new MiningController();
-        assertEquals("Value for the Debug mode", "50000.0", miningController.returnBalance());
+        assertEquals("Value for the Debug mode", "50000.00", miningController.returnBalance());
     }
 
 	@Test public void testReturnHashrate() throws IOException {
