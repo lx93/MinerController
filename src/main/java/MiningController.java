@@ -29,7 +29,8 @@ public class MiningController {
     String cvddc = "810";
     String mvddc = "810";
 
-    public MiningController() throws IOException{
+    public MiningController() {
+    		super();
 	}
 
 	public String getPathToMiningProgram() {
