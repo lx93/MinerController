@@ -94,7 +94,7 @@ public class QRScanner {
             try {
                 result = new MultiFormatReader().decode(bitmap, pureHints);
             } catch (NotFoundException e) {
-            	    System.out.print('.');
+            	    //System.out.print('.');
                 //System.out.println("didn't find a QR code");
                 continue;
             }
