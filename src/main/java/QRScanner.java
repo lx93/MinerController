@@ -22,7 +22,7 @@ public class QRScanner {
         catch(NullPointerException e){}
     }
 
-    public String scanCode() throws NullPointerException{
+    public String scanCode() throws NullPointerException {
         Result result = null;
         BufferedImage image = null;
 
@@ -69,6 +69,40 @@ public class QRScanner {
             @Override
             public void windowClosing(WindowEvent e){webcam.close();}
         });
+    }
+
+    public String scanCodeContiniously() {
+        Result result = null;
+        BufferedImage image = null;
+        boolean keepGoing = true;
+        while (keepGoing) {
+        		//webcam.getP
+        		//webcam.setParameters(parameters);
+        		/*
+        		java.awt.Dimension[] resolutions = this.webcam.getDevice().getResolutions();
+        		for (java.awt.Dimension resolution : resolutions) {
+        			System.out.println(resolution.toString());
+        		}
+        		*/
+        		image = webcam.getImage();
+        		if (null == image) continue;
+            LuminanceSource source = new BufferedImageLuminanceSource(image);
+            BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+            Map<DecodeHintType,Object> pureHints = new EnumMap<>(DecodeHintType.class);
+            pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+            // parsing the QR into result object
+            try {
+                result = new MultiFormatReader().decode(bitmap, pureHints);
+            } catch (NotFoundException e) {
+            	    System.out.print('.');
+                //System.out.println("didn't find a QR code");
+                continue;
+            }
+            if (null == result) continue;
+            keepGoing = false;
+        }
+        System.out.println("QR code extracted: " + result.getText());
+        return result.getText();
     }
 
 }
