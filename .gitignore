@@ -2,11 +2,12 @@
 /*/
 !.gitignore
 !build.gradle
+!.gradlew
+!.gradlew.bat
+!/gradle/*
 !/src/
 !/src/test/
 !README
 !ETHaddress
 !.classpath
 !.project
-!.gradlew
-!.gradlew.bat
