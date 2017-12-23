@@ -1,0 +1,233 @@
+11:21:34:236	dc011740	Check and remove old log files...
+11:21:34:237	dc011740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+11:21:34:237	dc011740	
+11:21:34:237	dc011740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+11:21:34:237	dc011740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+11:21:34:237	dc011740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+11:21:34:237	dc011740	
+11:21:34:438	dc011740	ETH: 1 pool is specified
+11:21:34:438	dc011740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+11:21:34:438	dc011740	DCR: 0 pool is specified
+11:21:34:486	dc011740	OpenCL platform: AMD Accelerated Parallel Processing
+11:21:34:487	dc011740	OpenCL initializing...
+
+11:21:34:487	dc011740	AMD Cards available: 1 
+11:21:34:487	dc011740	GPU #0: Ellesmere, 1576 MB available, 32 compute units
+11:21:34:487	dc011740	GPU #0 recognized as Radeon RX 470/570
+11:21:34:487	dc011740	POOL/SOLO version
+11:21:34:487	dc011740	b421 
+11:21:34:487	dc011740	Platform: Linux
+11:21:34:613	dc011740	start building OpenCL program for GPU 0...
+11:21:34:825	dc011740	done
+11:21:35:050	dc011740	GPU #0: algorithm ASM
+11:21:35:053	dc011740	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+11:21:35:053	dc011740	No NVIDIA CUDA GPUs detected.
+11:21:35:053	dc011740	Total cards: 1 
+11:21:39:054	dc011740	AMD ADL library not found.
+11:21:39:065	dc011740	amdgpu cnt: 1
+11:21:39:065	dc011740	No NVIDIA cards in the list, NVML library will not be used.
+11:21:39:071	c77fe700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <142.44.242.100> port 9999
+11:21:39:166	dc011740	No pool specified for Decred! Ethereum-only mining mode is enabled
+11:21:39:166	dc011740	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+11:21:39:167	dc011740	ETH: eth-proxy stratum mode
+11:21:39:167	dc011740	Watchdog enabled
+11:21:39:167	dc011740	Remote management (READ-ONLY MODE) is enabled on port 3333
+11:21:39:167	dc011740	
+11:21:40:456	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:43:460	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:46:464	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:49:468	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:52:472	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:55:476	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:21:58:481	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:22:01:485	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:22:04:489	d519f700	GPU 0 temp = 32, old fan speed = 60, new fan speed = 60 
+11:22:04:489	d519f700	GPU0 t=32C fan=60%
+11:22:04:489	d519f700	em hbt: 25423, fm hbt: 90, 
+11:22:04:489	d519f700	watchdog - thread 0 (gpu0), hb time 8
+11:22:04:489	d519f700	watchdog - thread 1 (gpu0), hb time 7
+11:22:07:493	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:10:498	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:13:502	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:16:506	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:19:510	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:22:514	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:25:519	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:28:523	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:31:527	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:34:531	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:34:531	d519f700	GPU0 t=31C fan=60%
+11:22:34:531	d519f700	em hbt: 55465, fm hbt: 94, 
+11:22:34:531	d519f700	watchdog - thread 0 (gpu0), hb time 77
+11:22:34:532	d519f700	watchdog - thread 1 (gpu0), hb time 76
+11:22:37:536	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:40:540	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:43:544	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:45:561	c77fe700	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com", "x"], "id": 2, "method": "eth_submitLogin"}
+
+11:22:45:561	c77fe700	ETH: Stratum - Connected (eth-us-east1.nanopool.org:9999)
+11:22:46:548	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:48:617	c77fe700	checkread timeout
+11:22:49:553	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:51:667	c77fe700	checkread timeout
+11:22:52:557	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:54:718	c77fe700	checkread timeout
+11:22:55:561	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:22:57:768	c77fe700	checkread timeout
+11:22:58:565	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:00:820	c77fe700	checkread timeout
+11:23:01:569	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:03:873	c77fe700	checkread timeout
+11:23:04:573	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:04:574	d519f700	GPU0 t=31C fan=60%
+11:23:04:574	d519f700	em hbt: 85508, fm hbt: 98, 
+11:23:04:574	d519f700	watchdog - thread 0 (gpu0), hb time 46
+11:23:04:574	d519f700	watchdog - thread 1 (gpu0), hb time 44
+11:23:06:925	c77fe700	checkread timeout
+11:23:07:578	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:09:975	c77fe700	checkread timeout
+11:23:10:582	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:13:026	c77fe700	checkread timeout
+11:23:13:586	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:16:077	c77fe700	checkread timeout
+11:23:16:078	c77fe700	ETH: Job timeout, disconnect, retry in 20 sec...
+11:23:16:590	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:19:594	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:22:598	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:25:602	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:28:607	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:31:611	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:34:615	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:34:620	d519f700	GPU0 t=31C fan=60%
+11:23:34:620	d519f700	em hbt: 115554, fm hbt: 6, 
+11:23:34:620	d519f700	watchdog - thread 0 (gpu0), hb time 18
+11:23:34:620	d519f700	watchdog - thread 1 (gpu0), hb time 17
+11:23:36:082	c77fe700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <142.44.243.6> port 9999
+11:23:37:624	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:40:628	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:43:633	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:46:637	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:49:641	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:52:645	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:55:649	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:23:58:653	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:01:658	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:04:662	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:04:662	d519f700	GPU0 t=31C fan=60%
+11:24:04:662	d519f700	em hbt: 28584, fm hbt: 8, 
+11:24:04:662	d519f700	watchdog - thread 0 (gpu0), hb time 87
+11:24:04:663	d519f700	watchdog - thread 1 (gpu0), hb time 86
+11:24:07:667	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:10:674	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:13:679	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:16:683	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:19:687	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:22:692	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:25:696	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:28:700	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:31:708	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:34:712	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:34:713	d519f700	GPU0 t=30C fan=60%
+11:24:34:713	d519f700	em hbt: 58635, fm hbt: 19, 
+11:24:34:713	d519f700	watchdog - thread 0 (gpu0), hb time 65
+11:24:34:713	d519f700	watchdog - thread 1 (gpu0), hb time 64
+11:24:37:717	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:40:721	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:41:278	c77fe700	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com", "x"], "id": 2, "method": "eth_submitLogin"}
+
+11:24:41:278	c77fe700	ETH: Stratum - Connected (eth-us-east1.nanopool.org:9999)
+11:24:43:730	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:44:330	c77fe700	checkread timeout
+11:24:46:735	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:47:381	c77fe700	checkread timeout
+11:24:49:739	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:24:50:431	c77fe700	checkread timeout
+11:24:52:743	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:53:481	c77fe700	checkread timeout
+11:24:55:752	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:56:532	c77fe700	checkread timeout
+11:24:58:756	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:24:59:583	c77fe700	checkread timeout
+11:25:01:761	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:25:02:637	c77fe700	checkread timeout
+11:25:04:765	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:04:766	d519f700	GPU0 t=30C fan=60%
+11:25:04:766	d519f700	em hbt: 88688, fm hbt: 32, 
+11:25:04:766	d519f700	watchdog - thread 0 (gpu0), hb time 46
+11:25:04:766	d519f700	watchdog - thread 1 (gpu0), hb time 45
+11:25:05:688	c77fe700	checkread timeout
+11:25:07:770	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:08:740	c77fe700	checkread timeout
+11:25:10:774	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:11:791	c77fe700	checkread timeout
+11:25:11:791	c77fe700	ETH: Job timeout, disconnect, retry in 20 sec...
+11:25:13:779	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:16:784	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:25:19:788	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:25:22:792	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:25:799	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:25:28:803	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:31:796	c77fe700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <192.99.69.170> port 9999
+11:25:31:808	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:34:812	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:34:812	d519f700	GPU0 t=30C fan=60%
+11:25:34:812	d519f700	em hbt: 3021, fm hbt: 38, 
+11:25:34:812	d519f700	watchdog - thread 0 (gpu0), hb time 18
+11:25:34:812	d519f700	watchdog - thread 1 (gpu0), hb time 17
+11:25:37:817	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:40:821	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:43:825	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:46:829	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:49:834	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:52:838	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:25:55:843	d519f700	GPU 0 temp = 31, old fan speed = 60, new fan speed = 60 
+11:25:58:847	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:01:851	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:04:855	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:04:856	d519f700	GPU0 t=30C fan=60%
+11:26:04:856	d519f700	em hbt: 33065, fm hbt: 42, 
+11:26:04:856	d519f700	watchdog - thread 0 (gpu0), hb time 90
+11:26:04:856	d519f700	watchdog - thread 1 (gpu0), hb time 89
+11:26:07:860	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:10:864	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:13:869	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:16:873	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:19:877	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:22:881	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:25:886	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:28:890	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:31:894	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:34:899	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:34:899	d519f700	GPU0 t=30C fan=60%
+11:26:34:899	d519f700	em hbt: 63108, fm hbt: 46, 
+11:26:34:899	d519f700	watchdog - thread 0 (gpu0), hb time 60
+11:26:34:899	d519f700	watchdog - thread 1 (gpu0), hb time 58
+11:26:37:903	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:40:908	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:43:912	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:46:916	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:49:920	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:52:925	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:55:929	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:26:58:933	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:01:938	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:04:942	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:04:942	d519f700	GPU0 t=30C fan=60%
+11:27:04:942	d519f700	em hbt: 93151, fm hbt: 49, 
+11:27:04:942	d519f700	watchdog - thread 0 (gpu0), hb time 30
+11:27:04:942	d519f700	watchdog - thread 1 (gpu0), hb time 29
+11:27:07:947	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:10:951	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:13:955	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:16:959	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:19:964	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:22:968	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:25:972	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:28:977	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:31:981	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:34:985	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:27:34:985	d519f700	GPU0 t=30C fan=60%
+11:27:34:985	d519f700	watchdog - eminer thread hangs
+11:27:34:986	d519f700	em hbt: 123194, fm hbt: 52, 
+11:27:34:986	d519f700	Miner thread hangs, need to restart miner!
+11:27:34:986	d519f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 

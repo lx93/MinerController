@@ -1,0 +1,120 @@
+22:18:12:259	62628740	Check and remove old log files...
+22:18:12:260	62628740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer0/lx93@me.com -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+22:18:12:260	62628740	
+22:18:12:260	62628740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+22:18:12:260	62628740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+22:18:12:260	62628740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+22:18:12:260	62628740	
+22:18:12:460	62628740	ETH: 1 pool is specified
+22:18:12:461	62628740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+22:18:12:461	62628740	DCR: 0 pool is specified
+22:18:12:500	62628740	OpenCL platform: AMD Accelerated Parallel Processing
+22:18:12:500	62628740	OpenCL initializing...
+
+22:18:12:500	62628740	AMD Cards available: 1 
+22:18:12:500	62628740	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:12:500	62628740	GPU #0 recognized as Radeon RX 470/570
+22:18:12:500	62628740	POOL/SOLO version
+22:18:12:500	62628740	b421 
+22:18:12:500	62628740	Platform: Linux
+22:18:12:625	62628740	start building OpenCL program for GPU 0...
+22:18:12:834	62628740	done
+22:18:13:047	62628740	GPU #0: algorithm ASM
+22:18:13:050	62628740	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+22:18:13:050	62628740	No NVIDIA CUDA GPUs detected.
+22:18:13:050	62628740	Total cards: 1 
+22:18:17:052	62628740	AMD ADL library not found.
+22:18:17:062	62628740	amdgpu cnt: 1
+22:18:17:063	62628740	No NVIDIA cards in the list, NVML library will not be used.
+22:18:17:069	52610700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <192.99.69.170> port 9999
+22:18:17:164	62628740	No pool specified for Decred! Ethereum-only mining mode is enabled
+22:18:17:164	62628740	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+22:18:17:165	62628740	ETH: eth-proxy stratum mode
+22:18:17:165	62628740	Watchdog enabled
+22:18:17:165	62628740	Remote management (READ-ONLY MODE) is enabled on port 3333
+22:18:17:166	62628740	
+22:18:18:477	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:21:482	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:24:486	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:27:490	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:30:495	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:32:888	5160e700	
+22:18:32:889	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:32:890	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:32:890	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:32:890	5160e700	Incorrect ETH shares: none
+22:18:32:890	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:32:890	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:32:890	5160e700	GPU0 t=30C fan=60%
+22:18:32:890	5160e700	
+22:18:33:499	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:36:503	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:39:507	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:42:511	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:42:512	5b7b6700	GPU0 t=30C fan=60%
+22:18:42:512	5b7b6700	em hbt: 25448, fm hbt: 14, 
+22:18:42:512	5b7b6700	watchdog - thread 0 (gpu0), hb time 35
+22:18:42:512	5b7b6700	watchdog - thread 1 (gpu0), hb time 38
+22:18:42:880	5160e700	
+22:18:42:880	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:42:880	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:42:880	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:42:881	5160e700	Incorrect ETH shares: none
+22:18:42:881	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:42:881	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:42:881	5160e700	GPU0 t=30C fan=60%
+22:18:42:881	5160e700	
+22:18:44:704	5160e700	
+22:18:44:704	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:44:704	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:44:704	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:44:705	5160e700	Incorrect ETH shares: none
+22:18:44:705	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:44:705	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:44:705	5160e700	GPU0 t=30C fan=60%
+22:18:44:705	5160e700	
+22:18:45:208	5160e700	
+22:18:45:208	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:45:208	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:45:208	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:45:209	5160e700	Incorrect ETH shares: none
+22:18:45:209	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:45:209	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:45:209	5160e700	GPU0 t=30C fan=60%
+22:18:45:209	5160e700	
+22:18:45:516	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:45:896	5160e700	
+22:18:45:896	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:45:896	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:45:897	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:45:897	5160e700	Incorrect ETH shares: none
+22:18:45:897	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:45:897	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:45:897	5160e700	GPU0 t=30C fan=60%
+22:18:45:897	5160e700	
+22:18:46:608	5160e700	
+22:18:46:608	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:46:608	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:46:609	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:46:609	5160e700	Incorrect ETH shares: none
+22:18:46:609	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:46:609	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:46:609	5160e700	GPU0 t=30C fan=60%
+22:18:46:609	5160e700	
+22:18:47:224	5160e700	
+22:18:47:225	5160e700	GPU #0: Ellesmere, 3975 MB available, 32 compute units
+22:18:47:225	5160e700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+22:18:47:225	5160e700	ETH: GPU0 0.000 Mh/s
+22:18:47:225	5160e700	Incorrect ETH shares: none
+22:18:47:225	5160e700	1 minute average ETH total speed: 0.000 Mh/s
+22:18:47:225	5160e700	Pool switches: ETH - 0, DCR - 0
+22:18:47:225	5160e700	GPU0 t=30C fan=60%
+22:18:47:225	5160e700	
+22:18:48:520	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:51:523	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:54:527	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:18:57:531	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:19:00:535	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:19:02:470	62628740	Quit signal received...
+22:19:02:470	62628740	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:19:03:539	5b7b6700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 

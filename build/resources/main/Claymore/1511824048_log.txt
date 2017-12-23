@@ -1,0 +1,8 @@
+18:07:28:697	85f06bc0	Check and remove old log files...
+18:07:28:698	85f06bc0	args: 
+18:07:28:698	85f06bc0	
+18:07:28:698	85f06bc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+18:07:28:698	85f06bc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+18:07:28:698	85f06bc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+18:07:28:698	85f06bc0	
+18:07:28:899	85f06bc0	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 
