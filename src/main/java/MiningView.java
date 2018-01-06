@@ -41,8 +41,8 @@ public class MiningView {
 	            while (true) {
 
                     //initial run before constant update every minute
-                    walletText.setText("current wallet: " + controller.returnMiningAddress());
-                    System.out.println("init print");
+                    walletText.setText("current wallet: " + controller.returnMiningAddress().substring(9));
+//                    System.out.println("init print");
 
                     //this is just for demo purposes, 60000 = one minute
                     try {
@@ -60,7 +60,6 @@ public class MiningView {
             }
         }).start();
     }
-
 
 
 	// This function updates balance section on the screen

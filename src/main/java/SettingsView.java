@@ -13,16 +13,20 @@ public class SettingsView {
     public void QRScanFrame() {
         JFrame QRFrame = new JFrame();
         shutterBtn.setVisible(true);
-        QRFrame.add(shutterBtn, BorderLayout.WEST);
+//        QRFrame.add(shutterBtn, BorderLayout.WEST);
         QRFrame.setSize (800,450);
         scanner.showScanner(QRFrame);
         QRFrame.setVisible(true);
-        shutterBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)
-            {
-                String address = controller.scanCode();
-                controller.addressWrite(address);
-            }
-        });
+        final String code = controller.scanCode();
+        controller.addressWrite(code);
+        QRFrame.dispose();
+
+//        shutterBtn.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e)
+//            {
+//                String address = controller.scanCode();
+//                controller.addressWrite(address);
+//            }
+//        });
     }
 }

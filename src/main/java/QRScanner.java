@@ -51,7 +51,7 @@ public class QRScanner {
 
         //otherwise if the QR is not picked up
         else{
-            return ("lalalala the QR code and your face is messed up");
+            return ("lalalala the QR code is messed up");
         }
     }
 
@@ -71,12 +71,11 @@ public class QRScanner {
         });
     }
 
-    public String scanCodeContiniously() {
+    public String scanCodeContinuously() {
         Result result = null;
         BufferedImage image = null;
         boolean keepGoing = true;
         while (keepGoing) {
-        		//webcam.getP
         		//webcam.setParameters(parameters);
         		/*
         		java.awt.Dimension[] resolutions = this.webcam.getDevice().getResolutions();

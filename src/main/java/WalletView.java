@@ -1,59 +1,80 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
-
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import org.bitcoinj.wallet.Wallet;
 
-public class WalletView{
 
-	TextField address = new TextField("Address");
-	TextField amount = new TextField("Amount");
+public class WalletView {
 
-	Text notification = new Text ();
+	String address = new String("recipient address");
+    public Text addressText = new Text();
+
+
+    Text notification = new Text ();
 
 	public static WalletController walletController = BTCHelper.getKeyPair();
 	QRScanner scanner = new QRScanner();
 
 
 	// Creates a JFrame which houses WalletControl Panel;
-	public void QRScanFrame(Text notification){
-
+    //
+    public void QRScanFrame(Text notification){
 		JFrame QRFrame = new JFrame();
-		JButton shutterBtn = new JButton("Capture!");
-		JButton submitBtn = new JButton("Submit!");
-		QRFrame.add(shutterBtn,BorderLayout.WEST);
-		QRFrame.add(submitBtn,BorderLayout.EAST);
-		QRFrame.add(address,BorderLayout.NORTH);
-		QRFrame.add(amount,BorderLayout.SOUTH);
-		QRFrame.setSize (800,450);
+		QRFrame.setSize (555,480);
 		scanner.showScanner(QRFrame);
 		QRFrame.setVisible(true);
+        address = walletController.scanCode();
+        QRFrame.dispose();
+    }
+
+    public void sendETHFrame (){
+        try{
+            Parent root1 = FXMLLoader.load(getClass().getClassLoader().getResource("sendBTCFrame.fxml"));
+            Stage stage = new Stage();
+            //stage.initModality(Modality.APPLICATION_MODAL);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Send ETH");
+            stage.setScene(new Scene(root1));
+            stage.show();
+            new Thread (new Runnable() {
+                @Override
+                public void run() {
+                    addressText.getScene().setRoot(root1);
+                    addressText.setText("hi!");
+                    System.out.println("wtf");
+                }
+            }).start();        }
+        catch(Exception e){
+            System.out.println("cannot open a new transaction page");
+        }
+    }
 
 
+	public void sendBTCFrame (){
+        try{
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sendBTCFrame.fxml"));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            //stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Send BTC");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(Exception e){
+            System.out.println("cannot open a new transaction page");
+        }
+ }
 
-		shutterBtn.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				address.setText(walletController.scanCode().substring(8));			}
-		});
-
-
-
-		submitBtn.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				QRFrame.dispose();
-				notification.setText("HII");
-				notification.setVisible(true);
-			}
-		});
-
-	}
 
 
 	public void displayQRAddr(String pubkey){
@@ -72,19 +93,21 @@ public class WalletView{
 
 	public void sendETH(){
 		//view.controller=this;
-		//QRScanFrame(notification);
+		QRScanFrame(notification);
+		sendETHFrame();
 	}
 
 
 	public void sendBTC(){
 		//view.controller=this;
 		QRScanFrame(notification);
-	}
+        sendBTCFrame();
+    }
 
 
 	public void recETH()
 	{
-		//displayQRAddr(controller.getPubKey());
+		displayQRAddr(walletController.getPubKey());
 	}
 
 	public void recBTC()
@@ -95,6 +118,5 @@ public class WalletView{
 	public void updateNotification(){
 		notification.setText("Payment sent successfully");
 	}
-
 
 }

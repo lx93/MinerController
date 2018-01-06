@@ -19,7 +19,7 @@ public class QRScannerTest {
     		assertNotNull("QRScanner", qrScanner);
     		qrScanner.showScanner(newFrame);
     		newFrame.setVisible(true);
-		final String qrCodeText = qrScanner.scanCodeContiniously();
+		final String qrCodeText = qrScanner.scanCodeContinuously();
 		assertNotNull("QR Code", qrCodeText);
 		//Thread.sleep(60000);
     }

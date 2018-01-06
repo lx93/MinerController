@@ -7,12 +7,12 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
+import javax.swing.*;
+
 
 public class WalletController {
 
-
-	public static WalletController key = BTCHelper.getKeyPair();
-	QRScanner scanner = new QRScanner();
+    QRScanner scanner = new QRScanner();
 
 
 	private String pubKey;
@@ -23,6 +23,8 @@ public class WalletController {
 		this.privKey = privKey;
 		this.pubKey = pubKey;
 	}
+
+	public WalletController(){}
 
 
 	public String getPubKey() {
@@ -36,7 +38,8 @@ public class WalletController {
 
 	public String scanCode(){
 		//return scanner.scanCode();
-		return scanner.scanCodeContiniously();
+
+        return scanner.scanCodeContinuously();
 	}
 
 

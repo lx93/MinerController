@@ -41,13 +41,14 @@ public class SettingsController {
     }
 
     public String scanCode(){
-        //return scanner.scanCode();
-        return scanner.scanCodeContiniously();
+        return scanner.scanCodeContinuously();
     }
+
 
     public String returnMiningAddress(){
         if (addressRead()!=null){
 //            System.out.println(addressRead());
+            System.out.println("the supplied mining address is at:" + addressRead());
             return addressRead();
         }
         else{

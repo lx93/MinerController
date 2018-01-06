@@ -18,7 +18,7 @@ public class MiningController {
 
 //The following variables are all configurations for Claymore
     String epool = "eth-us-east1.nanopool.org:9999";
-    String ewal = controller.returnMiningAddress();
+    String ewal = controller.returnMiningAddress().substring(9);
     String epsw = "x";
     String tt = "75";
     String fanmin = "60";
