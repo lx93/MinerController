@@ -39,21 +39,19 @@ public class WalletView {
 
     public void sendETHFrame (){
         try{
-            Parent root1 = FXMLLoader.load(getClass().getClassLoader().getResource("sendBTCFrame.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("SendBTCFrame.fxml"));
+            Parent root1 = fxmlLoader.load();
+            SendBTCView sendBTCView = fxmlLoader.<SendBTCView>getController();
+            sendBTCView.addressText.setText(address);
+
             Stage stage = new Stage();
             //stage.initModality(Modality.APPLICATION_MODAL);
             //stage.initStyle(StageStyle.UNDECORATED);
             stage.setTitle("Send ETH");
             stage.setScene(new Scene(root1));
             stage.show();
-            new Thread (new Runnable() {
-                @Override
-                public void run() {
-                    addressText.getScene().setRoot(root1);
-                    addressText.setText("hi!");
-                    System.out.println("wtf");
-                }
-            }).start();        }
+
+            }
         catch(Exception e){
             System.out.println("cannot open a new transaction page");
         }
@@ -62,7 +60,7 @@ public class WalletView {
 
 	public void sendBTCFrame (){
         try{
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sendBTCFrame.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("SendBTCFrame.fxml"));
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             //stage.initStyle(StageStyle.UNDECORATED);
