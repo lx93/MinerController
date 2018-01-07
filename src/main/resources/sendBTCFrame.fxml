@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsView">
+    <children>
+        <Text layoutX="92.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send BTC">
+            <font>
+                <Font size="58.0" />
+            </font>
+        </Text>
+        <Text layoutX="72.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convert BTC to ETH" visible="false">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Text>
+        <Text layoutX="206.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipient">
+            <font>
+                <Font size="19.0" />
+            </font></Text>
+        <ImageView fitHeight="94.0" fitWidth="91.0" layoutX="695.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo%20black.png" />
+            </image>
+        </ImageView>
+      <Text fx:id="addressText" layoutX="364.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="376.7294921875" />
+      <Text layoutX="206.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField layoutX="364.0" layoutY="249.0" />
+      <!--<Button fx:id="SendBtn" layoutX="332.0" layoutY="334.0" mnemonicParsing="false" onAction="#confirmSend" prefWidth="80.0" style="-fx-background-color: b6e7c9;" text="Send" />-->
+      <!--<Button fx:id="CancelBtn" layoutX="425.0" layoutY="334.0" mnemonicParsing="false" onAction="#cancelSend" prefWidth="80.0" style="-fx-background-color: ef8973;" text="Receive" />-->
+    </children>
+</AnchorPane>
