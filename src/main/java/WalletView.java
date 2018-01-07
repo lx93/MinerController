@@ -91,6 +91,7 @@ public class WalletView {
 
 
 
+
 	public void sendETH(){
 		//view.controller=this;
 		QRScanFrame(notification);
