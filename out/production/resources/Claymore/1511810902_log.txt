@@ -1,0 +1,21 @@
+14:28:22:130	5d4a740	Check and remove old log files...
+14:28:22:130	5d4a740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+14:28:22:130	5d4a740	
+14:28:22:130	5d4a740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+14:28:22:131	5d4a740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+14:28:22:131	5d4a740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+14:28:22:131	5d4a740	
+14:28:22:333	5d4a740	ETH: 1 pool is specified
+14:28:22:333	5d4a740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+14:28:22:333	5d4a740	DCR: 0 pool is specified
+14:28:52:377	feed8700	
+14:29:22:416	feed8700	
+14:29:52:457	feed8700	
+14:30:22:495	feed8700	
+14:30:52:535	feed8700	
+14:31:22:574	feed8700	
+14:31:52:613	feed8700	
+14:32:22:652	feed8700	
+14:32:52:692	feed8700	
+14:33:22:731	feed8700	
+14:33:22:731	feed8700	Miner cannot initialize for 5 minutes, need to restart miner!

@@ -1,0 +1,123 @@
+11:55:55:691	81b4b740	Check and remove old log files...
+11:55:55:692	81b4b740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+11:55:55:692	81b4b740	
+11:55:55:692	81b4b740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+11:55:55:692	81b4b740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+11:55:55:692	81b4b740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+11:55:55:692	81b4b740	
+11:55:55:893	81b4b740	ETH: 1 pool is specified
+11:55:55:893	81b4b740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+11:55:55:893	81b4b740	DCR: 0 pool is specified
+11:55:55:949	81b4b740	OpenCL platform: AMD Accelerated Parallel Processing
+11:55:55:949	81b4b740	OpenCL initializing...
+
+11:55:55:949	81b4b740	AMD Cards available: 1 
+11:55:55:949	81b4b740	GPU #0: Ellesmere, 0 MB available, 32 compute units
+11:55:55:949	81b4b740	GPU #0 recognized as Radeon RX 470/570
+11:55:55:949	81b4b740	POOL/SOLO version
+11:55:55:949	81b4b740	b421 
+11:55:55:949	81b4b740	Platform: Linux
+11:55:56:071	81b4b740	start building OpenCL program for GPU 0...
+11:55:56:346	81b4b740	done
+11:55:56:592	81b4b740	GPU #0: algorithm ASM
+11:55:56:594	81b4b740	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+11:55:56:594	81b4b740	No NVIDIA CUDA GPUs detected.
+11:55:56:594	81b4b740	Total cards: 1 
+11:56:00:596	81b4b740	AMD ADL library not found.
+11:56:00:606	81b4b740	amdgpu cnt: 1
+11:56:00:606	81b4b740	No NVIDIA cards in the list, NVML library will not be used.
+11:56:00:617	71b33700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <192.99.69.170> port 9999
+11:56:00:712	81b4b740	No pool specified for Decred! Ethereum-only mining mode is enabled
+11:56:00:712	81b4b740	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+11:56:00:712	81b4b740	ETH: eth-proxy stratum mode
+11:56:00:713	81b4b740	Watchdog enabled
+11:56:00:713	81b4b740	Remote management (READ-ONLY MODE) is enabled on port 3333
+11:56:00:713	81b4b740	
+11:56:01:006	71b33700	send: {"worker": "eth1.0", "jsonrpc": "2.0", "params": ["0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer2/lx93@me.com", "x"], "id": 2, "method": "eth_submitLogin"}
+
+11:56:01:006	71b33700	ETH: Stratum - Connected (eth-us-east1.nanopool.org:9999)
+11:56:01:543	71b33700	got 282 bytes
+11:56:01:543	71b33700	buf: {"jsonrpc":"2.0","id":2,"result":true}
+{"jsonrpc":"2.0","id":0,"result":["0x581285233ef60d6a5b57512c7fba9bcee36554e26eeb76d4a6bbf5e8aad5210c","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:01:543	71b33700	parse packet: 38
+11:56:01:544	71b33700	ETH: Authorized
+11:56:01:544	71b33700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+11:56:01:544	71b33700	remove first packet 243
+11:56:01:544	71b33700	new buf size: 243
+11:56:01:544	71b33700	parse packet: 242
+11:56:01:544	71b33700	ETH: job changed
+11:56:01:544	71b33700	new buf size: 0
+11:56:01:626	73159700	Setting DAG epoch #154...
+11:56:01:907	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:02:008	71b33700	got 243 bytes
+11:56:02:008	71b33700	buf: {"jsonrpc":"2.0","id":0,"result":["0x581285233ef60d6a5b57512c7fba9bcee36554e26eeb76d4a6bbf5e8aad5210c","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:02:008	71b33700	parse packet: 242
+11:56:02:008	71b33700	ETH: job is the same
+11:56:02:008	71b33700	new buf size: 0
+11:56:04:912	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:06:144	73159700	Setting DAG epoch #154 for GPU0
+11:56:06:144	73159700	Create GPU buffer for GPU0
+11:56:06:144	73159700	GPU0 - not enough GPU memory to place DAG, you cannot mine this coin with this GPU
+11:56:06:144	73159700	GPU0 - OpenCL error -61 - cannot allocate big buffer for DAG. Check readme.txt for possible solutions.
+11:56:07:916	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:08:321	71b33700	got 243 bytes
+11:56:08:321	71b33700	buf: {"jsonrpc":"2.0","id":0,"result":["0xb81a33d6cda3dd0246fb26e280500b0b9ae7aa139fbec8c8ea6bdf9b6d9dd3a2","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:08:321	71b33700	parse packet: 242
+11:56:08:321	71b33700	ETH: job changed
+11:56:08:321	71b33700	new buf size: 0
+11:56:08:322	71b33700	ETH: 11/27/17-11:56:08 - New job from eth-us-east1.nanopool.org:9999
+11:56:08:322	71b33700	target: 0x00000000dbe6fece (diff: 5000MH), epoch 154(2.20GB)
+11:56:08:322	71b33700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+11:56:08:322	71b33700	ETH: GPU0 0.000 Mh/s
+11:56:09:144	73159700	Set global fail flag, failed GPU0
+11:56:09:144	73159700	GPU 0 failed
+11:56:09:145	72334700	Setting DAG epoch #154 for GPU0
+11:56:09:145	72334700	GPU0, OpenCL error -38 - cannot write buffer for DAG
+11:56:10:920	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:11:545	71b33700	ETH: checking pool connection...
+11:56:11:545	71b33700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+11:56:12:010	71b33700	got 243 bytes
+11:56:12:010	71b33700	buf: {"jsonrpc":"2.0","id":0,"result":["0xb81a33d6cda3dd0246fb26e280500b0b9ae7aa139fbec8c8ea6bdf9b6d9dd3a2","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:12:010	71b33700	parse packet: 242
+11:56:12:010	71b33700	ETH: job is the same
+11:56:12:010	71b33700	new buf size: 0
+11:56:12:145	72334700	Set global fail flag, failed GPU0
+11:56:12:145	72334700	GPU 0 failed
+11:56:13:924	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:16:929	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:18:665	71b33700	got 243 bytes
+11:56:18:666	71b33700	buf: {"jsonrpc":"2.0","id":0,"result":["0x917c629350a16f74344d1f02834461ed87147570f5150abe29905742b098ad18","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:18:666	71b33700	parse packet: 242
+11:56:18:666	71b33700	ETH: job changed
+11:56:18:666	71b33700	new buf size: 0
+11:56:18:666	71b33700	ETH: 11/27/17-11:56:18 - New job from eth-us-east1.nanopool.org:9999
+11:56:18:666	71b33700	target: 0x00000000dbe6fece (diff: 5000MH), epoch 154(2.20GB)
+11:56:18:666	71b33700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+11:56:18:666	71b33700	ETH: GPU0 0.000 Mh/s
+11:56:19:933	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:21:546	71b33700	send: {"id":6,"jsonrpc":"2.0","method":"eth_submitHashrate","params":["0x0", "0x000000000000000000000000000000000000000000000000000000000db39c04"]}
+
+11:56:21:547	71b33700	ETH: checking pool connection...
+11:56:21:547	71b33700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+11:56:22:407	71b33700	got 243 bytes
+11:56:22:412	71b33700	buf: {"jsonrpc":"2.0","id":0,"result":["0x917c629350a16f74344d1f02834461ed87147570f5150abe29905742b098ad18","0x4be89018faa297948d0d2530cf8cc65a2cf729dac5b0eb0b41415a8338949f53","0x00000000dbe6fecebdedd5beb573440e5a884d1b2fbf06fcce912adcb8d8422e"]}
+
+11:56:22:412	71b33700	parse packet: 242
+11:56:22:412	71b33700	ETH: job is the same
+11:56:22:412	71b33700	new buf size: 0
+11:56:22:937	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:25:941	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+11:56:25:942	7acd9700	GPU0 t=30C fan=60%
+11:56:25:942	7acd9700	em hbt: 0, fm hbt: 2, 
+11:56:25:942	7acd9700	watchdog - thread 0 (gpu0), hb time 16797
+11:56:25:942	7acd9700	watchdog - thread 1 (gpu0), hb time 16797
+11:56:25:942	7acd9700	WATCHDOG: GPU error, you need to restart miner :( 
+11:56:25:942	7acd9700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 

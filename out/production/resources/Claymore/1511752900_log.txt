@@ -1,0 +1,51 @@
+22:21:40:952	fa0b1740	Check and remove old log files...
+22:21:40:953	fa0b1740	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x36f536f54ccec727f861d6622e465003a731fe41/isaiahminer0/lx93@me.com -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+22:21:40:953	fa0b1740	
+22:21:40:953	fa0b1740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+22:21:40:953	fa0b1740	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+22:21:40:953	fa0b1740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+22:21:40:953	fa0b1740	
+22:21:41:154	fa0b1740	ETH: 1 pool is specified
+22:21:41:154	fa0b1740	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+22:21:41:154	fa0b1740	DCR: 0 pool is specified
+22:21:41:196	fa0b1740	OpenCL platform: AMD Accelerated Parallel Processing
+22:21:41:197	fa0b1740	OpenCL initializing...
+
+22:21:41:197	fa0b1740	AMD Cards available: 1 
+22:21:41:197	fa0b1740	GPU #0: Ellesmere, 3893 MB available, 32 compute units
+22:21:41:197	fa0b1740	GPU #0 recognized as Radeon RX 470/570
+22:21:41:197	fa0b1740	POOL/SOLO version
+22:21:41:197	fa0b1740	b421 
+22:21:41:197	fa0b1740	Platform: Linux
+22:21:41:321	fa0b1740	start building OpenCL program for GPU 0...
+22:21:41:541	fa0b1740	done
+22:21:41:766	fa0b1740	GPU #0: algorithm ASM
+22:21:41:768	fa0b1740	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+22:21:41:768	fa0b1740	No NVIDIA CUDA GPUs detected.
+22:21:41:768	fa0b1740	Total cards: 1 
+22:21:45:770	fa0b1740	AMD ADL library not found.
+22:21:45:782	fa0b1740	amdgpu cnt: 1
+22:21:45:782	fa0b1740	No NVIDIA cards in the list, NVML library will not be used.
+22:21:45:790	ea099700	ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <142.44.242.100> port 9999
+22:21:45:883	fa0b1740	No pool specified for Decred! Ethereum-only mining mode is enabled
+22:21:45:883	fa0b1740	ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
+22:21:45:883	fa0b1740	ETH: eth-proxy stratum mode
+22:21:45:883	fa0b1740	Watchdog enabled
+22:21:45:883	fa0b1740	Remote management (READ-ONLY MODE) is enabled on port 3333
+22:21:45:883	fa0b1740	
+22:21:47:170	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:21:50:174	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:21:53:178	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:21:56:182	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:21:59:186	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:02:189	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:05:193	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:08:198	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:11:202	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:11:202	f323f700	GPU0 t=30C fan=60%
+22:22:11:202	f323f700	em hbt: 25419, fm hbt: 88, 
+22:22:11:202	f323f700	watchdog - thread 0 (gpu0), hb time 11
+22:22:11:202	f323f700	watchdog - thread 1 (gpu0), hb time 12
+22:22:14:206	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:17:209	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 
+22:22:20:213	f323f700	GPU 0 temp = 30, old fan speed = 60, new fan speed = 60 

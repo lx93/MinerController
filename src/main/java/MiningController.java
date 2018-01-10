@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
@@ -34,9 +31,9 @@ public class MiningController {
 	}
 
 	public String getPathToMiningProgram() {
-		return MinerControllerApplication.DEBUG ? "src/main/resources/bash/test-print.sh"
+		return MinerControllerApplication.DEBUG ? "src/main/resources/bash/emulateClaymore.sh"
 				: "src/main/resources/Claymore/ethdcrminer64";
-	}
+    }
 
 	public String returnBalance() {
 		return String.format("%.2f", Double.parseDouble(balance()) * 1000);
@@ -128,10 +125,11 @@ public class MiningController {
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(json);
 			JSONObject innerObject = (JSONObject) jsonObject.get("data");
+			if (null == innerObject) return "loading...";
 			return String.valueOf(innerObject.get(dataType));
 		} catch (ParseException e) {
 			System.out.println("JSON File invalid: " + json);
-			return "0";
+			return "loading...";
 		}
 	}
 
@@ -143,12 +141,13 @@ public class MiningController {
      */
     private String output(InputStream inputStream) throws IOException {
         StringBuilder sb = new StringBuilder();
-        BufferedReader br = null;
+        InputStreamReader isr = new InputStreamReader(inputStream);
+        BufferedReader br = new BufferedReader(isr);
         try {
             //System.out.println(inputStream.available());
-            br = new BufferedReader(new InputStreamReader(inputStream));
             String line;
             while ((line = br.readLine()) != null) {
+                if (line.contains("�����")&& isr!=null) continue;
                 sb.append(line + System.getProperty("line.separator"));
             }
         } finally {
@@ -159,12 +158,14 @@ public class MiningController {
         return result;
     }
 
+
 	public void claymoreStarter() throws IOException{
 		try {
 			ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
                     "-epool",epool,"-ewal",ewal,"-epsw",epsw,"-tt",tt,"-fanmin",fanmin,"-fanmax",fanmax,"-dcri",dcri,"-cclock",cclock,"-mclock",mclock,"-cvddc",cvddc,"-mvddc",mvddc);
 
 			Process p = pb.start();
+			p.getOutputStream();
 
             new Thread(new Runnable() {
             		@Override

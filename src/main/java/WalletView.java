@@ -2,16 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 
 
-import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import org.bitcoinj.wallet.Wallet;
 
 
 public class WalletView {
@@ -56,6 +52,7 @@ public class WalletView {
             System.out.println("cannot open a new transaction page");
         }
     }
+
 
 
 	public void sendBTCFrame (){
