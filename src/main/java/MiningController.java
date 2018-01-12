@@ -9,9 +9,11 @@ import org.json.simple.parser.ParseException;
 
 public class MiningController {
 
-
 	SettingsController controller = new SettingsController();
     public static String claymoreStats;
+    public static String gpu0speed;
+    public static String gpu0temperature;
+    public static String gpu0fan;
 
 //The following variables are all configurations for Claymore
     String epool = "eth-us-east1.nanopool.org:9999";
@@ -138,7 +140,6 @@ public class MiningController {
      * @param inputStream
      * @return
      * @throws IOException
-     */
     private String output(InputStream inputStream) throws IOException {
         StringBuilder sb = new StringBuilder();
         InputStreamReader isr = new InputStreamReader(inputStream);
@@ -157,35 +158,87 @@ public class MiningController {
         System.out.println(result);
         return result;
     }
+    */
 
+	public void claymoreStarter() {
+		final ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
+				"-epool", epool,
+				"-ewal", ewal,
+				"-epsw", epsw,
+				"-tt", tt,
+				"-fanmin", fanmin,
+				"-fanmax", fanmax,
+				"-dcri", dcri,
+				"-cclock", cclock,
+				"-mclock", mclock,
+				"-cvddc", cvddc,
+				"-mvddc", mvddc);
 
-	public void claymoreStarter() throws IOException{
+		Process minerProcess;
 		try {
-			ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
-                    "-epool",epool,"-ewal",ewal,"-epsw",epsw,"-tt",tt,"-fanmin",fanmin,"-fanmax",fanmax,"-dcri",dcri,"-cclock",cclock,"-mclock",mclock,"-cvddc",cvddc,"-mvddc",mvddc);
-
-			Process p = pb.start();
-			p.getOutputStream();
-
-            new Thread(new Runnable() {
-            		@Override
-                public void run(){
-                    claymoreStats = "be back in 4s";
-                    while (true) {
-                        try { Thread.sleep(4000); } catch (Exception e) {}
-
-                        // we are not in the event thread currently so we should not update the UI here
-                        // this is a good place to do some slow, background loading, e.g. load from a server or from a file system
-                        if (p.isAlive()){
-                            try { claymoreStats = output(p.getInputStream()); } catch (IOException e) { e.printStackTrace(); }
-                        }
-                    }
-                }
-            }).start();
-
-		} catch (IOException f) {
-			f.printStackTrace();
-			System.out.println("Claymore is not executing");
+			minerProcess = pb.start();
+		} catch (IOException e) {
+			System.err.println("Failed to start miner process");
+			e.printStackTrace();
+			return;
 		}
+		//p.getOutputStream();
+		final Thread outputListener = new Thread() {
+			private final static String ETH_GPU0_PREFIX  = "ETH: GPU0 ";
+			private final static String ETH_GPU0_POSTFIX = " Mh/s";
+			private final static String GPU0_PREFIX  = "GPU0 t=";
+			private final static String GPU0_POSTFIX = "%";
+			private final static String GPU0_MIDDLE = "C fan=";
+			
+			@Override
+			public void run() {
+				String statsLine = null;
+				final BufferedReader reader =  new BufferedReader(new InputStreamReader(minerProcess.getInputStream()));
+				while (true) {
+					if (minerProcess.isAlive()) {
+						try {
+							statsLine = reader.readLine();
+						} catch (IOException e1) {
+							try { Thread.sleep(1000); } catch (InterruptedException e) { return; }
+							continue;
+						}
+						if (null == statsLine || 0 == statsLine.length()) {
+							try { Thread.sleep(500); } catch (InterruptedException e) { return; }
+							continue;
+						}
+						parseStatsLine(statsLine);
+						continue;
+					}
+					statsLine = "Claymore had finished already with exit code: " + minerProcess.exitValue();
+					MiningController.claymoreStats = statsLine;
+					System.err.println(statsLine);
+					final BufferedReader errorReader =  new BufferedReader(new InputStreamReader(minerProcess.getErrorStream()));
+					String errorLine;
+					try {
+						while ((errorLine = errorReader.readLine()) != null) System.err.println(errorLine);
+					} catch (IOException e) {}
+					return;
+				}
+			}
+
+			private void parseStatsLine(final String statsLine) {
+				if (MinerControllerApplication.DEBUG) System.out.println(statsLine);
+				MiningController.claymoreStats = statsLine;
+				if (statsLine.startsWith(ETH_GPU0_PREFIX) && statsLine.endsWith(ETH_GPU0_POSTFIX)) {
+					gpu0speed = statsLine.substring(ETH_GPU0_PREFIX.length(), statsLine.length() - ETH_GPU0_POSTFIX.length());
+					if (MinerControllerApplication.DEBUG) System.out.println("gpu0speed: " + gpu0speed + " Mh/s");
+					return;
+				}
+				if (statsLine.startsWith(GPU0_PREFIX) && statsLine.endsWith(GPU0_POSTFIX)) {
+					gpu0temperature = statsLine.substring(GPU0_PREFIX.length(), statsLine.indexOf(GPU0_MIDDLE));
+					gpu0fan = statsLine.substring(statsLine.indexOf(GPU0_MIDDLE) + GPU0_MIDDLE.length());
+					if (MinerControllerApplication.DEBUG) System.out.println("gpu0temperature: " + gpu0temperature
+							+ "C gpu0fan: " + gpu0fan);
+					return;
+				}
+			}
+		};
+		outputListener.setName("Claymore listener");
+		outputListener.start();
 	}
 }
