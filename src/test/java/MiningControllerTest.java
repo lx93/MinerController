@@ -28,6 +28,6 @@ public class MiningControllerTest {
 	@Test public void testClaymoreStarter() throws IOException {
 		final MiningController miningController = new MiningController();
 		miningController.claymoreStarter();
-		try { Thread.sleep(300000); } catch (Exception e) {}
+		try { Thread.sleep(300000); } catch (InterruptedException e) {}
 	}
 }
