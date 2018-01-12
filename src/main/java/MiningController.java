@@ -11,9 +11,9 @@ public class MiningController {
 
 	SettingsController controller = new SettingsController();
     public static String claymoreStats;
-    public static String gpu0speed;
-    public static String gpu0temperature;
-    public static String gpu0fan;
+    public static String gpu0speed = "0";
+    public static String gpu0temperature = "0";
+    public static String gpu0fan = "0";
 
 //The following variables are all configurations for Claymore
     String epool = "eth-us-east1.nanopool.org:9999";

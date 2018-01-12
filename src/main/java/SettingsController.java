@@ -48,7 +48,7 @@ public class SettingsController {
     public String returnMiningAddress(){
         if (addressRead()!=null){
 //            System.out.println(addressRead());
-            System.out.println("the supplied mining address is at:" + addressRead());
+//            System.out.println("the supplied mining address is at:" + addressRead());
             return addressRead();
         }
         else{
@@ -56,5 +56,4 @@ public class SettingsController {
             return "address unavailable";
         }
     }
-//--------------------------------------------------------------------------------------
 }

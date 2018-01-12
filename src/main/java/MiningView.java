@@ -15,6 +15,9 @@ public class MiningView {
     public Text hashrateText = new Text();
     public Text walletText = new Text();
     public TextField claymoreText = new TextField();
+    public TextField hashrateTextfield = new TextField();
+    public TextField tempTextfield = new TextField();
+    public TextField fanTextfield = new TextField();
     public boolean buttonStatus = true;
     public SettingsController controller = new SettingsController();
 
@@ -24,8 +27,10 @@ public class MiningView {
 		updateHashrate();
 		updateWallet();
 		updateClaymoreStatus();
+		updateFanText();
+		updateHashrateText();
+		updateTempText();
 	}
-
 
 
 //this function updates wallet address
@@ -33,23 +38,9 @@ public class MiningView {
 	    new Thread(new Runnable() {
 	        public void run(){
 	            while (true) {
-
-                    //initial run before constant update every minute
                     walletText.setText("current wallet: " + controller.returnMiningAddress().substring(9));
-//                    System.out.println("init print");
-
-                    //this is just for demo purposes, 60000 = one minute
                     try {
                         Thread.sleep(2000); } catch (Exception e) {}
-
-
-//                    Platform.runLater(new Runnable() {
-//                        public void run() {
-//                            // we are now back in the EventThread and can update the GUI
-//                            walletText.setText("current wallet: " + controller.returnMiningAddress());
-//                            System.out.println("thread print");
-//                        }
-//                    });
                 }
             }
         }).start();
@@ -61,22 +52,9 @@ public class MiningView {
 		new Thread(new Runnable() {
 			public void run() {
 				while (true) {
-					//initial run before constant update every minute
                     String balance = miningController.returnBalance();
 					balanceText.setText(balance + " milliether");
-
-					//this is just for demo purposes, 60000 = one minute
-					try { Thread.sleep(60000); } catch (Exception e) {}
-
-					// we are not in the event thread currently so we should not update the UI here
-					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
-
-//					Platform.runLater(new Runnable() {
-//						public void run() {
-//							// we are now back in the EventThread and can update the GUI
-//							balanceText.setText(balance + " ETH");
-//						}
-//					});
+                    try { Thread.sleep(60000); } catch (Exception e) {}
 				}
 			}
 		}).start();
@@ -88,22 +66,9 @@ public class MiningView {
 		new Thread(new Runnable() {
 			public void run() {
                 while (true) {
-					//initial run before constant update every minute
                     String hashrate = miningController.returnHashrate();
                     hashrateText.setText("current hashrate: " + hashrate + " MH/s");
-
-                    //this is just for demo purposes, 60000 = one minute
-					try { Thread.sleep(60000); } catch (Exception e) {}
-
-					// we are not in the event thread currently so we should not update the UI here
-					// this is a good place to do some slow, background loading, e.g. load from a server or from a file system
-
-//					Platform.runLater(new Runnable() {
-//						public void run() {
-//							// we are now back in the EventThread and can update the GUI
-//							hashrateText.setText("current hashrate: " + hashrate + " MH/s");
-//						}
-//					});
+                    try { Thread.sleep(60000); } catch (Exception e) {}
 				}
 			}
 		}).start();
@@ -117,16 +82,51 @@ public class MiningView {
                 while (true) {
                     //initial run before constant update every minute
                     claymoreText.setText(MiningController.claymoreStats);
-                    //TODO  MiningController.gpu0fan, MiningController.gpu0speed, and MiningController.gpu0temperature
                     try { Thread.sleep(500); } catch (InterruptedException e) {}
                 }
             }
         }.start();
 	}
 
+	public void updateHashrateText() throws IOException {
+        new Thread() {
+            @Override
+            public void run() {
+                while (true) {
+                    hashrateTextfield.setText(MiningController.gpu0speed);
+                    try { Thread.sleep(500); } catch (InterruptedException e) {}
+                }
+            }
+        }.start();
+    }
+
+    public void updateFanText() throws IOException {
+        new Thread() {
+            @Override
+            public void run() {
+                while (true) {
+                    fanTextfield.setText(MiningController.gpu0fan);
+                    try { Thread.sleep(500); } catch (InterruptedException e) {}
+                }
+            }
+        }.start();
+    }
+
+    public void updateTempText() throws IOException {
+        new Thread() {
+            @Override
+            public void run() {
+                while (true) {
+                    tempTextfield.setText(MiningController.gpu0temperature);
+                    try { Thread.sleep(500); } catch (InterruptedException e) {}
+                }
+            }
+        }.start();
+    }
 
 
-	//Controls the state of the mineButton
+
+    //Controls the state of the mineButton
 	public void mineButtonController () throws IOException {
 		if (buttonStatus) {
 			buttonStatus = false;

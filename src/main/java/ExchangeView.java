@@ -12,7 +12,7 @@ public class ExchangeView {
     public TextField output_btcTF;
 
 
-    ExchangeController controller = new ExchangeController();
+    ExchangeController exchangeController = new ExchangeController();
 
 
     //class constructor
@@ -23,13 +23,11 @@ public class ExchangeView {
 
     // This function updates eth_btc rate section on the screen
     public void update_eth_btcRate() {
-
-
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
                     //initial run before constant update every minute
-                    String rate = controller.eth_btcRate();
+                    String rate = exchangeController.eth_btcRate();
                     eth_btcText.setText("Current exchange rate: 1ETH = " + rate + " BTC");
                     output_btcTF.setText(rate);
 

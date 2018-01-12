@@ -38,6 +38,5 @@
             <Font size="58.0" />
          </font>
       </Text>
-      <Text fx:id="addressText" layoutX="358.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="address" wrappingWidth="376.7294921875" />
        </children>
 </AnchorPane>

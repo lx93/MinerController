@@ -1,32 +1,3 @@
-����������������������������������������������������������������ͻ
-�     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      �
-����������������������������������������������������������������ͼ
-
-ETH: 1 pool is specified
-Main Ethereum pool is eth-us-east1.nanopool.org:9999
-DCR: 0 pool is specified
-At least 16 GB of Virtual Memory is required for multi-GPU systems
-Make sure you defined GPU_MAX_ALLOC_PERCENT 100
-Be careful with overclocking, use default clocks for first tests
-Press "s" for current statistics, "0".."9" to turn on/off cards, "r" to reload pools, "e" or "d" to select current pool 
-OpenCL initializing...
-
-AMD Cards available: 1 
-GPU #0: Ellesmere, 3975 MB available, 32 compute units
-GPU #0 recognized as Radeon RX 470/570
-POOL/SOLO version
-GPU #0: algorithm ASM
-No NVIDIA CUDA GPUs detected.
-Total cards: 1 
-AMD ADL library not found.
-ETH: Stratum - connecting to 'eth-us-east1.nanopool.org' <144.217.14.109> port 9999
-ETH: Stratum - Connected (eth-us-east1.nanopool.org:9999)
-No pool specified for Decred! Ethereum-only mining mode is enabled
-ETHEREUM-ONLY MINING MODE ENABLED (-mode 1)
-ETH: eth-proxy stratum mode
-Watchdog enabled
-Remote management (READ-ONLY MODE) is enabled on port 3333
-
 ETH: Authorized
 Setting DAG epoch #162...
 Setting DAG epoch #162 for GPU0
