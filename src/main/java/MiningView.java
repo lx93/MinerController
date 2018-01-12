@@ -1,17 +1,11 @@
 
-import java.awt.*;
 import java.io.IOException;
 
-import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
 
-import javafx.application.Platform;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-
-import java.io.*;
 
 public class MiningView {
 
@@ -117,20 +111,17 @@ public class MiningView {
 
 
 	public void updateClaymoreStatus() throws IOException {
-
-        new Thread(new Runnable() {
-            public void run(){
+		new Thread() {
+			@Override
+			public void run() {
                 while (true) {
-
                     //initial run before constant update every minute
                     claymoreText.setText(MiningController.claymoreStats);
-
-                    //this is just for demo purposes, 60000 = one minute
-                    try {
-                        Thread.sleep(2000); } catch (Exception e) {}
+                    //TODO  MiningController.gpu0fan, MiningController.gpu0speed, and MiningController.gpu0temperature
+                    try { Thread.sleep(500); } catch (InterruptedException e) {}
                 }
             }
-        }).start();
+        }.start();
 	}
 
 
