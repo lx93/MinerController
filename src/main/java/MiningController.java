@@ -196,14 +196,17 @@ public class MiningController {
 				final BufferedReader reader =  new BufferedReader(new InputStreamReader(minerProcess.getInputStream()));
 				while (true) {
 					if (minerProcess.isAlive()) {
-					    //System.out.println("minerProcess is alive!");
+					    System.out.println("minerProcess is alive!");
 						try {
 							statsLine = reader.readLine();
 						} catch (IOException e1) {
+							e1.printStackTrace();
+							System.out.println("sleep 1000ms");
 							try { Thread.sleep(1000); } catch (InterruptedException e) { return; }
 							continue;
 						}
 						if (null == statsLine || 0 == statsLine.length()) {
+							System.out.println("sleep 500ms");
 							try { Thread.sleep(500); } catch (InterruptedException e) { return; }
 							continue;
 						}
@@ -229,14 +232,15 @@ public class MiningController {
                 }
 				if (statsLine.startsWith(ETH_GPU0_PREFIX) && statsLine.endsWith(ETH_GPU0_POSTFIX)) {
 					gpu0speed = statsLine.substring(ETH_GPU0_PREFIX.length(), statsLine.length() - ETH_GPU0_POSTFIX.length());
+					System.out.println("#Extracted GPU0 Speed (Mh/s): " + gpu0speed);
 					if (MinerControllerApplication.DEBUG) System.out.println("gpu0speed: " + gpu0speed + " Mh/s");
 					return;
 				}
 				if (statsLine.startsWith(GPU0_PREFIX) && statsLine.endsWith(GPU0_POSTFIX)) {
 					gpu0temperature = statsLine.substring(GPU0_PREFIX.length(), statsLine.indexOf(GPU0_MIDDLE));
-					gpu0fan = statsLine.substring(statsLine.indexOf(GPU0_MIDDLE) + GPU0_MIDDLE.length());
-					if (MinerControllerApplication.DEBUG) System.out.println("gpu0temperature: " + gpu0temperature
-							+ "C gpu0fan: " + gpu0fan);
+					System.out.println("#Extracted GPU0 Temperature (C): " + gpu0temperature);
+					gpu0fan = statsLine.substring(statsLine.indexOf(GPU0_MIDDLE) + GPU0_MIDDLE.length(), statsLine.length() - 1);
+					System.out.println("#Extracted GPU0 Fan speed (%): " + gpu0fan);
 					return;
 				}
 			}
