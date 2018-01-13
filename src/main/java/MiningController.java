@@ -34,7 +34,7 @@ public class MiningController {
 
 	public String getPathToMiningProgram() {
 		return MinerControllerApplication.DEBUG ? "src/main/resources/bash/emulateClaymore.sh"
-				: "~/Desktop/Claymore/ethdcrminer64";
+				: "./Desktop/Claymore/ethdcrminer64";
     }
 
 	public String returnBalance() {
@@ -207,6 +207,7 @@ public class MiningController {
 							try { Thread.sleep(500); } catch (InterruptedException e) { return; }
 							continue;
 						}
+						System.out.println(statsLine);
 						parseStatsLine(statsLine);
 						continue;
 					}
