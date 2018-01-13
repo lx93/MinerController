@@ -38,7 +38,11 @@ public class MiningController {
     }
 
 	public String returnBalance() {
-		return String.format("%.2f", Double.parseDouble(balance()) * 1000);
+		try {
+			return String.format("%.2f", Double.parseDouble(balance()) * 1000);
+		} catch (NumberFormatException e) {
+			return "loading...";
+		}
 	}
 
 	private String balance() {
