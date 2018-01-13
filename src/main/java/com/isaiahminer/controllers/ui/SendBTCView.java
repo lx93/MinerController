@@ -1,3 +1,5 @@
+package com.isaiahminer.controllers.ui;
+
 import javafx.scene.text.Text;
 
 public class SendBTCView {

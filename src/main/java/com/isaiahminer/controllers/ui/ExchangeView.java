@@ -1,9 +1,13 @@
-import javafx.application.Platform;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
+package com.isaiahminer.controllers.ui;
+
+import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
+
+import com.isaiahminer.controllers.crypto.ExchangeController;
+
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class ExchangeView {
 

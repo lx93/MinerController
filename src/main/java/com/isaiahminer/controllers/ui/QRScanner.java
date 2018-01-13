@@ -1,15 +1,23 @@
-import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
-import com.google.zxing.*;
-import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
-import com.google.zxing.common.HybridBinarizer;
+package com.isaiahminer.controllers.ui;
 
-import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.util.EnumMap;
 import java.util.Map;
+
+import javax.swing.JFrame;
+
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.DecodeHintType;
+import com.google.zxing.LuminanceSource;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.NotFoundException;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
+import com.google.zxing.common.HybridBinarizer;
 
 public class QRScanner {
 
@@ -32,7 +40,7 @@ public class QRScanner {
 
         LuminanceSource source = new BufferedImageLuminanceSource(image);
         BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-        Map<DecodeHintType,Object> pureHints = new EnumMap<>(DecodeHintType.class);
+        Map<DecodeHintType, Object> pureHints = new EnumMap<>(DecodeHintType.class);
         pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
 
         // parsing the QR into result object
@@ -57,7 +65,7 @@ public class QRScanner {
 
 
     // this creates a Panel to be fitted into the JFrame passed in as an argument
-    public void showScanner(JFrame window){
+    public void showScanner(final JFrame window){
         webcam.open();
         WebcamPanel panel = new WebcamPanel(webcam);
         panel.setFPSDisplayed(true);

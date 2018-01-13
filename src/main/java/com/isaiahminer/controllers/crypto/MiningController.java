@@ -1,19 +1,25 @@
-import java.io.*;
+package com.isaiahminer.controllers.crypto;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.isaiahminer.MinerControllerApplication;
+import com.isaiahminer.controllers.ui.MiningView;
+import com.isaiahminer.controllers.ui.SettingsController;
+
 public class MiningController {
 
+	private final MiningView miningTab;
 	SettingsController controller = new SettingsController();
-    public static String claymoreStats;
-    public static String gpu0speed = "0";
-    public static String gpu0temperature = "0";
-    public static String gpu0fan = "0";
 
 //The following variables are all configurations for Claymore
     String epool = "eth-us-east1.nanopool.org:9999";
@@ -28,8 +34,8 @@ public class MiningController {
     String cvddc = "810";
     String mvddc = "810";
 
-    public MiningController() {
-    		super();
+    public MiningController(final MiningView miningTab) {
+    		this.miningTab = miningTab;
 	}
 
 	public String getPathToMiningProgram() {
@@ -200,27 +206,23 @@ public class MiningController {
 				final BufferedReader reader =  new BufferedReader(new InputStreamReader(minerProcess.getInputStream()));
 				while (true) {
 					if (minerProcess.isAlive()) {
-					    System.out.println("minerProcess is alive!");
+					    //System.out.println("minerProcess is alive!");
 						try {
 							statsLine = reader.readLine();
 						} catch (IOException e1) {
 							e1.printStackTrace();
 							System.out.println("sleep 1000ms");
-							try { Thread.sleep(1000); } catch (InterruptedException e) { return; }
+							try { Thread.sleep(1000); } catch (InterruptedException e) {}
 							continue;
 						}
 						if (null == statsLine || 0 == statsLine.length()) {
-							System.out.println("sleep 500ms");
-							try { Thread.sleep(500); } catch (InterruptedException e) { return; }
+							try { Thread.sleep(500); } catch (InterruptedException e) {}
 							continue;
 						}
-						System.out.println(statsLine);
 						parseStatsLine(statsLine);
 						continue;
 					}
-					statsLine = "Claymore had finished already with exit code: " + minerProcess.exitValue();
-					MiningController.claymoreStats = statsLine;
-					System.err.println(statsLine);
+					parseStatsLine("Claymore had finished already with exit code: " + minerProcess.exitValue());
 					final BufferedReader errorReader =  new BufferedReader(new InputStreamReader(minerProcess.getErrorStream()));
 					String errorLine;
 					try {
@@ -230,23 +232,27 @@ public class MiningController {
 				}
 			}
 
-			private void parseStatsLine(final String statsLine) {
-				if (MinerControllerApplication.DEBUG) System.out.println(statsLine);{
-				    MiningController.claymoreStats = statsLine;
-                }
+			/**
+			 * 27(\e) 91([) 48(0)                   109(m) 
+			 * 27(\e) 91([) 48(0) 59(;) 51(3) 54(6) 109(m)
+			 * 27(\e) 91([) 48(0) 59(;) 51(3) 53(5) 109(m)
+			 * 27(\e) 91([) 48(0) 59(;) 51(3) 50(2) 109(m)
+			 * 27(\e) 91([) 49(1) 59(;) 51(3) 50(2) 109(m)
+			 */
+			private void parseStatsLine(String statsLine) {
+				statsLine = statsLine.replaceAll("\\e\\[\\d(;\\d{2,3})?m", "");
+				System.out.println(statsLine);
+
 				if (statsLine.startsWith(ETH_GPU0_PREFIX) && statsLine.endsWith(ETH_GPU0_POSTFIX)) {
-					gpu0speed = statsLine.substring(ETH_GPU0_PREFIX.length(), statsLine.length() - ETH_GPU0_POSTFIX.length());
-					System.out.println("#Extracted GPU0 Speed (Mh/s): " + gpu0speed);
-					if (MinerControllerApplication.DEBUG) System.out.println("gpu0speed: " + gpu0speed + " Mh/s");
+					miningTab.hashrateTextfield.setText(statsLine.substring(ETH_GPU0_PREFIX.length(), statsLine.length() - ETH_GPU0_POSTFIX.length()));
 					return;
 				}
 				if (statsLine.startsWith(GPU0_PREFIX) && statsLine.endsWith(GPU0_POSTFIX)) {
-					gpu0temperature = statsLine.substring(GPU0_PREFIX.length(), statsLine.indexOf(GPU0_MIDDLE));
-					System.out.println("#Extracted GPU0 Temperature (C): " + gpu0temperature);
-					gpu0fan = statsLine.substring(statsLine.indexOf(GPU0_MIDDLE) + GPU0_MIDDLE.length(), statsLine.length() - 1);
-					System.out.println("#Extracted GPU0 Fan speed (%): " + gpu0fan);
+					miningTab.tempTextfield.setText(statsLine.substring(GPU0_PREFIX.length(), statsLine.indexOf(GPU0_MIDDLE)));
+					miningTab.fanTextfield.setText(statsLine.substring(statsLine.indexOf(GPU0_MIDDLE) + GPU0_MIDDLE.length(), statsLine.length() - 1));
 					return;
 				}
+				miningTab.claymoreText.setText(statsLine);
 			}
 		};
 		outputListener.setName("Claymore listener");

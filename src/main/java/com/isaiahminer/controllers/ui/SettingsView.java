@@ -1,14 +1,13 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package com.isaiahminer.controllers.ui;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 public class SettingsView {
 
     QRScanner scanner = new QRScanner();
     SettingsController controller = new SettingsController();
     JButton shutterBtn = new JButton("Capture!");
-
 
     public void QRScanFrame() {
         JFrame QRFrame = new JFrame();

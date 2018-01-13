@@ -1,11 +1,12 @@
+package com.isaiahminer.helpers;
 
+import org.apache.commons.codec.binary.Hex;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.Utils;
 
-import org.apache.commons.codec.binary.Hex;
-import org.bitcoinj.wallet.Wallet;
+import com.isaiahminer.controllers.ui.WalletController;
 
 public class BTCHelper {
 

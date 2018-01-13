@@ -1,6 +1,12 @@
-import javax.swing.*;
-import java.awt.*;
+package com.isaiahminer.controllers.ui;
 
+import java.awt.FlowLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import com.isaiahminer.helpers.BTCHelper;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,7 +41,7 @@ public class WalletView {
 
     public void sendETHFrame (){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("SendBTCFrame.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("com/isaiahminer/resources/SendBTCFrame.fxml"));
             Parent root1 = fxmlLoader.load();
             SendBTCView sendBTCView = fxmlLoader.<SendBTCView>getController();
             sendBTCView.addressText.setText(address);

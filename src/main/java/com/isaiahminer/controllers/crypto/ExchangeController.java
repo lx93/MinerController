@@ -1,19 +1,20 @@
-
-
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+package com.isaiahminer.controllers.crypto;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.isaiahminer.MinerControllerApplication;
 
 public class ExchangeController {
 
@@ -149,11 +150,6 @@ public class ExchangeController {
 		http.sendPost();
 
 	}
-
-
-
-
-
 
 	// HTTP POST request
 	private void sendPost() throws Exception {
