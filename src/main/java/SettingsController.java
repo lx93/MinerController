@@ -20,7 +20,7 @@ public class SettingsController {
             out.println(newAddress);
             System.out.println("file printed");
         } catch (FileNotFoundException e) {
-            System.out.println("ETHaddress file not found");
+            System.err.println("ETHaddress file not found");
         } finally {
         		if (null != out) out.close();
         }
@@ -31,11 +31,13 @@ public class SettingsController {
         try (BufferedReader br = new BufferedReader(new FileReader("ETHaddress"))) {
             address = br.readLine();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        		System.err.println("ETHaddress file not found. Creating a default one.");
+        		addressWrite("ethereum:0x54d0b70baa6577b1118dde00de22bdbcafb1e8aa");
+        		address = "ethereum:0x54d0b70baa6577b1118dde00de22bdbcafb1e8aa";
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("ETHaddress file not found");
-            return null;
+	    		System.err.println("Failed to read ETHaddress. Trying to overide with a default one.");
+	    		addressWrite("ethereum:0x54d0b70baa6577b1118dde00de22bdbcafb1e8aa");
+	    		address = "ethereum:0x54d0b70baa6577b1118dde00de22bdbcafb1e8aa";
         }
         return address;
     }
