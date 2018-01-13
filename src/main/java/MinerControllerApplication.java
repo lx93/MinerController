@@ -11,32 +11,32 @@ import javax.xml.parsers.ParserConfigurationException;
 
 
 
-public class MinerControllerApplication extends Application{
+public class MinerControllerApplication extends Application {
 
     final static boolean DEBUG = false;
 
-
-	public void start(Stage primaryStage) throws Exception{
+    @Override
+	public void start(Stage primaryStage) throws IOException {
+    		System.out.println(MinerControllerApplication.class.getName() + " started");
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MinerControllerFXML.fxml"));
 		primaryStage.setTitle("Isaiah Miner");
 		primaryStage.setScene(new Scene(root, 800, 450));
 		//primaryStage.setFullScreen(true);
 		primaryStage.show();
 	}
-// terminates the program when clicked X on window
+
+	/** 
+	 * Terminates the program when clicked X on window
+	 */
 	@Override
-	public void stop(){System.exit(0);}
-
-
-	public static void main(String[] args) throws IOException, ParserConfigurationException {
-
-
-	    if (DEBUG){
-	        System.out.println("Debug mode is on!!!!!!!!!!!!!!!!!");
-        }
-
-		launch(args);
-
+	public void stop() {
+		System.out.println(MinerControllerApplication.class.getName() + " stopped");
+		System.exit(0);
 	}
 
+	public static void main(String[] args) throws IOException, ParserConfigurationException {
+		System.out.println("Debug mode is " + (MinerControllerApplication.DEBUG ? "on!!!!!!!!!!!!!!!!!" : "off"));
+		launch(args);
+		System.out.println(MinerControllerApplication.class.getName() + " launched");
+	}
 }
