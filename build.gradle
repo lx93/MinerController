@@ -1,5 +1,9 @@
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+  //id 'com.github.johnrengelman.plugin-shadow' version '2.0.2'
+  //id 'eu.appsatori.fatjar'
+  id 'java'
+  id 'application'
+}
 
 mainClassName = 'MinerControllerApplication'
 
@@ -30,4 +34,19 @@ jar{
 	manifest{
 		attributes("Main-Class":"MinerControllerApplication")
 	}
+}
+
+task fatJar(type: Jar) {
+	version = '0.1.0'
+	manifest {
+		attributes('Implementation-Title': 'Isaiah Miner',
+        		'Implementation-Version': version,
+        		'Main-Class': 'MinerControllerApplication')
+	}
+	exclude(['Claymore/**'])
+	exclude(['bash/**'])
+	exclude(['META-INF/**'])
+    baseName = project.name + '-full'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
