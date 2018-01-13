@@ -51,7 +51,8 @@ public class MiningView {
 	public void updateBalance(){
 		new Thread(new Runnable() {
 			public void run() {
-				while (true) {
+                try { Thread.sleep(1000); } catch (Exception e) {}
+                while (true) {
                     String balance = miningController.returnBalance();
 					balanceText.setText(balance + " milliether");
                     try { Thread.sleep(60000); } catch (Exception e) {}
@@ -66,6 +67,7 @@ public class MiningView {
 		new Thread(new Runnable() {
 			public void run() {
                 while (true) {
+                    try { Thread.sleep(1000); } catch (Exception e) {}
                     String hashrate = miningController.returnHashrate();
                     hashrateText.setText("current hashrate: " + hashrate + " MH/s");
                     try { Thread.sleep(60000); } catch (Exception e) {}

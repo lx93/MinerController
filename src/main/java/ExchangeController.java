@@ -22,7 +22,7 @@ public class ExchangeController {
 	public String eth_btcRate(){
 		String URLAddress = "https://shapeshift.io/rate/eth_btc";
 		if (MinerControllerApplication.DEBUG) {
-			return jsonParse("{\"pair\":\"eth_btc\",\"rate\":\"1\"}","rate");
+			return jsonParse("{\"pair\":\"eth_btc\",\"rate\":\"888\"}","rate");
 		}
 		else{
 			return jsonParse(jsonToString(connectAPI(URLAddress)),"rate");

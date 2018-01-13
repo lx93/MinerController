@@ -192,10 +192,11 @@ public class MiningController {
 			
 			@Override
 			public void run() {
-				String statsLine = null;
+				String statsLine;
 				final BufferedReader reader =  new BufferedReader(new InputStreamReader(minerProcess.getInputStream()));
 				while (true) {
 					if (minerProcess.isAlive()) {
+					    //System.out.println("minerProcess is alive!");
 						try {
 							statsLine = reader.readLine();
 						} catch (IOException e1) {
@@ -222,8 +223,9 @@ public class MiningController {
 			}
 
 			private void parseStatsLine(final String statsLine) {
-				if (MinerControllerApplication.DEBUG) System.out.println(statsLine);
-				MiningController.claymoreStats = statsLine;
+				if (MinerControllerApplication.DEBUG) System.out.println(statsLine);{
+				    MiningController.claymoreStats = statsLine;
+                }
 				if (statsLine.startsWith(ETH_GPU0_PREFIX) && statsLine.endsWith(ETH_GPU0_POSTFIX)) {
 					gpu0speed = statsLine.substring(ETH_GPU0_PREFIX.length(), statsLine.length() - ETH_GPU0_POSTFIX.length());
 					if (MinerControllerApplication.DEBUG) System.out.println("gpu0speed: " + gpu0speed + " Mh/s");

@@ -26,14 +26,14 @@ public class ExchangeView {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
+                    try { Thread.sleep(1000);} catch (Exception e) {}
                     //initial run before constant update every minute
                     String rate = exchangeController.eth_btcRate();
                     eth_btcText.setText("Current exchange rate: 1ETH = " + rate + " BTC");
                     output_btcTF.setText(rate);
 
                     //this is just for demo purposes
-                    try {
-                        Thread.sleep(60000); } catch (Exception e) {}
+                    try { Thread.sleep(60000); } catch (Exception e) {}
 
                     // we are not in the event thread currently so we should not update the UI here
                     // this is a good place to do some slow, background loading, e.g. load from a server or from a file system
