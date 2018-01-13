@@ -144,31 +144,6 @@ public class MiningController {
 		}
 	}
 
-    /**
-     * creates a BufferedReader that reads what Claymore prints, and returns it as a string
-     * @param inputStream
-     * @return
-     * @throws IOException
-    private String output(InputStream inputStream) throws IOException {
-        StringBuilder sb = new StringBuilder();
-        InputStreamReader isr = new InputStreamReader(inputStream);
-        BufferedReader br = new BufferedReader(isr);
-        try {
-            //System.out.println(inputStream.available());
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.contains("�����")&& isr!=null) continue;
-                sb.append(line + System.getProperty("line.separator"));
-            }
-        } finally {
-            if (br!=null){br.close();}
-        }
-        final String result = sb.toString();
-        System.out.println(result);
-        return result;
-    }
-    */
-
 	public void claymoreStarter() {
 		final ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
 				"-epool", epool,

@@ -6,7 +6,6 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import com.isaiahminer.controllers.crypto.MiningController;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -38,59 +37,28 @@ public class MiningView {
     @FXML
     public void initialize() {
 		System.out.println(MiningView.class.getName() + " is being initialized");
-    		//updateBalance();
-		//updateHashrate();
-		//updateWallet();
-		//updateClaymoreStatus();
+		updateWalletUI();
     }
-	/**
-	 * Updates wallet address
-	 */
-    public void updateWallet() {
-    		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-	            while (true) {
-                    walletText.setText("Current Wallet: " + controller.returnMiningAddress().substring(9));
-                    try { Thread.sleep(2000); } catch (InterruptedException e) {}
-                }
-			}
-    		});
-    }
-
-
-	/**
-	 * Updates balance section on the screen
-	 */
-	public void updateBalance() {
-		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-                while (true) {
-                    String balance = miningController.returnBalance();
-					balanceText.setText(balance + " milliether");
-                    try { Thread.sleep(60000); } catch (InterruptedException e) {}
-				}
-			}
-		});
-	}
-
 
     /**
-	 * Updates hashrate section on the screen
+	 * Updates wallet UI
 	 */
-	public void updateHashrate() {
-		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-                while (true) {
-                    String hashrate = miningController.returnHashrate();
-                    hashrateText.setText("current hashrate: " + hashrate + " MH/s");
-                    try { Thread.sleep(60000); } catch (InterruptedException e) {}
-				}
-			}
-		});
-	}
+    public void updateWalletUI() {
+    		new Thread() {
+    			@Override
+    			public void run() {
+    	            while (true) {
+                    walletText.setText("Current Wallet: " + controller.returnMiningAddress().substring(9));
+                    try { Thread.sleep(750); } catch (InterruptedException e) {}
+                    balanceText.setText(miningController.returnBalance() + " milliether");
+                    try { Thread.sleep(750); } catch (InterruptedException e) {}
+                    hashrateText.setText("current hashrate: " + miningController.returnHashrate() + " MH/s");
+                    try { Thread.sleep(750); } catch (InterruptedException e) {}
+                }
+    			}
+    		}.start();
+    }
+
 
     /** 
      * Controls the state of the mineButton
