@@ -19,10 +19,12 @@ public class MinerControllerApplication extends Application {
 	public void start(Stage primaryStage) throws IOException {
     		System.out.println(MinerControllerApplication.class.getName() + " started");
 		Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("MinerControllerFXML.fxml"));
+		System.out.println("MinerControllerFXML.fxml found");
 		primaryStage.setTitle("Isaiah Miner");
 		primaryStage.setScene(new Scene(root, 800, 450));
 		//primaryStage.setFullScreen(true);
 		primaryStage.show();
+		System.out.println("MinerControllerFXML.fxml shown");
 	}
 
 	/** 
