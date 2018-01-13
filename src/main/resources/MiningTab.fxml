@@ -43,8 +43,8 @@
       <TextField fx:id="hashrateTextfield" layoutX="103.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
       <TextField fx:id="tempTextfield" layoutX="264.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
       <TextField fx:id="fanTextfield" layoutX="427.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
-      <Text layoutX="34.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="hashrate" />
-      <Text layoutX="175.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="temperature" wrappingWidth="98.97265625" />
-      <Text layoutX="351.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fan speed" wrappingWidth="98.97265625" />
+      <Text layoutX="34.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hashrate (Mh/s)" />
+      <Text layoutX="175.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature (C)" wrappingWidth="98.97265625" />
+      <Text layoutX="351.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fan Speed (%)" wrappingWidth="98.97265625" />
   </children>
 </AnchorPane>
