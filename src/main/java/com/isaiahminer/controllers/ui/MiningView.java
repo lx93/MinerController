@@ -1,7 +1,10 @@
+package com.isaiahminer.controllers.ui;
 
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
+
+import com.isaiahminer.controllers.crypto.MiningController;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -21,7 +24,7 @@ public class MiningView {
     @FXML public TextField fanTextfield = new TextField();
     public boolean buttonStatus = true;
     public SettingsController controller = new SettingsController();
-    public MiningController miningController = new MiningController();
+    public MiningController miningController = new MiningController(this);
 
 	/**
 	 * Public Constructor
@@ -85,24 +88,6 @@ public class MiningView {
                     hashrateText.setText("current hashrate: " + hashrate + " MH/s");
                     try { Thread.sleep(60000); } catch (InterruptedException e) {}
 				}
-			}
-		});
-	}
-
-    /**
-	 * Updates Claymore Status
-	 */
-	public void updateClaymoreStatus() {
-		Platform.runLater(new Runnable() {
-			@Override
-			public void run() {
-                while (true) {
-                    claymoreText.setText(MiningController.claymoreStats);
-                    hashrateTextfield.setText(MiningController.gpu0speed);
-                    fanTextfield.setText(MiningController.gpu0fan);
-                    tempTextfield.setText(MiningController.gpu0temperature);
-                    try { Thread.sleep(500); } catch (InterruptedException e) {}
-                }
 			}
 		});
 	}
