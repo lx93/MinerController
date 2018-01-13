@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
-import java.util.Arrays;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -220,6 +219,7 @@ public class MiningController {
 							continue;
 						}
 						parseStatsLine(statsLine);
+						try { Thread.sleep(100); } catch (InterruptedException e) {}
 						continue;
 					}
 					parseStatsLine("Claymore had finished already with exit code: " + minerProcess.exitValue());
