@@ -3,8 +3,10 @@ package com.isaiahminer.controllers.crypto;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 
 import org.json.simple.JSONObject;
@@ -18,20 +20,21 @@ import com.isaiahminer.controllers.ui.SettingsController;
 public class MiningController {
 
 	private final MiningView miningTab;
-	SettingsController controller = new SettingsController();
+	private SettingsController controller = new SettingsController();
 
 //The following variables are all configurations for Claymore
-    String epool = "eth-us-east1.nanopool.org:9999";
-    String ewal = controller.returnMiningAddress().substring(9);
-    String epsw = "x";
-    String tt = "75";
-    String fanmin = "60";
-    String fanmax = "90";
-    String dcri = "4";
-    String cclock = "1165";
-    String mclock = "2150";
-    String cvddc = "810";
-    String mvddc = "810";
+    private String epool = "eth-us-east1.nanopool.org:9999";
+    private String ewal = controller.returnMiningAddress().substring(9);//"ethereum:0x54d0b70baa6577b1118dde00de22bdbcafb1e8aa"
+    private String eworker = getHostName(); //Worker name
+    private String epsw = "x";
+    private String tt = "75";
+    private String fanmin = "60";
+    private String fanmax = "90";
+    private String dcri = "4";
+    private String cclock = "1165";
+    private String mclock = "2150";
+    private String cvddc = "810";
+    private String mvddc = "810";
 
     public MiningController(final MiningView miningTab) {
     		this.miningTab = miningTab;
@@ -148,6 +151,7 @@ public class MiningController {
 		final ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
 				"-epool", epool,
 				"-ewal", ewal,
+				"-eworker", eworker,
 				"-epsw", epsw,
 				"-tt", tt,
 				"-fanmin", fanmin,
@@ -233,5 +237,13 @@ public class MiningController {
 		};
 		outputListener.setName("Claymore listener");
 		outputListener.start();
+	}
+
+	private String getHostName() {
+		try {
+			return InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException | NullPointerException e) {}
+		final String hostname = System.getenv("HOSTNAME");
+		return null == hostname ? "IsaiahMiner" : hostname;
 	}
 }
