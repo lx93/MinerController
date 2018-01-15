@@ -6,6 +6,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import com.isaiahminer.controllers.crypto.MiningController;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -48,12 +49,15 @@ public class MiningView {
     			@Override
     			public void run() {
     	            while (true) {
-                    walletText.setText("Current Wallet: " + controller.returnMiningAddress().substring(9));
-                    try { Thread.sleep(750); } catch (InterruptedException e) {}
-                    balanceText.setText(miningController.returnBalance() + " milliether");
-                    try { Thread.sleep(750); } catch (InterruptedException e) {}
-                    hashrateText.setText("current hashrate: " + miningController.returnHashrate() + " MH/s");
-                    try { Thread.sleep(750); } catch (InterruptedException e) {}
+    	            		final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
+    	            		final String balance = miningController.returnBalance() + " milliether";
+    	            		final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
+    	            		Platform.runLater(() -> {
+                    		walletText.setText(wallet);
+                    		balanceText.setText(balance);
+                    		hashrateText.setText(hashrate);
+                    });
+                    try { Thread.sleep(3000); } catch (InterruptedException e) {}
                 }
     			}
     		}.start();
