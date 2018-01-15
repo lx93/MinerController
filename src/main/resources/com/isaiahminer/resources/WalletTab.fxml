@@ -12,7 +12,7 @@
 <?import javafx.scene.control.Label?>
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-	fx:controller="com.isaiahminer.controllers.ui.WalletView">
+	fx:controller="com.isaiahminer.controllers.ui.WalletTabController">
        <children>
           <Text layoutX="222.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Ethereum wallet balance:    10.98ETH">
              <font>

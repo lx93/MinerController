@@ -16,17 +16,15 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
-public class WalletView {
+public class WalletTabController {
 
 	String address = new String("recipient address");
     public Text addressText = new Text();
-
 
     Text notification = new Text ();
 
 	public static WalletController walletController = BTCHelper.getKeyPair();
 	QRScanner scanner = new QRScanner();
-
 
 	// Creates a JFrame which houses WalletControl Panel;
     //

@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class MiningView {
+public class MiningTabController {
 
     @FXML public Button mineButton = new Button();
     @FXML public Text balanceText = new Text();
@@ -31,13 +31,13 @@ public class MiningView {
 	 * @throws IOException
 	 * @throws ParserConfigurationException
 	 */
-	public MiningView() {
+	public MiningTabController() {
 		super();
 	}
 
     @FXML
     public void initialize() {
-		System.out.println(MiningView.class.getName() + " is being initialized");
+		System.out.println(MiningTabController.class.getName() + " is being initialized");
 		updateWalletUI();
     }
 

@@ -9,18 +9,16 @@ import com.isaiahminer.controllers.crypto.ExchangeController;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class ExchangeView {
+public class ExchangeTabController {
 
     public Text eth_btcText;
     public TextField input_ethTF;
     public TextField output_btcTF;
 
-
-    ExchangeController exchangeController = new ExchangeController();
-
+    private ExchangeController exchangeController = new ExchangeController();
 
     //class constructor
-    public ExchangeView() throws IOException, ParserConfigurationException {
+    public ExchangeTabController() throws IOException, ParserConfigurationException {
         update_eth_btcRate();
     }
 

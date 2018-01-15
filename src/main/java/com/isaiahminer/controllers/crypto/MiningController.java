@@ -14,12 +14,12 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.isaiahminer.MinerControllerApplication;
-import com.isaiahminer.controllers.ui.MiningView;
+import com.isaiahminer.controllers.ui.MiningTabController;
 import com.isaiahminer.controllers.ui.SettingsController;
 
 public class MiningController {
 
-	private final MiningView miningTab;
+	private final MiningTabController miningTab;
 	private SettingsController controller = new SettingsController();
 
 //The following variables are all configurations for Claymore
@@ -36,7 +36,7 @@ public class MiningController {
     private String cvddc = "810";
     private String mvddc = "810";
 
-    public MiningController(final MiningView miningTab) {
+    public MiningController(final MiningTabController miningTab) {
     		this.miningTab = miningTab;
 	}
 

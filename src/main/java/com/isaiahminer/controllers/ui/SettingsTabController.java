@@ -3,7 +3,7 @@ package com.isaiahminer.controllers.ui;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class SettingsView {
+public class SettingsTabController {
 
     QRScanner scanner = new QRScanner();
     SettingsController controller = new SettingsController();
