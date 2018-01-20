@@ -38,7 +38,7 @@ public class MiningTabController {
 
     @FXML
     public void initialize() {
-		System.out.println(MiningTabController.class.getName() + " is being initialized");
+		//System.out.println(MiningTabController.class.getName() + " is being initialized");
 		updateWalletUI();
     }
 
@@ -49,22 +49,24 @@ public class MiningTabController {
     		new Thread() {
     			@Override
     			public void run() {
-    	            while (true) {
-    	            		final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
-    	            		final String balance = miningController.returnBalance() + " milliether";
-    	            		final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
-    	            		final String USD = miningController.returnPrice();
-    	            		final String profit = "daily profit: $" + miningController.returnProfit();
-    	            		Platform.runLater(() -> {
-    	            		    profitText.setText(profit);
-                                walletText.setText(wallet);
-                                balanceText.setText(balance+" ≈ $"+String.format("%.2f",(Double.parseDouble(miningController.returnBalance())*Double.parseDouble(USD)/1000)));
-                                hashrateText.setText(hashrate);
-    	            		});
-    	            		try { Thread.sleep(3000); } catch (InterruptedException e) {}
-    	            }
-    			}
-    		}.start();
+				while (true) {
+					final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
+					final String balance = miningController.returnBalance() + " milliether";
+					final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
+					final String usd = miningController.returnPrice();
+					final String profit = "daily profit: $" + miningController.returnProfit();
+					final String totalBalance = balance + " ≈ $" + 
+							String.format("%.2f", (Double.parseDouble(miningController.returnBalance()) * Double.parseDouble(usd) / 1000));
+					Platform.runLater(() -> {
+						profitText.setText(profit);
+						walletText.setText(wallet);
+						balanceText.setText(totalBalance);
+						hashrateText.setText(hashrate);
+					});
+					try { Thread.sleep(3000); } catch (InterruptedException e) {}
+				}
+			}
+		}.start();
     }
 
 
