@@ -63,7 +63,7 @@ public class MiningTabController {
 					} catch  (NumberFormatException e) {
 						balance = balanceString + " milliether"; 
 					}
-					String totalBalance = balance;
+					final String totalBalance = balance;
 					Platform.runLater(() -> {
 						profitText.setText(profit);
 						walletText.setText(wallet);
