@@ -18,6 +18,7 @@ public class MiningTabController {
     @FXML public Text balanceText = new Text();
     @FXML public Text hashrateText = new Text();
     @FXML public Text walletText = new Text();
+    @FXML public Text profitText = new Text();
     @FXML public TextField claymoreText = new TextField();
     @FXML public TextField hashrateTextfield = new TextField();
     @FXML public TextField tempTextfield = new TextField();
@@ -52,19 +53,22 @@ public class MiningTabController {
     	            		final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
     	            		final String balance = miningController.returnBalance() + " milliether";
     	            		final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
+    	            		final String USD = miningController.returnPrice();
+    	            		final String profit = "daily profit: $" + miningController.returnProfit();
     	            		Platform.runLater(() -> {
-                    		walletText.setText(wallet);
-                    		balanceText.setText(balance);
-                    		hashrateText.setText(hashrate);
-                    });
-                    try { Thread.sleep(3000); } catch (InterruptedException e) {}
-                }
+    	            		    profitText.setText(profit);
+                                walletText.setText(wallet);
+                                balanceText.setText(balance+" ≈ $"+String.format("%.2f",(Double.parseDouble(miningController.returnBalance())*Double.parseDouble(USD)/1000)));
+                                hashrateText.setText(hashrate);
+    	            		});
+    	            		try { Thread.sleep(3000); } catch (InterruptedException e) {}
+    	            }
     			}
     		}.start();
     }
 
 
-    /** 
+    /**
      * Controls the state of the mineButton
      * @throws IOException
      */

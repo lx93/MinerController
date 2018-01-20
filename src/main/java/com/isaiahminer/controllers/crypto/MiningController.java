@@ -49,7 +49,7 @@ public class MiningController {
 		try {
 			return String.format("%.2f", Double.parseDouble(balance()) * 1000);
 		} catch (NumberFormatException e) {
-			return "loading...";
+			return "8.88";
 		}
 	}
 
@@ -69,6 +69,22 @@ public class MiningController {
 		return jsonParse(jsonToString(connectAPI(URLAddress)), "hashrate");
 	}
 
+	public String returnPrice() {
+        if (MinerControllerApplication.DEBUG) {
+            return jsonParse("{\"status\":true,\"data\":{\"price_btc\":0.09078,\"price_usd\":8888.88,\"price_eur\":868.86,\"price_rur\":70353.59,\"price_cny\":7859.19}}", "price_usd");
+        }
+        final String URLAddress = "https://api.nanopool.org/v1/eth/prices";
+        return jsonParse(jsonToString(connectAPI(URLAddress)), "price_usd");
+    }
+
+    public String returnProfit() {
+        if (MinerControllerApplication.DEBUG) {
+            return ("$1000/day");
+        }
+        final String URLAddress = "https://api.nanopool.org/v1/eth/approximated_earnings/28" ;
+//        System.out.println(jsonParse(jsonToString(connectAPI(URLAddress)), "day","dollars"));
+        return jsonParse(jsonToString(connectAPI(URLAddress)), "day","dollars");
+    }
 
 
 	// this function establish connection to various external APIs
@@ -105,16 +121,16 @@ public class MiningController {
 			e.printStackTrace();
 			System.out.println("Check internet connectivity"); }
 
-		String balance;
+		String string;
 
 		try {
-			balance = bufferedReader.readLine();
+			string = bufferedReader.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-			balance = "Cannot retrieve your nanopool balance";
+			string = "Cannot retrieve your nanopool balance";
 		}
 
-		return balance;
+		return string;
 
 	}
 
@@ -131,21 +147,45 @@ public class MiningController {
 		if ("hashrate".equalsIgnoreCase(dataType)) {
 			return getValueFromJson(json, dataType);
 		}
+        if ("price_usd".equalsIgnoreCase(dataType)) {
+            return getValueFromJson(json, dataType);
+        }
 		return "you are a prick";
 	}
+
+    public String jsonParse(String json, String dataType, String dataType2) {
+        if ("day".equalsIgnoreCase(dataType)) {
+            return getValueFromJson(json, dataType, dataType2);
+        }
+        return "you are a prick";
+    }
 
 	private String getValueFromJson(String json, String dataType) {
 		final JSONParser parser = new JSONParser();
 		try {
 			JSONObject jsonObject = (JSONObject) parser.parse(json);
 			JSONObject innerObject = (JSONObject) jsonObject.get("data");
-			if (null == innerObject) return "loading...";
+			if (null == innerObject) return "getValueFromJson2: JSON innerObject is null";
 			return String.valueOf(innerObject.get(dataType));
 		} catch (ParseException e) {
 			System.out.println("JSON File invalid: " + json);
-			return "loading...";
+			return "failed to parse JSON...";
 		}
 	}
+
+    private String getValueFromJson(String json, String dataType, String dataType2) {
+        final JSONParser parser = new JSONParser();
+        try {
+            JSONObject jsonObject = (JSONObject) parser.parse(json);
+            JSONObject innerObject = (JSONObject) jsonObject.get("data");
+            if (null == innerObject) return "getValueFromJson3:JSON innerObject is null";
+            JSONObject innerinnerObject = (JSONObject) innerObject.get(dataType);
+            return String.valueOf(innerinnerObject.get(dataType2));
+        } catch (ParseException e) {
+            System.out.println("JSON File invalid: " + json);
+            return "failed to parse JSON...";
+        }
+    }
 
 	public void claymoreStarter() {
 		final ProcessBuilder pb = new ProcessBuilder(getPathToMiningProgram(),
@@ -177,7 +217,7 @@ public class MiningController {
 			private final static String GPU0_PREFIX  = "GPU0 t=";
 			private final static String GPU0_POSTFIX = "%";
 			private final static String GPU0_MIDDLE = "C fan=";
-			
+
 			@Override
 			public void run() {
 				String statsLine;
@@ -238,6 +278,8 @@ public class MiningController {
 		outputListener.setName("Claymore listener");
 		outputListener.start();
 	}
+
+
 
 	private String getHostName() {
 		try {

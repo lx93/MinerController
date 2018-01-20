@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" side="BOTTOM" style="-fx-background-color: b6ccef;" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="Infinity" tabMaxWidth="Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
@@ -18,16 +10,16 @@
       	<fx:include source="MiningTab.fxml" />
       </content>
     </Tab>
-    <Tab fx:id="walletTab" text=" Wallet ">
-      <content>
-      	<fx:include source="WalletTab.fxml" />
-      </content>
-    </Tab>
-    <Tab fx:id="exchangeTab" text=" Exchange ">
-      <content>
-        <fx:include source="ExchangeTab.fxml" />
-      </content>
-    </Tab>
+    <!--<Tab fx:id="walletTab" text=" Wallet ">-->
+      <!--<content>-->
+      	<!--<fx:include source="WalletTab.fxml" />-->
+      <!--</content>-->
+    <!--</Tab>-->
+    <!--<Tab fx:id="exchangeTab" text=" Exchange ">-->
+      <!--<content>-->
+        <!--<fx:include source="ExchangeTab.fxml" />-->
+      <!--</content>-->
+    <!--</Tab>-->
     <Tab fx:id="settingsTab" text=" Settings ">
       <content>
         <fx:include source="SettingsTab.fxml" />

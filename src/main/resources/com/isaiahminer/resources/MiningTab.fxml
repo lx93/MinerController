@@ -11,25 +11,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-	fx:controller="com.isaiahminer.controllers.ui.MiningTabController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isaiahminer.controllers.ui.MiningTabController">
   <children>
     <Button fx:id="mineButton" layoutX="103.0" layoutY="208.0" mnemonicParsing="false" onAction="#mineButtonController" prefHeight="102.0" prefWidth="280.0" style="-fx-base: #b6e7c9" text="Start Mining">
       <font>
         <Font size="24.0" />
       </font>
     </Button>
-    <Text layoutX="447.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unconfirmed Balance" wrappingWidth="279.7294921875">
+    <Text layoutX="447.0" layoutY="244.0" onMouseClicked="#changeInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="Unconfirmed Balance" wrappingWidth="279.7294921875">
              <font>
                 <Font size="26.0" />
              </font></Text>
-          <Text fx:id="balanceText" layoutX="419.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." textAlignment="CENTER" wrappingWidth="334.5673828125">
+          <Text fx:id="balanceText" layoutX="391.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="loading..." textAlignment="CENTER" wrappingWidth="401.5673828125">
              <font>
                 <Font size="26.0" />
              </font>
           </Text>
           <Text fx:id="hashrateText" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current hashrate: loading..." />
-          <TextField fx:id="claymoreText" editable="false" layoutX="45.0" layoutY="379.0" prefHeight="15.0" prefWidth="630.0" promptText="Claymore Status" />
+          <TextField fx:id="claymoreText" editable="false" layoutX="45.0" layoutY="522.0" prefHeight="159.0" prefWidth="620.0" promptText="Claymore Output" />
       <Text fx:id="walletText" layoutX="360.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="current wallet: " />
       <ImageView fitHeight="94.0" fitWidth="91.0" layoutX="695.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
           <image>
@@ -44,8 +43,14 @@
       <TextField fx:id="hashrateTextfield" layoutX="103.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
       <TextField fx:id="tempTextfield" layoutX="264.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
       <TextField fx:id="fanTextfield" layoutX="427.0" layoutY="340.0" prefHeight="25.0" prefWidth="63.0" />
-      <Text layoutX="34.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="${'Hashrate\n(Mh/s)'}" />
-      <Text layoutX="175.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="${'Temperature\n(C)'}" wrappingWidth="98.97265625" />
-      <Text layoutX="351.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="${'Fan Speed\n(%)'}" wrappingWidth="98.97265625" />
+      <Text layoutX="34.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hashrate (mh/s)" wrappingWidth="80.0" />
+      <Text layoutX="175.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature (C)" wrappingWidth="85.0" />
+      <Text layoutX="351.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fan Speed (%)" wrappingWidth="80.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="487.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Downloads/mario.gif" />
+         </image>
+      </ImageView>
+      <Text fx:id="profitText" layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="daily profit: loading..." />
   </children>
 </AnchorPane>
