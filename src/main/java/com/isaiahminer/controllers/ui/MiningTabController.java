@@ -51,12 +51,19 @@ public class MiningTabController {
     			public void run() {
 				while (true) {
 					final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
-					final String balance = miningController.returnBalance() + " milliether";
 					final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
+					final String profit = "Daily Profit: $" + miningController.returnProfit();
+					final String balanceString = miningController.returnBalance();
 					final String usd = miningController.returnPrice();
-					final String profit = "daily profit: $" + miningController.returnProfit();
-					final String totalBalance = balance + " ≈ $" + 
-							String.format("%.2f", (Double.parseDouble(miningController.returnBalance()) * Double.parseDouble(usd) / 1000));
+					String balance;
+					try {
+						double currentBalance = Double.parseDouble(balanceString);
+						double rate = Double.parseDouble(usd);
+						balance =  String.format("%s milliether ≈ $%.2f", balanceString, (currentBalance * rate / 1000));
+					} catch  (NumberFormatException e) {
+						balance = balanceString + " milliether"; 
+					}
+					String totalBalance = balance;
 					Platform.runLater(() -> {
 						profitText.setText(profit);
 						walletText.setText(wallet);
