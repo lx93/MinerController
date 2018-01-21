@@ -38,7 +38,7 @@ public class MiningTabController {
 
     @FXML
     public void initialize() {
-		//System.out.println(MiningTabController.class.getName() + " is being initialized");
+		System.out.println(MiningTabController.class.getName() + " is being initialized");
 		updateWalletUI();
     }
 
@@ -46,9 +46,10 @@ public class MiningTabController {
 	 * Updates wallet UI
 	 */
     public void updateWalletUI() {
-    		new Thread() {
-    			@Override
-    			public void run() {
+    	new Thread() {
+			@Override
+			public void run() {
+				Thread.currentThread().setName("NanopoolStats");
 				while (true) {
 					final String wallet = "Current Wallet: " + controller.returnMiningAddress().substring(9);
 					final String hashrate = "Current Hashrate: " + miningController.returnHashrate() + " MH/s";
@@ -74,6 +75,7 @@ public class MiningTabController {
 				}
 			}
 		}.start();
+		System.out.println("NanopoolStats Thread started");
     }
 
 

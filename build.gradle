@@ -3,6 +3,7 @@ plugins {
   //id 'eu.appsatori.fatjar'
   id 'java'
   id 'application'
+  id 'eclipse'
 }
 
 mainClassName = 'MinerControllerApplication'
