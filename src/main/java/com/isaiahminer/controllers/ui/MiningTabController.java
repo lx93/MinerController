@@ -7,6 +7,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import com.isaiahminer.controllers.crypto.MiningController;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -78,7 +79,10 @@ public class MiningTabController {
 		System.out.println("NanopoolStats Thread started");
     }
 
-
+    @FXML
+    void changeInfo (ActionEvent event){
+    }
+    
     /**
      * Controls the state of the mineButton
      * @throws IOException
