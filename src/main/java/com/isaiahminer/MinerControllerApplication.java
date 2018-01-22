@@ -21,9 +21,9 @@ public class MinerControllerApplication extends Application {
 
 	@Override
     public void start(Stage primaryStage) {
-        System.out.println(MinerControllerApplication.class.getName() + " starting: looking for " + VIEW);
+        //System.out.println(MinerControllerApplication.class.getName() + " starting: looking for " + VIEW);
         final URL mainView = getClass().getClassLoader().getResource("com/isaiahminer/resources/" + VIEW);
-        System.out.println(mainView);
+        //System.out.println(mainView);
         Parent root;
 		try {
 			root = FXMLLoader.load(mainView);
@@ -36,7 +36,7 @@ public class MinerControllerApplication extends Application {
         System.out.println(VIEW + " loaded");
         primaryStage.setTitle("Isaiah Miner");
         primaryStage.setScene(new Scene(root, 800, 450));
-        primaryStage.setFullScreen(true);
+        //primaryStage.setFullScreen(true);
         primaryStage.show();
         System.out.println(VIEW + " shown");
     }
