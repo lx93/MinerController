@@ -1,4 +1,4 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -30,38 +30,38 @@ public class QRScanner {
         catch(NullPointerException e){}
     }
 
-    public String scanCode() throws NullPointerException {
-        Result result = null;
-        BufferedImage image = null;
-
-        try { Thread.sleep(2000); } catch (Exception e) {}
-        if ((image = webcam.getImage()) == null) {
-        }
-
-        LuminanceSource source = new BufferedImageLuminanceSource(image);
-        BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
-        Map<DecodeHintType, Object> pureHints = new EnumMap<>(DecodeHintType.class);
-        pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
-
-        // parsing the QR into result object
-        try {
-            result = new MultiFormatReader().decode(bitmap, pureHints);
-        } catch (NotFoundException e) {
-            e.printStackTrace();
-            System.out.println("didnt find a QR code");
-        }
-
-
-        // if the QR is present
-        if (result != null) {
-            return result.getText();
-        }
-
-        //otherwise if the QR is not picked up
-        else{
-            return ("lalalala the QR code is messed up");
-        }
-    }
+//    public String scanCode() throws NullPointerException {
+//        Result result = null;
+//        BufferedImage image = null;
+//
+//        try { Thread.sleep(2000); } catch (Exception e) {}
+//        if ((image = webcam.getImage()) == null) {
+//        }
+//
+//        LuminanceSource source = new BufferedImageLuminanceSource(image);
+//        BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+//        Map<DecodeHintType, Object> pureHints = new EnumMap<>(DecodeHintType.class);
+//        pureHints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+//
+//        // parsing the QR into result object
+//        try {
+//            result = new MultiFormatReader().decode(bitmap, pureHints);
+//        } catch (NotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("didnt find a QR code");
+//        }
+//
+//
+//        // if the QR is present
+//        if (result != null) {
+//            return result.getText();
+//        }
+//
+//        //otherwise if the QR is not picked up
+//        else{
+//            return ("lalalala the QR code is messed up");
+//        }
+//    }
 
 
     // this creates a Panel to be fitted into the JFrame passed in as an argument

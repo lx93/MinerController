@@ -1,4 +1,6 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.models;
+
+import com.isaiahminer.controllers.QRScanner;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

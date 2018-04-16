@@ -1,4 +1,4 @@
-package com.isaiahminer.controllers.crypto;
+package com.isaiahminer.models;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

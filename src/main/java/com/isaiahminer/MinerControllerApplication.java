@@ -36,7 +36,7 @@ public class MinerControllerApplication extends Application {
         System.out.println(VIEW + " loaded");
         primaryStage.setTitle("Isaiah Miner");
         primaryStage.setScene(new Scene(root, 800, 450));
-        //primaryStage.setFullScreen(true);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
         System.out.println(VIEW + " shown");
     }

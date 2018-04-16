@@ -1,4 +1,4 @@
-package com.isaiahminer.controllers.crypto;
+package com.isaiahminer.models;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,8 +14,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.isaiahminer.MinerControllerApplication;
-import com.isaiahminer.controllers.ui.MiningTabController;
-import com.isaiahminer.controllers.ui.SettingsController;
+import com.isaiahminer.controllers.MiningTabController;
 
 public class MiningController {
 
@@ -83,7 +82,7 @@ public class MiningController {
         }
         final String URLAddress = "https://api.nanopool.org/v1/eth/approximated_earnings/28" ;
 //        System.out.println(jsonParse(jsonToString(connectAPI(URLAddress)), "day","dollars"));
-        return jsonParse(jsonToString(connectAPI(URLAddress)), "day","dollars");
+        return String.format("%.2f",Double.parseDouble(jsonParse(jsonToString(connectAPI(URLAddress)), "day","dollars")));
     }
 
 
@@ -200,7 +199,8 @@ public class MiningController {
 				"-cclock", cclock,
 				"-mclock", mclock,
 				"-cvddc", cvddc,
-				"-mvddc", mvddc);
+				"-mvddc", mvddc,
+                "-mport", "0");
 
 		Process minerProcess;
 		try {

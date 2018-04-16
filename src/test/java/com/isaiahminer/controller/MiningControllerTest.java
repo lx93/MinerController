@@ -1,9 +1,9 @@
-package com.isaiahminer.controllers;
+package com.isaiahminer.controller;
 
 import org.junit.Test;
 
-import com.isaiahminer.controllers.crypto.MiningController;
-import com.isaiahminer.controllers.ui.MiningTabController;
+import com.isaiahminer.models.MiningController;
+import com.isaiahminer.controllers.MiningTabController;
 
 import static org.junit.Assert.*;
 

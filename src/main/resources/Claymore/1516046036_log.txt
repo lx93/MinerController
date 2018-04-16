@@ -1,0 +1,14 @@
+14:53:56:421	4ed20bc0	Check and remove old log files...
+14:53:56:423	4ed20bc0	args: -epool eth-us-east1.nanopool.org:9999 -ewal 0x3feb4e158df426df10e3f167d3c0d822d1460fee -eworker ThinkPad-X1-Carbon-5th -epsw x -tt 75 -fanmin 60 -fanmax 90 -dcri 4 -cclock 1165 -mclock 2150 -cvddc 810 -mvddc 810 
+14:53:56:423	4ed20bc0	
+14:53:56:423	4ed20bc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+14:53:56:423	4ed20bc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+14:53:56:423	4ed20bc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+14:53:56:423	4ed20bc0	
+14:53:56:623	4ed20bc0	ETH: 1 pool is specified
+14:53:56:623	4ed20bc0	Main Ethereum pool is eth-us-east1.nanopool.org:9999
+14:53:56:623	4ed20bc0	DCR: 0 pool is specified
+14:53:56:627	4ed20bc0	AMD OpenCL platform not found 
+14:53:56:627	4ed20bc0	cudaGetDeviceCount failed (35, CUDA driver version is insufficient for CUDA runtime version), probably no CUDA devices
+14:53:56:627	4ed20bc0	No NVIDIA CUDA GPUs detected.
+14:53:56:627	4ed20bc0	No AMD OPENCL or NVIDIA CUDA GPUs found, exit

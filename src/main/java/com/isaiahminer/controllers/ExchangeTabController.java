@@ -1,10 +1,10 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
 
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.isaiahminer.controllers.crypto.ExchangeController;
+import com.isaiahminer.models.ExchangeController;
 
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;

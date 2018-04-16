@@ -1,11 +1,12 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
 
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import com.isaiahminer.controllers.crypto.MiningController;
+import com.isaiahminer.models.MiningController;
 
+import com.isaiahminer.models.SettingsController;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

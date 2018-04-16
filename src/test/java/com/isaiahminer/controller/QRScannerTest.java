@@ -1,4 +1,4 @@
-package com.isaiahminer.controllers;
+package com.isaiahminer.controller;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 import org.junit.Test;
 
-import com.isaiahminer.controllers.ui.QRScanner;
+import com.isaiahminer.controllers.QRScanner;
 
 public class QRScannerTest {
 

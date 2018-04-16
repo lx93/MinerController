@@ -1,4 +1,6 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
+
+import com.isaiahminer.models.SettingsController;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;

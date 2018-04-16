@@ -12,9 +12,9 @@
 <?import javafx.scene.control.Label?>
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: b6ccef;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-	fx:controller="com.isaiahminer.controllers.SendBTCController">
+	fx:controller="com.isaiahminer.controllers.SendETHController">
     <children>
-        <Text layoutX="92.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send BTC">
+        <Text layoutX="92.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send ETH">
             <font>
                 <Font size="58.0" />
             </font>

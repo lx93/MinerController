@@ -1,0 +1,8 @@
+07:32:32:794	51a18bc0	Check and remove old log files...
+07:32:32:799	51a18bc0	args: 
+07:32:32:799	51a18bc0	
+07:32:32:799	51a18bc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+07:32:32:799	51a18bc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.1      บ
+07:32:32:799	51a18bc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+07:32:32:799	51a18bc0	
+07:32:33:000	51a18bc0	ETH: No pools specified! Specify at least one valid pool in "-epool" parameter. 

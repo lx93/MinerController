@@ -10,7 +10,7 @@
       	<fx:include source="MiningTab.fxml" />
       </content>
     </Tab>
-<!--
+
     <Tab fx:id="walletTab" text=" Wallet ">
       <content>
       	<fx:include source="WalletTab.fxml" />
@@ -21,7 +21,7 @@
         <fx:include source="ExchangeTab.fxml" />
       </content>
     </Tab>
--->
+
     <Tab fx:id="settingsTab" text=" Settings ">
       <content>
         <fx:include source="SettingsTab.fxml" />

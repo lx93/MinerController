@@ -1,4 +1,4 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
 
 import java.awt.FlowLayout;
 
@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import com.isaiahminer.models.WalletController;
 import com.isaiahminer.helpers.BTCHelper;
 
 import javafx.fxml.FXMLLoader;
@@ -39,10 +40,10 @@ public class WalletTabController {
 
     public void sendETHFrame (){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("com/isaiahminer/resources/SendBTCFrame.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("com/isaiahminer/resources/SendETHFrame.fxml"));
             Parent root1 = fxmlLoader.load();
-            SendBTCView sendBTCView = fxmlLoader.<SendBTCView>getController();
-            sendBTCView.addressText.setText(address);
+            SendETHController sendETHController = fxmlLoader.<SendETHController>getController();
+            sendETHController.addressText.setText(address);
 
             Stage stage = new Stage();
             //stage.initModality(Modality.APPLICATION_MODAL);

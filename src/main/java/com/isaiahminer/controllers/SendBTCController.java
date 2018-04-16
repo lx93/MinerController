@@ -1,11 +1,9 @@
-package com.isaiahminer.controllers.ui;
+package com.isaiahminer.controllers;
 
 import javafx.scene.text.Text;
 
-public class SendBTCView {
+public class SendBTCController {
     public Text addressText = new Text();
-
-
 
     public void confirmSend(){
         System.out.println("sent");

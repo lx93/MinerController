@@ -6,7 +6,7 @@ import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.Utils;
 
-import com.isaiahminer.controllers.ui.WalletController;
+import com.isaiahminer.models.WalletController;
 
 public class BTCHelper {
 
